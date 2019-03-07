@@ -55,7 +55,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -115,5 +117,13 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/plugin-transform-react-jsx-source": "^7.2.0",
+    "@storybook/addon-actions": "^5.0.0",
+    "@storybook/addon-links": "^5.0.0",
+    "@storybook/addons": "^5.0.0",
+    "@storybook/react": "^5.0.0"
   }
 }
