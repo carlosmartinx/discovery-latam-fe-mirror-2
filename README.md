@@ -19,7 +19,7 @@ This repository is based on monorepo architecture
 - **modules/shared-components:** Reusable components for the web app
 - **modules/tu-discovery:** TODO
 
-## DEVELOPMENT MODE
+## Development Mode
 
 - Install node v8.4 or higher
 - We are using the Prettier module if you like to add it on your code editor
@@ -29,7 +29,7 @@ $ yarn
 $ yarn start
 ```
 
-## STORYBOOK
+## Storybook
 
 TODO
 
