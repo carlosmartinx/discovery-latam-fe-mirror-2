@@ -1,6 +1,8 @@
 {
-  "name": "web",
+  "name": "discovery-web-app",
   "version": "0.1.0",
+  "author": "DLA Platform Engineers",
+  "license": "MIT",
   "private": true,
   "workspaces": [
     "modules/*"
