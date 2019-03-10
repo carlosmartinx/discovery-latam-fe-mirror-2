@@ -1,5 +1,3 @@
-"use strict";
-
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = "development";
 process.env.NODE_ENV = "development";
@@ -52,7 +50,7 @@ if (process.env.HOST) {
     )
   );
   console.log(
-    `If this was unintentional, check that you haven't mistakenly set it in your shell.`
+    "If this was unintentional, check that you haven't mistakenly set it in your shell."
   );
   console.log(
     `Learn more here: ${chalk.yellow("https://bit.ly/CRA-advanced-config")}`
@@ -63,12 +61,9 @@ if (process.env.HOST) {
 // We require that you explictly set browsers and do not fall back to
 // browserslist defaults.
 const { checkBrowsers } = require("react-dev-utils/browsersHelper");
+
 checkBrowsers(paths.appPath, isInteractive)
-  .then(() => {
-    // We attempt to use the default port but if it is busy, we offer the user to
-    // run on a different port. `choosePort()` Promise resolves to the next free port.
-    return choosePort(HOST, DEFAULT_PORT);
-  })
+  .then(() => choosePort(HOST, DEFAULT_PORT))
   .then(port => {
     if (port == null) {
       // We have not found a port.
@@ -115,8 +110,8 @@ checkBrowsers(paths.appPath, isInteractive)
       openBrowser(urls.localUrlForBrowser);
     });
 
-    ["SIGINT", "SIGTERM"].forEach(function(sig) {
-      process.on(sig, function() {
+    ["SIGINT", "SIGTERM"].forEach(sig => {
+      process.on(sig, () => {
         devServer.close();
         process.exit();
       });
