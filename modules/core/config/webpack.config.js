@@ -1,5 +1,3 @@
-"use strict";
-
 const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
@@ -18,11 +16,11 @@ const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeModulesPlugin");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const getCSSModuleLocalIdent = require("react-dev-utils/getCSSModuleLocalIdent");
-const paths = require("./paths");
-const getClientEnvironment = require("./env");
 const ModuleNotFoundPlugin = require("react-dev-utils/ModuleNotFoundPlugin");
 const ForkTsCheckerWebpackPlugin = require("react-dev-utils/ForkTsCheckerWebpackPlugin");
 const typescriptFormatter = require("react-dev-utils/typescriptFormatter");
+const paths = require("./paths");
+const getClientEnvironment = require("./env");
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false";
@@ -52,7 +50,7 @@ module.exports = function(webpackEnv) {
     ? paths.servedPath
     : isEnvDevelopment && "/";
   // Some apps do not use client-side routing with pushState.
-  // For these, "homepage" can be set to "." to enable relative asset paths.
+  // For these, 'homepage' can be set to '.' to enable relative asset paths.
   const shouldUseRelativeAssetPaths = publicPath === "./";
 
   // `publicUrl` is just like `publicPath`, but we will provide it to our app
@@ -121,8 +119,8 @@ module.exports = function(webpackEnv) {
         ? "source-map"
         : false
       : isEnvDevelopment && "cheap-module-source-map",
-    // These are the "entry points" to our application.
-    // This means they will be the "root" imports that are included in JS bundle.
+    // These are the 'entry points' to our application.
+    // This means they will be the 'root' imports that are included in JS bundle.
     entry: [
       // Include an alternative client for WebpackDevServer. A client's job is to
       // connect to WebpackDevServer by a socket and get notified about changes.
@@ -156,8 +154,8 @@ module.exports = function(webpackEnv) {
       chunkFilename: isEnvProduction
         ? "static/js/[name].[contenthash:8].chunk.js"
         : isEnvDevelopment && "static/js/[name].chunk.js",
-      // We inferred the "public path" (such as / or /my-project) from homepage.
-      // We use "/" in development.
+      // We inferred the 'public path' (such as / or /my-project) from homepage.
+      // We use '/' in development.
       publicPath: publicPath,
       // Point sourcemap entries to original disk location (format as URL on Windows)
       devtoolModuleFilenameTemplate: isEnvProduction
@@ -244,7 +242,7 @@ module.exports = function(webpackEnv) {
     },
     resolve: {
       // This allows you to set a fallback for where Webpack should look for modules.
-      // We placed these paths second because we want `node_modules` to "win"
+      // We placed these paths second because we want `node_modules` to 'win'
       // if there are any conflicts. This matches Node resolution mechanism.
       // https://github.com/facebook/create-react-app/issues/253
       modules: ["node_modules"].concat(
@@ -308,11 +306,11 @@ module.exports = function(webpackEnv) {
           exclude: /(config|node_modules|serviceWorker.js)/
         },
         {
-          // "oneOf" will traverse all following loaders until one will
+          // 'oneOf' will traverse all following loaders until one will
           // match the requirements. When no loader matches it will fall
-          // back to the "file" loader at the end of the loader list.
+          // back to the 'file' loader at the end of the loader list.
           oneOf: [
-            // "url" loader works like "file" loader except that it embeds assets
+            // 'url' loader works like 'file' loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
             // A missing `test` is equivalent to a match.
             {
@@ -380,11 +378,11 @@ module.exports = function(webpackEnv) {
                 sourceMaps: false
               }
             },
-            // "postcss" loader applies autoprefixer to our CSS.
-            // "css" loader resolves paths in CSS and adds assets as dependencies.
-            // "style" loader turns CSS into JS modules that inject <style> tags.
+            // 'postcss' loader applies autoprefixer to our CSS.
+            // 'css' loader resolves paths in CSS and adds assets as dependencies.
+            // 'style' loader turns CSS into JS modules that inject <style> tags.
             // In production, we use MiniCSSExtractPlugin to extract that CSS
-            // to a file, but in development "style" loader enables hot editing
+            // to a file, but in development 'style' loader enables hot editing
             // of CSS.
             // By default we support CSS Modules with the extension .module.css
             {
@@ -444,15 +442,15 @@ module.exports = function(webpackEnv) {
                 "sass-loader"
               )
             },
-            // "file" loader makes sure those assets get served by WebpackDevServer.
+            // 'file' loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
-            // This loader doesn't use a "test" so it will catch all modules
+            // This loader doesn't use a 'test' so it will catch all modules
             // that fall through the other loaders.
             {
               loader: require.resolve("file-loader"),
-              // Exclude `js` files to keep "css" loader working as it injects
-              // its runtime that would otherwise be processed through "file" loader.
+              // Exclude `js` files to keep 'css' loader working as it injects
+              // its runtime that would otherwise be processed through 'file' loader.
               // Also exclude `html` and `json` extensions so they get processed
               // by webpacks internal loaders.
               exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
@@ -461,7 +459,7 @@ module.exports = function(webpackEnv) {
               }
             }
             // ** STOP ** Are you adding a new loader?
-            // Make sure to add the new loader(s) before the "file" loader.
+            // Make sure to add the new loader(s) before the 'file' loader.
           ]
         }
       ]
@@ -500,8 +498,8 @@ module.exports = function(webpackEnv) {
         new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime~.+[.]js/]),
       // Makes some environment variables available in index.html.
       // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
-      // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-      // In production, it will be an empty string unless you specify "homepage"
+      // <link rel='shortcut icon' href='%PUBLIC_URL%/favicon.ico'>
+      // In production, it will be an empty string unless you specify 'homepage'
       // in `package.json`, in which case it will be the pathname of that URL.
       // In development, this will be an empty string.
       new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
