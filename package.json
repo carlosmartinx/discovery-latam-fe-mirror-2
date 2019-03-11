@@ -5,7 +5,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "modules/*"
+    "modules/*",
+    "shared-components/*"
   ],
   "dependencies": {
     "@storybook/addon-actions": "^5.0.1",
