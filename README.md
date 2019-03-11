@@ -23,6 +23,7 @@ This repository is based on monorepo architecture
 
 - Install node v8.4 or higher
 - We are using the Prettier module if you like to add it on your code editor
+- If you have an old version of the project is recommendable to use `yarn clean` to fix the dependencies
 
 ```sh
 $ yarn
@@ -32,7 +33,9 @@ $ yarn start
 
 ## Storybook
 
-TODO
+```sh
+$ yarn storybook
+```
 
 For more information please visit:
 
