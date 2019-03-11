@@ -140,6 +140,9 @@
       "react-app"
     ]
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
