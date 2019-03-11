@@ -26,6 +26,7 @@ This repository is based on monorepo architecture
 
 ```sh
 $ yarn
+$ yarn build
 $ yarn start
 ```
 

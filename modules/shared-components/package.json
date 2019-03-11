@@ -1,0 +1,50 @@
+{
+  "name": "shared-components",
+  "version": "0.1.0",
+  "description": "Shared components for DLA",
+  "main": "./dist",
+  "scripts": {
+    "test": "jest --coverage --verbose --color",
+    "build": "yarn babel",
+    "lint": "npx eslint src/",
+    "babel": "babel src --out-dir dist --ignore ./**/*.spec.js,./**/*.stories.js"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 90,
+        "branches": 90,
+        "functions": 90,
+        "lines": 90
+      }
+    },
+    "setupFiles": [
+      "./config/setupTests.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs",
+          "dynamic-import-node"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "@storybook/addon-actions": "^5.0.1",
+    "@storybook/addon-links": "^5.0.1",
+    "@storybook/addons": "^5.0.1",
+    "@storybook/react": "^5.0.1",
+    "react": "^16.8.4"
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0"
+  }
+}
