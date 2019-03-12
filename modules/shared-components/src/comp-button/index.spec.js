@@ -1,36 +1,37 @@
-import React from "react";
-import { mount } from "enzyme";
-import Button from ".";
+/* eslint-disable */
+import React from 'react';
+import { mount } from 'enzyme';
+import Button from '.';
 
-describe("Button Component", function() {
-  it("renders without props", function() {
+describe('Button Component', () => {
+  it('renders without props', () => {
     const wrapper = mount(<Button />);
-    const button = wrapper.find(".button");
+    const button = wrapper.find('.button');
     expect(button.length).toBe(1);
   });
 
-  it("renders without props", function() {
+  it('renders without props', () => {
     const wrapper = mount(<Button />);
-    const button = wrapper.find(".button");
+    const button = wrapper.find('.button');
     expect(button.length).toBe(1);
   });
 
-  it("renders children when passed in", () => {
+  it('renders children when passed in', () => {
     const wrapper = mount(
       <Button>
         <p className="child">Some Child</p>
-      </Button>
+      </Button>,
     );
 
-    const child = wrapper.find(".child");
+    const child = wrapper.find('.child');
     expect(child.length).toBe(1);
   });
 
-  it("handles onClick events", () => {
+  it('handles onClick events', () => {
     const onClick = jest.fn();
     const wrapper = mount(<Button onClick={onClick} />);
 
-    wrapper.find("button").simulate("click");
+    wrapper.find('button').simulate('click');
 
     expect(onClick.mock.calls.length).toBe(1);
   });
