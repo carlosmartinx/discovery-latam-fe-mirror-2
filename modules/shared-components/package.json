@@ -1,13 +1,13 @@
 {
-  "name": "shared-components",
-  "version": "0.1.0",
+  "name": "@discovery-web-app/shared-components",
+  "version": "0.1.1",
   "description": "Shared components for DLA",
   "main": "./dist",
   "scripts": {
     "test": "jest --coverage --verbose --color",
     "build": "yarn babel",
     "lint": "npx eslint src/",
-    "babel": "babel src --out-dir dist --ignore ./**/*.spec.js,./**/*.stories.js"
+    "transpile": "babel src --out-dir dist --ignore ./**/*.spec.js,./**/*.stories.js"
   },
   "jest": {
     "coverageThreshold": {
@@ -37,10 +37,6 @@
     }
   },
   "dependencies": {
-    "@storybook/addon-actions": "^5.0.1",
-    "@storybook/addon-links": "^5.0.1",
-    "@storybook/addons": "^5.0.1",
-    "@storybook/react": "^5.0.1",
     "react": "^16.8.4"
   },
   "devDependencies": {
