@@ -5,7 +5,6 @@
   "main": "./dist",
   "scripts": {
     "test": "jest --coverage --verbose --color",
-    "build": "yarn babel",
     "lint": "npx eslint src/",
     "transpile": "babel src --out-dir dist --ignore ./**/*.spec.js,./**/*.stories.js"
   },

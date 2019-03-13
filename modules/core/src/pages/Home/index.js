@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flex, Text, Box } from 'rebass';
 import { NavLink } from 'react-router-dom';
+import { Button } from '@discovery-web-app/shared-components';
 import { Heading, BoxBase } from './styled';
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
         <Text>Go to Test page!</Text>
       </NavLink>
     </Box>
+    <Button />
   </Flex>
 );
 
