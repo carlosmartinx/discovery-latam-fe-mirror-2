@@ -19,15 +19,29 @@ This repository is based on monorepo architecture
 - **modules/shared-components:** Reusable components for the web app
 - **modules/tu-discovery:** TODO
 
+## StyleGuide
+Styled-components structure through [***rebassjs***](https://rebassjs.org/). 
+
+Every component must have the following ***CamelCase*** structure
+
+```
+|-ComponentName
+|-- index.js              # Main component
+|-- SubComponentName.js   # If any
+|-- styled.js             # If needed extend any component styles
+```
+
 ## Development Mode
 
 1st for all, u need install lerna globally `npm install -g lerna`.
 
-Then run `lerna boostrap` for download all node_modulels forr all *modules* and link the among them
+Run `lerna boostrap` for download all *node_modules* for all ***modules*** and link the among them.
 
-All main commands must be executed in root app folder
+Then run `yarn transpile` for build all the components in ther respective dist folders.
 
-***IMPORTANT***: everytime that u make changes in ***modules*** make sure update the version in `package.json`. Is needed update only the last number
+All main commands must be executed in root app folder.
+
+***IMPORTANT***: everytime that u make changes in ***modules*** make sure update the version in `package.json`. Is needed update only the last number and run `lerna bootstrap` in app root folder again.
 
 ## Working in *tu-discovery*
 
@@ -43,7 +57,7 @@ If u are working in common components, there are 2 ways
 
 - **via storybook**: run `yarn storybook`, work and check changes in storybook page
 
-- **via core**: run `yarn start` and work in **shared-components** folder. For check changes u must run `yarn transpile` in root folder.
+- **via core**: run `yarn start` and work in **shared-components** folder. For check changes u must run `yarn transpile` in app root folder for apply changes.
 
 ## Storybook
 
