@@ -33,6 +33,9 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      # run transpile!
+      - run: yarn transpile    
+
       # run lint!
       - run: yarn lint
 
