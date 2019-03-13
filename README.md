@@ -27,6 +27,8 @@ Every component must have the following ***CamelCase*** structure
 ```
 |-ComponentName
 |-- index.js              # Main component
+|-- index.stories.js      # Storybook File
+|-- index.spec.js         # Test file
 |-- SubComponentName.js   # If any
 |-- styled.js             # If needed extend any component styles
 ```
