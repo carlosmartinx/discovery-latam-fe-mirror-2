@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ type = 'button', children, onClick }) => (
+const Button = ({ type = 'button', children = 'testing', onClick }) => (
   <div>
     <button type={type} className="button" onClick={onClick}>
       {children}
@@ -12,7 +12,7 @@ const Button = ({ type = 'button', children, onClick }) => (
 
 Button.propTypes = {
   type: PropTypes.string,
-  children: PropTypes.oneOf(PropTypes.element, PropTypes.func, PropTypes.element),
+  children: PropTypes.oneOf(PropTypes.string, PropTypes.func, PropTypes.element),
   onClick: PropTypes.func,
 };
 

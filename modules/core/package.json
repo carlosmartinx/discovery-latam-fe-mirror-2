@@ -99,7 +99,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "devDependencies": {
   }
 }
