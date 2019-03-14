@@ -4,7 +4,7 @@
   "description": "Shared components for DLA",
   "main": "./dist",
   "scripts": {
-    "test": "jest --coverage --verbose --color",
+    "test": "jest --coverage --verbose --color --updateSnapshot",
     "lint": "npx eslint src/",
     "transpile": "babel src --out-dir dist --ignore ./**/*.spec.js,./**/*.stories.js"
   },
