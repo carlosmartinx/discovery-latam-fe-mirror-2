@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 // Pages
 import Home from '../pages/Home';
-import Test from '../pages/Test';
+import Test from '../pages/Test'; // eslint-disable-line
 
 const Routes = () => (
   <Switch>

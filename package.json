@@ -66,6 +66,7 @@
     "start": "yarn run:core start",
     "build": "lerna run build",
     "test": "lerna run test --stream",
+    "test:core": "run:core test",
     "lint": "lerna run lint",
     "clean": "lerna clean --yes",
     "lint:core": "yarn run:core lint",

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from '@discovery-web-app/shared-components';
 import { Heading, BoxBase } from './styled';
 
-const App = () => (
+const Home = () => (
   <Flex flexDirection="column">
     <BoxBase>
       <Heading color="magenta">Hello</Heading>
@@ -18,4 +18,4 @@ const App = () => (
   </Flex>
 );
 
-export default App;
+export default Home;

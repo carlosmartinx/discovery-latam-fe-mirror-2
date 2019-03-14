@@ -5,12 +5,14 @@
   "dependencies": {
     "@discovery-web-app/shared-components": "^0.1.1",
     "keymirror-nested": "^1.0.3",
+    "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.8.4",
     "rebass": "^3.0.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
@@ -99,5 +101,10 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "enzyme-adapter-react-16": "^1.11.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "jest-styled-components": "^6.3.1"
   }
 }
