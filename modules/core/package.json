@@ -95,6 +95,9 @@
       "web.jsx",
       "jsx",
       "node"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "babel": {
@@ -103,8 +106,9 @@
     ]
   },
   "devDependencies": {
-    "enzyme-adapter-react-16": "^1.11.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "enzyme-adapter-react-16": "^1.11.0",
+    "enzyme-to-json": "^3.3.5",
     "jest-styled-components": "^6.3.1"
   }
 }
