@@ -1,12 +1,15 @@
+/**
+ * filename demo for avoid test runner fails
+ */
 import TYPES from '../actions/test/types';
 
-const initialState = {
+export const initialState = {
   loading: false,
   test: '',
 };
 
-const testReducer = (state = initialState, action) => {
-  switch (action.type) {
+const testReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
     case TYPES.TEST.SET.REQUEST:
       return {
         ...state,
@@ -15,7 +18,7 @@ const testReducer = (state = initialState, action) => {
     case TYPES.TEST.SET.SUCCESS:
       return {
         ...state,
-        test: action.payload.data,
+        test: payload.data,
         loading: false,
       };
     default:
