@@ -4,8 +4,11 @@ const path = require('path');
 const globSync = require('glob').sync;
 
 const mkdirpSync = require('mkdirp').sync;
-const last = require('lodash').last;
+const { last, each } = require('lodash');
+
 const publicFolder = path.resolve(__dirname, '../public/');
+
+const args = require('minimist')(process.argv.slice(2))
 
 const MESSAGES_PATTERN = publicFolder + '/messages/**/*.json';
 const LANG_DIR = publicFolder + '/locales/';
@@ -14,29 +17,9 @@ const LANG_PATTERN = publicFolder + '/locales/*.json';
 try {
   fs.unlinkSync(publicFolder+'/locales/data.json');
 } catch (error) {
-  // eslint-disable-next-line
+  // // console.log('error', error)
 }
 
-const mergedTranslations = globSync(LANG_PATTERN)
-  .map((filename) => {
-    const locale = last(filename.split('/')).split('.json')[0];
-    // if (locale === 'data'){
-    //   return 
-    // }
-    return {
-      [locale]: JSON.parse(fs.readFileSync(filename, 'utf8')),
-    };
-  })
-  .reduce((acc, localeObj) => ({
-    ...acc,
-    ...localeObj,
-  }), {});
-
-
-// Aggregates the default messages that were extracted from the example app's
-// React components via the React Intl Babel plugin. An error will be thrown if
-// there are messages in different components that use the same `id`. The result
-// is a flat collection of `id: message` pairs for the app's default locale.
 const defaultMessages = globSync(MESSAGES_PATTERN)
   .map(filename => fs.readFileSync(filename, 'utf8'))
   .map(file => JSON.parse(file))
@@ -55,6 +38,39 @@ const defaultMessages = globSync(MESSAGES_PATTERN)
 
     return collection;
   }, {});
+  
+
+  if (args.lang) {
+    const newMessages = {}
+    const langMessages = JSON.parse(fs.readFileSync(LANG_DIR + args.lang + '.json', 'utf8'));
+    Object.keys(defaultMessages).forEach(msg => {
+      if(!langMessages[msg]) {
+        newMessages[msg] = ''
+      }
+    })
+    fs.writeFileSync(
+      `${LANG_DIR + args.lang}.json`,
+      JSON.stringify({
+       ...langMessages,
+        ...newMessages,
+      }, null, 2),
+    );
+
+  }
+
+const mergedTranslations = globSync(LANG_PATTERN)
+  .map((filename) => {
+    const locale = last(filename.split('/')).split('.json')[0];
+    return {
+      [locale]: JSON.parse(fs.readFileSync(filename, 'utf8')),
+    };
+  })
+  .reduce((acc, localeObj) => ({
+    ...acc,
+    ...localeObj,
+  }), {});
+
+
 
 // Create a new directory that we want to write the aggregate messages to
 mkdirpSync(LANG_DIR);
