@@ -92,7 +92,7 @@
     "build:prod": "node scripts/build.js",
     "lint": "npx eslint src/",
     "start": "node scripts/start.js",
-    "test": "jest --coverage --verbose --color"
+    "test": "jest --coverage --verbose --color -u"
   },
   "version": "0.1.0"
 }
