@@ -1,6 +1,7 @@
 // Libraries
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+// eslint-disable-next-line import/no-unresolved
 import Loadable from 'react-loadable';
 
 const Loading = () => <div>Loading</div>;

@@ -66,6 +66,7 @@
     "start": "yarn run:core start",
     "build": "lerna run build",
     "test": "lerna run test --stream",
+    "test:core": "run:core test",
     "lint": "lerna run lint",
     "clean": "lerna clean --yes",
     "lint:core": "yarn run:core lint",
@@ -75,7 +76,8 @@
     "run:core": "cd modules/core && yarn",
     "run:shared-components": "cd modules/shared-components && yarn",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:intl": "yarn run:core build:intl"
   },
   "eslintConfig": {
     "plugins": [

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "Test.Heading",
+    "defaultMessage": "TEST"
+  },
+  {
+    "id": "Test.TestText",
+    "defaultMessage": "Probando!"
+  },
+  {
+    "id": "Test.StateData",
+    "defaultMessage": "Info en el State!"
+  },
+  {
+    "id": "Test.ActualLang",
+    "defaultMessage": "Idioma Actual"
+  },
+  {
+    "id": "Test.ChangeLang",
+    "defaultMessage": "Cambiar Idioma!"
+  }
+]
