@@ -1,17 +1,22 @@
 /* eslint-disable */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import {
+  withKnobs,
+  text,
+} from '@storybook/addon-knobs';
 
-import Button2 from '.';
+import CookieBar from '.';
 
-storiesOf('Button2', module)
-  .add('with text', () => <Button2 onClick={action('clicked')}>Button</Button2>)
+storiesOf('CookieBar', module)
+  .addDecorator(withKnobs)
+  .add('Cookies', () => 
+    <CookieBar language={text('language', 'es')}> </CookieBar>
+  )
+  .add('latam', () => 
+    <CookieBar language='es'> </CookieBar>
+  )
 
-  .add('with some emoji', () => (
-    <Button2 onClick={action('clicked')}>😀 😎 👍 💯</Button2>
-  ))
-
-  .add('with a theme provider', () => (
-    <Button2 onClick={action('clicked')}>Button</Button2>
-  ));
+  .add('brasil', () => 
+  <CookieBar language='br'> </CookieBar>
+  )

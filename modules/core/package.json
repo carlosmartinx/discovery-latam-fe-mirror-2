@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@discovery-web-app/shared-components": "^0.1.1",
+    "@storybook/addon-knobs": "^5.0.1",
     "keymirror-nested": "^1.0.3",
     "lodash": "^4.17.11",
     "react": "^16.8.4",
