@@ -40,6 +40,7 @@ const defaultMessages = globSync(MESSAGES_PATTERN)
   }, {});
   
 
+  // yarn buid:intl --lang=pt
   if (args.lang) {
     const newMessages = {}
     const langMessages = JSON.parse(fs.readFileSync(LANG_DIR + args.lang + '.json', 'utf8'));
