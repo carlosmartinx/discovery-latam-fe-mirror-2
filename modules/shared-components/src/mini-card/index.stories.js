@@ -10,5 +10,9 @@ const logo = "http://discoverydrupalbackend-1795829284.us-east-1.elb.amazonaws.c
 
 storiesOf('Mini Card', module)
   .add('with image', () => {
-    return <Flex flexDirection="column"><Box width={[ 1 / 6 ]}><MiniCard logo={logo} title="Food" onClick={action('opened')}></MiniCard></Box></Flex>
+    return <Flex flexDirection="column"><Box width={[ 1 / 8 ]}><MiniCard logo={logo} title="Food" onClick={action('opened')}></MiniCard></Box></Flex>
+  })
+
+  .add('with Text', () => {
+    return <Flex flexDirection="column"><Box width={[ 1 / 8 ]}><MiniCard logo={logo} title="Food" onClick={action('opened')}></MiniCard></Box></Flex>
   });
