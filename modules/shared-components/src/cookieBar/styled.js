@@ -28,7 +28,7 @@ export const Content = styled(Text)`
   font-size: 12px;
   line-height: 20px;
   margin: 0;
-  max-width: 826px;
+
   & a {
     color: #000;
   }

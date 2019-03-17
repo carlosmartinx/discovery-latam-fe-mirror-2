@@ -13,13 +13,12 @@ import {
   Icon,
   Input,
   Checkmark,
-} from './index.styled';
+} from './styled';
 
 
 const CookieBar = ({ langcode }) => {
   const [onCheckChange, setonCheckChange] = useState(false);
   const [clicked, setClicked] = useState();
-
 
   const updateButton = () => {
     setonCheckChange(!onCheckChange);
@@ -65,7 +64,7 @@ const CookieBar = ({ langcode }) => {
       ) : (
         <Inner>
           <Flex flexDirection={['column', 'column', 'row']} alignItems="center">
-            <Content width={1}>
+            <Content width={[1, 1, 10 / 12]}>
               Os sites Discovery utilizam cookies para aprimorar sua experiência
               com nosso conteúdo.
               Para saber mais sobre como gerenciá-los, leia nossa {' '}
@@ -84,7 +83,7 @@ const CookieBar = ({ langcode }) => {
 };
 
 CookieBar.propTypes = {
-  langcode: PropTypes.any.isRequired,
+  langcode: PropTypes.string.isRequired,
 };
 
 export default CookieBar;
