@@ -16,9 +16,3 @@ export const Headline = styled(Heading)`
   text-transform: uppercase;
   line-height: 32px;
 `;
-
-export const Bullet = styled(Box)`
-  height: 16px;
-  width: 24px;
-`;
-
