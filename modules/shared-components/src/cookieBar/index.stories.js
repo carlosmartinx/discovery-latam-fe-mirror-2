@@ -10,13 +10,9 @@ import CookieBar from '.';
 
 storiesOf('CookieBar', module)
   .addDecorator(withKnobs)
-  .add('Cookies', () => 
-    <CookieBar language={text('language', 'es')}> </CookieBar>
+  .add('Default', () => 
+    <CookieBar langcode={text('language', 'es')}> </CookieBar>
   )
-  .add('latam', () => 
-    <CookieBar language='es'> </CookieBar>
-  )
-
-  .add('brasil', () => 
-  <CookieBar language='br'> </CookieBar>
+  .add('Brasil', () => 
+    <CookieBar langcode='br'> </CookieBar>
   )
