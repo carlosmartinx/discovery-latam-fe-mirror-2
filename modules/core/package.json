@@ -1,6 +1,6 @@
 {
   "name": "@discovery-web-app/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@discovery-web-app/shared-components": "^0.1.1",
@@ -107,6 +107,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-backgrounds": "^5.0.1",
     "babel-plugin-styled-components": "^1.10.0",
     "enzyme-adapter-react-16": "^1.11.0",
     "enzyme-to-json": "^3.3.5",
