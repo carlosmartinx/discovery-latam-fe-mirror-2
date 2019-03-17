@@ -1,12 +1,8 @@
 import { testSetRequest, testSetSuccess } from './actionCreators';
 
-const testAction = text => (dispatch, getState) => {
+const testAction = text => (dispatch, getState) => { // eslint-disable-line
   dispatch(testSetRequest());
-
-  setTimeout(() => {
-    window.console.log('getState()', getState());
-    dispatch(testSetSuccess(text));
-  }, 1000);
+  dispatch(testSetSuccess(text));
 };
 
 export default testAction;
