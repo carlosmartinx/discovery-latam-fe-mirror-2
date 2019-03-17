@@ -32,4 +32,5 @@ export default {
   whatsApp: '#25d366',
   mail: '#333333',
   gMail: '#d44638',
+  btnEnabled: '#00255b',
 };
