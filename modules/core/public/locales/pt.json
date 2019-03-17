@@ -5,5 +5,6 @@
   "Test.TestText": "Testando!",
   "Test.StateData": "informação no estado!",
   "Test.ActualLang": "Idioma Atual",
-  "Test.ChangeLang": ""
+  "Test.ChangeLang": "",
+  "BulletTitle.title": "Destaques"
 }
