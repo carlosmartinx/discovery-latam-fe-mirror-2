@@ -24,3 +24,4 @@
 
 #VSC
 **/.vscode/
+*.lock
