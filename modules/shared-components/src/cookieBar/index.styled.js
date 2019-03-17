@@ -5,7 +5,7 @@ import styled from "styled-components";
 import get from 'lodash/get';
 
 export const Root = styled(Box)`
-  background: ${props => get(props, 'theme.colors.tdBlueGray', '#d6dbda')};
+  background: ${props => get(props, 'theme.colors.tdBlueGray', '')};
   bottom: 0;
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
   font-style: italic;
@@ -13,7 +13,7 @@ export const Root = styled(Box)`
   left: 0;
   margin: auto;
   max-width: 1440px;
-  padding: 8px 16px;
+  padding: 8px;
   position: fixed;
   right: 0;
 `;
@@ -35,13 +35,24 @@ export const Content = styled(Text)`
 `;
 
 export const Accept = styled(Button)`
-  background: ${props => get(props, 'theme.colors.tdBlueGray', '#00255b')};
+  background: ${props => get(props, 'theme.colors.btnEnabled', '')};
   border-radius: 0;
   cursor: pointer;
+  line-height:24px;
+  padding: 8px 16px;
   text-transform: uppercase;
+  transition: all .2s ease-out;
   &:disabled {
-    opacity: 0.5;
+    background: ${props => get(props, 'theme.colors.g3', '')};
     cursor: not-allowed;
+  }
+  &:disabled:hover {
+    background: ${props => get(props, 'theme.colors.g3', '')};
+    color: ${props => get(props, 'theme.colors.white', '')};
+  }
+  &:hover {
+    background: ${props => get(props, 'theme.colors.white', '')};
+    color: ${props => get(props, 'theme.colors.g3', '')};
   }
   &:focus {
     outline: none;

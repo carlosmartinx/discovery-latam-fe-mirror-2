@@ -43,7 +43,7 @@ const CookieBar = ({ langcode }) => {
             </Content>
             <Check mt={1}>
               <Flex width={1} flexDirection={[ 'column', 'row' ]} alignItems={'center'} justifyContent={'space-between'}>
-                <Label mt={[2,2,1]}>
+                <Label mt={[2,0,0]}>
                   <Input type="checkbox" checked={onCheckChange} onChange={() => updateButton()} />
                   <Checkmark checked={onCheckChange}>
                   <Icon viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ const CookieBar = ({ langcode }) => {
                   </Checkmark>
                   Declaro que he leído y acepto los términos de uso y la política de privacidad del Discovery, incluso con respecto al uso de cookies.
                 </Label>
-                <Accept mt={[3,0,-5,-5]} ml={[0,4]} fontSize={1} type="button" disabled={!onCheckChange} onClick={() => updateVisible()}>
+                <Accept mt={[3,0,-6,-6]} mb={[0,0,2,2]} mr={[0,0,0,5]} ml={[0,2,0,0]} fontSize={1} type="button" disabled={!onCheckChange} onClick={() => updateVisible()}>
                   Aceptar
                 </Accept>
               </Flex>
