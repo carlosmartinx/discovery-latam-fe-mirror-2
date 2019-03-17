@@ -38,8 +38,8 @@ const CookieBar = ({ langcode }) => {
               Como la mayoría de los sitios web, los sitios de Discovery utilizan cookies para mejorar su experiencia con nuestro contenido. 
               Para obtener más información acerca de las cookies y cómo administrarlas, por favor lea nuestra Política de privacidad. 
               Declaro que he leído y acepto los&nbsp;
-              <CookieA href="https://tudiscovery.com/terminos-y-condiciones"> términos y condiciones</CookieA> y las&nbsp;
-              <CookieA href="políticas de privacidad"> políticas de privacidad </CookieA>  
+              <CookieA href="https://tudiscovery.com/terminos-y-condiciones" target="_blank"> términos y condiciones</CookieA> y las&nbsp;
+              <CookieA href="políticas de privacidad" target="_blank"> políticas de privacidad </CookieA>  
             </Content>
             <Check mt={1}>
               <Flex width={1} flexDirection={[ 'column', 'row' ]} alignItems={'center'} justifyContent={'space-between'}>
@@ -64,8 +64,8 @@ const CookieBar = ({ langcode }) => {
               <Content width={1}>
                 Os sites Discovery utilizam cookies para aprimorar sua experiência com nosso conteúdo. 
                 Para saber mais sobre como gerenciá-los, leia nossa &nbsp;
-                <CookieA href="https://www.discoverybrasil.com/pagina/politica-de-privacidade">Política de Privacidade</CookieA> e nossos&nbsp;
-                <CookieA href="https://www.discoverybrasil.com/pagina/acordo-de-utilizacao">Termos de Uso</CookieA>.
+                <CookieA href="https://www.discoverybrasil.com/pagina/politica-de-privacidade" target="_blank">Política de Privacidade</CookieA> e nossos&nbsp;
+                <CookieA href="https://www.discoverybrasil.com/pagina/acordo-de-utilizacao" target="_blank">Termos de Uso</CookieA>.
               </Content>
               <Accept mt={[3,3,0]} ml={[0,0,4]} fontSize={1} type="button" onClick={() => updateVisible()}>
                 Aceitar

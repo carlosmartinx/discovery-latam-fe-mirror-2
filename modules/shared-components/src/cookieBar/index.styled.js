@@ -1,3 +1,5 @@
+/* eslint-disable */
+import React from 'react';
 import { Text, Box, Button, Flex } from "rebass";
 import styled from "styled-components";
 import get from 'lodash/get';
