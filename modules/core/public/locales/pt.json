@@ -1,0 +1,9 @@
+{
+  "Home.Hello": "Ola",
+  "Home.GoToTest": "nós vamos para a página de teste!",
+  "Test.Heading": "TESTAR",
+  "Test.TestText": "Testando!",
+  "Test.StateData": "informação no estado!",
+  "Test.ActualLang": "Idioma Atual",
+  "Test.ChangeLang": ""
+}
