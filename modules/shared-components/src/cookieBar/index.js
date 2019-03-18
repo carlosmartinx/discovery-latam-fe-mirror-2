@@ -32,13 +32,12 @@ const CookieBar = ({ langcode }) => {
     console.log(termsandconditions, clicked);
   };
 
-  const barVisible = clicked === false && termsandconditions === "true";
+  const barVisible = !(clicked === false && termsandconditions === "false");
 
 
   return (
     
     <Root style={{ display: (barVisible) ? 'none' : 'block' }}>
-      { console.log(barVisible) }
       {langcode === 'es' ? (
         <Inner>
           <Content width={[1, 1, 10 / 12]}>
