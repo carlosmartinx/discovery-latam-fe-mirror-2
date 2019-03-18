@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
+import useCookie from "@use-hook/use-cookie";
 import {
   Root,
   Inner,
@@ -18,18 +19,26 @@ import {
 
 const CookieBar = ({ langcode }) => {
   const [onCheckChange, setonCheckChange] = useState(false);
-  const [clicked, setClicked] = useState();
+  const [clicked, setClicked] = useState(false);
+  const [termsandconditions, setTermsandconditions] = useCookie("termsandconditions", "false"); 
 
   const updateButton = () => {
     setonCheckChange(!onCheckChange);
   };
 
   const updateVisible = () => {
-    setClicked(!clicked);
+    setClicked(true);
+    setTermsandconditions(true, { expires: 1});
+    console.log(termsandconditions, clicked);
   };
 
+  const barVisible = clicked === false && termsandconditions === "true";
+
+
   return (
-    <Root style={{ display: clicked ? 'none' : 'block' }}>
+    
+    <Root style={{ display: (barVisible) ? 'none' : 'block' }}>
+      { console.log(barVisible) }
       {langcode === 'es' ? (
         <Inner>
           <Content width={[1, 1, 10 / 12]}>
@@ -62,7 +71,7 @@ const CookieBar = ({ langcode }) => {
           </Check>
         </Inner>
       ) : (
-        <Inner>
+        <Inner> 
           <Flex flexDirection={['column', 'column', 'row']} alignItems="center">
             <Content width={[1, 1, 10 / 12]}>
               Os sites Discovery utilizam cookies para aprimorar sua experiência
