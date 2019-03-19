@@ -18,9 +18,14 @@ export const Root = styled(Box)`
   right: 0;
 `;
 
-export const Inner = styled(Box)`
+export const Inner = styled(Flex)`
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 1038px;
+
+  & p {
+    margin: 0;
+  }
 `;
 
 export const Content = styled(Text)`
@@ -35,6 +40,7 @@ export const Content = styled(Text)`
 `;
 
 export const Accept = styled(Button)`
+  align-self: center;
   background: ${props => get(props, 'theme.colors.btnEnabled', '')};
   border-radius: 0;
   cursor: pointer;
@@ -69,9 +75,6 @@ export const CookieA = styled.a`
   line-height: 20px;
   margin: 0;
   max-width: 826px;
-  & a {
-    color: #000;
-  }
 `;
 
 
@@ -121,3 +124,7 @@ export const Checkmark = styled.span`
     stroke: ${props => (props.checked ? 'black' : '#efefef')}
   }
 `;
+
+export const FlexEs = {
+  
+}
