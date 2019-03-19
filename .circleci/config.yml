@@ -24,7 +24,7 @@ jobs:
       - save_cache:
           paths:
             - ~/src
-          key: - discovery-latam-fe-{{ checksum "package.json" }}
+          key: discovery-latam-fe-{{ checksum "package.json" }}
   # run transpile!
   transpile:
     working_directory: ~/src
