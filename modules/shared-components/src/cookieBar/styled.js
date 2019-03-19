@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import { Text, Box, Button, Flex } from "rebass";
-import styled from "styled-components";
+import { Text, Box, Button, Flex } from 'rebass';
+import styled from 'styled-components';
 import get from 'lodash/get';
 
 export const Root = styled(Box)`
@@ -9,30 +9,24 @@ export const Root = styled(Box)`
   bottom: 0;
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
   font-style: italic;
-  font-weight: 400;
   left: 0;
-  margin: auto;
-  max-width: 1440px;
-  padding: 8px;
+  max-width: ${props => get(props, 'theme.breakpoints.3', '')};
   position: fixed;
   right: 0;
 `;
 
 export const Inner = styled(Flex)`
   justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1038px;
 
   & p {
-    margin: 0;
+    margin: ${props => get(props, 'theme.space.0', '')}px;
   }
 `;
 
 export const Content = styled(Text)`
-  color: black;
-  font-size: 12px;
+  color: ${props => get(props, 'theme.colors.black', '')};
+  font-size: ${props => get(props, 'theme.fontSizes[0]', '')}px;
   line-height: 20px;
-  margin: 0;
 
   & a {
     color: #000;
@@ -41,11 +35,10 @@ export const Content = styled(Text)`
 
 export const Accept = styled(Button)`
   align-self: center;
-  background: ${props => get(props, 'theme.colors.btnEnabled', '')};
+  background: ${props => get(props, 'theme.colors.dSecondary', '')};
   border-radius: 0;
   cursor: pointer;
   line-height:24px;
-  padding: 8px 16px;
   text-transform: uppercase;
   transition: all .2s ease-out;
   &:disabled {
@@ -66,31 +59,25 @@ export const Accept = styled(Button)`
 `;
 
 export const Check = styled(Flex)`
-  font-size: 12px;
+  font-size: ${props => get(props, 'theme.fontSizes[0]', '')}px;
 `;
 
 export const CookieA = styled.a`
-  color: black;
-  font-size: 12px;
+  color: ${props => get(props, 'theme.colors.black', '')};
   line-height: 20px;
   margin: 0;
-  max-width: 826px;
 `;
-
 
 export const Label = styled(Text)`
   display: inline-block;
-  font-size: 12px;
   line-height: 20px;
-  padding-left: 32px;
   position: relative;
   vertical-align: middle;
 `;
 
-
 export const Icon = styled.svg`
   fill: none;
-  stroke: white;
+  stroke: ${props => get(props, 'theme.colors.white', '')};
   stroke-width: 2px;
 `;
 
@@ -104,15 +91,13 @@ export const Input = styled.input`
   left: 0;
   margin: auto;
   width: 24px;
-
 `;
-
 
 export const Checkmark = styled.span`
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: white;
+  background: ${props => get(props, 'theme.colors.white', '')};
   position: absolute;
   pointer-events: none;
   left: 0;
@@ -121,10 +106,6 @@ export const Checkmark = styled.span`
   bottom: 0;
   transition: all 150ms;
   ${Icon} {
-    stroke: ${props => (props.checked ? 'black' : '#efefef')}
+    stroke: ${props => get(props.checked ? 'black' : 'white')}
   }
 `;
-
-export const FlexEs = {
-  
-}

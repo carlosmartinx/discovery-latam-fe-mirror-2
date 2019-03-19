@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Flex } from 'rebass';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import useCookie from '@use-hook/use-cookie';
+
 import {
   Root,
   Inner,
@@ -17,7 +18,6 @@ import {
   Input,
   Checkmark,
 } from './styled';
-
 
 const CookieBar = ({
   langcode, ptLegal, esLegal, acceptText, btnEs, btnPt,
@@ -38,16 +38,20 @@ const CookieBar = ({
   const barVisible = !(clicked === false && termsandconditions === 'false');
   const checkLang = langcode === 'pt';
 
-
   return (
-
-    <Root style={{ display: (barVisible) ? 'none' : 'block' }}>
+    <Root
+      style={{ display: (barVisible) ? 'none' : 'block' }}
+      p="1"
+      m="auto"
+    >
       <Flex
         flexDirection={checkLang ? (['column', 'column', 'row']) : ('column')}
       >
         <Inner
           flexDirection={checkLang ? ('column') : (['column', 'column', 'row'])}
           alignItems={checkLang ? '' : ('center')}
+          width={9 / 12}
+          m="auto"
         >
           <Content width={[1, 1, 10 / 12]}>
             {langcode === 'pt' ? ptLegal : esLegal }
@@ -60,7 +64,10 @@ const CookieBar = ({
                 alignItems="center"
                 justifyContent="space-between"
               >
-                <Label mt={[0, 0, 0]}>
+                <Label
+                  mt={[0, 0, 0]}
+                  pl="5"
+                >
                   <Input
                     type="checkbox"
                     checked={onCheckChange}
@@ -77,6 +84,8 @@ const CookieBar = ({
                   mt={[1, 0, -5, -6]}
                   mr={[0, 0, 0, 5]}
                   ml={[0, 2, 0]}
+                  px={2}
+                  py={1}
                   fontSize={1}
                   type="button"
                   disabled={!onCheckChange}
@@ -91,6 +100,8 @@ const CookieBar = ({
               mt={[2, 2, 0]}
               mr={[0, 0, 4, 4]}
               ml={[0, 2, 0]}
+              px={2}
+              py={1}
               fontSize={1}
               type="button"
               onClick={() => updateVisible()}
@@ -136,12 +147,12 @@ por favor lea nuestra Política de privacidad.
 Declaro que he leído y acepto los
     {' '}
     <CookieA href="https://tudiscovery.com/terminos-y-condiciones" target="_blank"> términos y condiciones</CookieA>
+    {' '}
 y las
     {' '}
     <CookieA href="políticas de privacidad" target="_blank"> políticas de privacidad </CookieA>
   </p>
 );
-
 
 CookieBar.propTypes = {
   langcode: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
