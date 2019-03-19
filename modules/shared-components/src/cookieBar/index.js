@@ -32,7 +32,7 @@ const CookieBar = ({
 
   const updateVisible = () => {
     setClicked(true);
-    setTermsandconditions(true, { expires: 1 });
+    setTermsandconditions(true, { expires: 7 });
   };
 
   const barVisible = !(clicked === false && termsandconditions === 'false');
