@@ -79,31 +79,6 @@
     "build-storybook": "build-storybook",
     "build:intl": "yarn run:core build:intl"
   },
-  "eslintConfig": {
-    "plugins": [
-      "react"
-    ],
-    "extends": "airbnb",
-    "rules": {
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "*/*/src/serviceWorker.js"
-  ],
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"

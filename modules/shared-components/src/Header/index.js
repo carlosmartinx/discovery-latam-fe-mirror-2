@@ -39,8 +39,7 @@ const Search = ({ placeholder }) => (
 );
 
 Search.propTypes = {
-  // eslint-disable-next-line react/require-default-props
-  placeholder: PropTypes.oneOf([PropTypes.element, PropTypes.string]),
+  placeholder: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
 };
 
 const Header = (props) => {
@@ -64,7 +63,7 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  searchPlaceHolder: PropTypes.oneOf([PropTypes.element, PropTypes.string]),
+  searchPlaceHolder: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
 Header.defaultProps = {
