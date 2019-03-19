@@ -17,7 +17,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - dependency-cache-{{ .BuildNum }}
+            - dependency-cache-{{ .Revision }}
 
       - run: yarn install
 
@@ -27,7 +27,7 @@ jobs:
       - save_cache:
           paths:
             - ~/Discovery-Latam-FE
-          key: dependency-cache-{{ .BuildNum }}
+          key: dependency-cache-{{ .Revision }}
   # run lint!
   lint:
     working_directory: ~/Discovery-Latam-FE
@@ -35,7 +35,7 @@ jobs:
       - image: circleci/node:8.11.1
     steps:
       - restore_cache:
-          key: dependency-cache-{{ .BuildNum }}
+          key: dependency-cache-{{ .Revision }}
       - run: yarn lint
   # run test!
   test:
@@ -44,7 +44,7 @@ jobs:
       - image: circleci/node:8.11.1
     steps:
       - restore_cache:
-          key: dependency-cache-{{ .BuildNum }}
+          key: dependency-cache-{{ .Revision }}
       - run: yarn test
 workflows:
   version: 2
