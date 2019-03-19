@@ -66,7 +66,7 @@ const CookieBar = ({
               >
                 <Label
                   mt={[0, 0, 0]}
-                  pl="5"
+                  pl="4"
                 >
                   <Input
                     type="checkbox"
