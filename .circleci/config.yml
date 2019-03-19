@@ -9,12 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:8.11.1
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/src
+    working_directory: ~/Discovery-Latam-FE
 
     steps:
       - checkout
@@ -22,22 +17,43 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - dependency-cache-{{ .Revision }}
 
       - run: yarn install
 
+      # run transpile!
+      - run: yarn transpile
+
       - save_cache:
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run transpile!
-      - run: yarn transpile    
-
-      # run lint!
+            - ~/Discovery-Latam-FE
+          key: dependency-cache-{{ .Revision }}
+  # run lint!
+  lint:
+    working_directory: ~/Discovery-Latam-FE
+    docker:
+      - image: circleci/node:8.11.1
+    steps:
+      - restore_cache:
+          key: dependency-cache-{{ .Revision }}
       - run: yarn lint
-
-      # run tests!
+  # run test!
+  test:
+    working_directory: ~/Discovery-Latam-FE
+    docker:
+      - image: circleci/node:8.11.1
+    steps:
+      - restore_cache:
+          key: dependency-cache-{{ .Revision }}
       - run: yarn test
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
