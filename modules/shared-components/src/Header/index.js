@@ -47,8 +47,6 @@ const Header = (props) => {
   const { searchPlaceHolder } = props;
   const [search, setSearch] = useState(false);
 
-  // const [text, setText] = useState('');
-
   const justifyContent = search ? 'flex-end' : 'space-between';
 
   return (
