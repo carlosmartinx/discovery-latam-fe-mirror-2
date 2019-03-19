@@ -21,20 +21,13 @@ jobs:
 
       - run: yarn install
 
+      # run transpile!
+      - run: yarn transpile
+
       - save_cache:
           paths:
             - ~/src
           key: discovery-latam-fe-{{ checksum "package.json" }}
-  # run transpile!
-  transpile:
-    working_directory: ~/src
-    docker:
-      - image: circleci/node:8.11.1
-    steps:
-      - restore_cache:
-        keys:
-          - discovery-latam-fe-{{ checksum "package.json" }}
-      - run: yarn transpile
   # run lint!
   lint:
     working_directory: ~/src
@@ -55,3 +48,14 @@ jobs:
         keys:
           - discovery-latam-fe-{{ checksum "package.json" }}
       - run: yarn test
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - lint
+        requires:
+          - build
+      - test
+        requires:
+          - build
