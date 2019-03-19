@@ -106,6 +106,6 @@ export const Checkmark = styled.span`
   bottom: 0;
   transition: all 150ms;
   ${Icon} {
-    stroke: ${props => get(props.checked ? 'black' : 'white')}
+    stroke: ${props => (props.checked ? 'black' : 'white')}
   }
 `;
