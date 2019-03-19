@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:8.11.1
 
-    working_directory: ~/src
+    working_directory: ~/Discovery-Latam-FE
 
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - discovery-latam-fe-{{ checksum "package.json" }}
+            - dependency-cache-{{ checksum "package.json" }}
 
       - run: yarn install
 
@@ -26,36 +26,36 @@ jobs:
 
       - save_cache:
           paths:
-            - ~/src
-          key: discovery-latam-fe-{{ checksum "package.json" }}
+            - node_modules
+          key: dependency-cache-{{ checksum "package.json" }}
   # run lint!
   lint:
-    working_directory: ~/src
+    working_directory: ~/Discovery-Latam-FE
     docker:
       - image: circleci/node:8.11.1
     steps:
+      - checkout
       - restore_cache:
-        keys:
-          - discovery-latam-fe-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }}
       - run: yarn lint
   # run test!
   test:
-    working_directory: ~/src
+    working_directory: ~/Discovery-Latam-FE
     docker:
       - image: circleci/node:8.11.1
     steps:
+      - checkout
       - restore_cache:
-        keys:
-          - discovery-latam-fe-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }}
       - run: yarn test
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - lint
-        requires:
-          - build
-      - test
-        requires:
-          - build
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
