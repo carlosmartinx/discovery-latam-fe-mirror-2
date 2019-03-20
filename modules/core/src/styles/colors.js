@@ -32,4 +32,6 @@ export default {
   whatsApp: '#25d366',
   mail: '#333333',
   gMail: '#d44638',
+  blueLigth: '#00255B',
+  orange: '#E14833',
 };
