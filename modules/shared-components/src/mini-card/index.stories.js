@@ -6,7 +6,7 @@ import { Flex, Box } from 'rebass';
 
 import MiniCard from '.';
 
-const logo = "http://discoverydrupalbackend-1795829284.us-east-1.elb.amazonaws.com/sites/default/files/logos/food.svg";
+const logo = "https://cdn.admin-discoverybrasil.com/sites/default/files/logos/hh.svg";
 
 storiesOf('Mini Card', module)
   .add('with image', () => {

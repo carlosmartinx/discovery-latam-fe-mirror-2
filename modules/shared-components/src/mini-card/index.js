@@ -1,67 +1,52 @@
-/* eslint-disable */
-import React from 'react';
-import { Flex, Box, Link, Image, Heading } from 'rebass';
-import styled from 'styled-components';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Box } from 'rebass';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  Card, LinkOptions, LinkWrapper, ImgLogo,
+  TextNav, WrapperFront, WrapperBack, OptionLink,
+  LinkBack, EffectBox, ImgWrapper,
+} from './styled';
 
-const Card = styled(Box)`
-  background: ${props => get(props, 'theme.colors.white', '')};
-  border-radius: 8px;
-  font-family: ${props => get(props, 'theme.fonts.sans', '')};
-  font-weight: 600;
-  overflow: hidden;
-`
-const LinkWrapper = styled(Link)`
-  color: #00255B;
-  display: block;
-  text-decoration: none;
-  position: relative;
-`
-const LinkOptions = styled.button`
-  align-self: flex-end;
-  background: transparent;
-  border: none;
-  color: ${props => get(props, 'theme.colors.w3', '')};
-  cursor: pointer;
-  font-size: 21px;
-  font-weight: bold;
-  padding: 0;
-  transform: rotate(-90deg);
-  width: 24px;
-`
-const ImgLogo = styled(Image)`
-  display: block;
-  height: 90px;
-  width: 90px;
-`
-const TextNav = styled(Heading)`
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  text-align: center;
-  text-transform: uppercase;
-`
+const MiniCard = ({
+  logo, title, url = '/',
+}) => {
+  const [effect, setEffect] = useState('normal');
 
-const MiniCard = ({ logo, title = 'text', link = '/', onClick }) => (
-  <div>
-    <Card>
-      <Flex flexDirection="column" p={1}>
-        <LinkOptions>...</LinkOptions>
-        <LinkWrapper href={link}>
-          <ImgLogo src={logo} mx='auto' />
-          <TextNav my={1} w={[1]}>{title}</TextNav>
-        </LinkWrapper>
-      </Flex>
-    </Card>
-  </div>
-);
+  return (
+    <div>
+      <EffectBox>
+        <Card className={effect}>
+          <WrapperFront flexDirection="column" py={1}>
+            <LinkOptions onClick={() => setEffect('flipped')}>...</LinkOptions>
+            <LinkWrapper href={url}>
+              <ImgWrapper alignItems="center" mx="auto">
+                <ImgLogo src={logo} />
+              </ImgWrapper>
+              <TextNav mt={1} w={[1]}>{title}</TextNav>
+            </LinkWrapper>
+          </WrapperFront>
+          <WrapperBack flexDirection="column">
+            <Box alignSelf="flex-end" m={1}>
+              <LinkBack p={2} onClick={() => setEffect('normal')} />
+            </Box>
+            <OptionLink py={1} m={1}>Programación</OptionLink>
+            <OptionLink py={1} m={1}>Series</OptionLink>
+          </WrapperBack>
+        </Card>
+      </EffectBox>
+    </div>
+  );
+};
 
 MiniCard.propTypes = {
-  logo: PropTypes.string,
-  title: PropTypes.string,
-  link: PropTypes.string,
-  onClick: PropTypes.func,
+  logo: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  url: PropTypes.string,
 };
 
 export default MiniCard;

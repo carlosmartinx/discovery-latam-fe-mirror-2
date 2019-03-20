@@ -1,5 +1,6 @@
 const globalColors = require('./colors');
 const globalLayout = require('./layout');
+const globalIcons = require('./icons');
 
 export default {
   breakpoints: globalLayout.default,
@@ -9,4 +10,5 @@ export default {
   fonts: {
     sans: 'Fira Sans, sans-serif',
   },
+  icons: globalIcons.default,
 };
