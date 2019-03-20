@@ -19,15 +19,21 @@ const Footer = ({
       <LinkChannel logo={mainLogo} link={mainLinkLogo} title="Discovery" />
     </Card>
     <Card>
-      {channels.map(channel => (
-        <LinkChannel logo={channel.logo} link={channel.url} title={channel.title} />
+      {channels.map((channel, i) => (
+        <LinkChannel
+          // eslint-disable-next-line react/no-array-index-key
+          key={i}
+          logo={channel.logo}
+          link={channel.url}
+          title={channel.title}
+        />
       ))}
     </Card>
     <Card p={1}>
-      <FormattedMessage id="footer.terms" defaultMessage={terms} />
+      <FormattedMessage id="Footer.Terms" defaultMessage={terms} />
     </Card>
     <Card p={1}>
-      <FormattedMessage id="footer.copyright" defaultMessage={copyright} />
+      <FormattedMessage id="Footer.Copyright" defaultMessage={copyright} />
     </Card>
   </Root>
 );
