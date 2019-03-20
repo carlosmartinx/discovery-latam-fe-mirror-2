@@ -1,10 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Box } from 'rebass';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   Card, LinkOptions, LinkWrapper, ImgLogo,
   TextNav, WrapperFront, WrapperBack, OptionLink,
@@ -12,7 +8,7 @@ import {
 } from './styled';
 
 const MiniCard = ({
-  logo, title, url = '/',
+  logo, title, url = '/', itemClicked, shortname,
 }) => {
   const [effect, setEffect] = useState('normal');
 
@@ -30,11 +26,11 @@ const MiniCard = ({
             </LinkWrapper>
           </WrapperFront>
           <WrapperBack flexDirection="column">
-            <Box alignSelf="flex-end" m={1}>
+            <Box alignSelf="flex-end" my={1}>
               <LinkBack p={2} onClick={() => setEffect('normal')} />
             </Box>
-            <OptionLink py={1} m={1}>Programación</OptionLink>
-            <OptionLink py={1} m={1}>Series</OptionLink>
+            <OptionLink py={1} m={1} href={`${shortname}/tv/programacion`}>Programación</OptionLink>
+            <OptionLink py={1} m={1} onClick={() => itemClicked(shortname)}>Series</OptionLink>
           </WrapperBack>
         </Card>
       </EffectBox>
@@ -45,6 +41,8 @@ const MiniCard = ({
 MiniCard.propTypes = {
   logo: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  itemClicked: PropTypes.func.isRequired,
+  shortname: PropTypes.string.isRequired,
   // eslint-disable-next-line react/require-default-props
   url: PropTypes.string,
 };

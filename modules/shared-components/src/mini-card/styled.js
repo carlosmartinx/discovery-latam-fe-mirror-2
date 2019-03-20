@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   Box, Link, Image, Heading, Flex,
 } from 'rebass';
@@ -11,9 +9,9 @@ export const EffectBox = styled(Box)`
   perspective: 1000px;
   overflow: hidden;
   position: relative;
+  min-width: 128px;
 `;
 export const Card = styled(Box)`
-  background: ${props => get(props, 'theme.colors.white', '')};
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
   font-weight: 600;
   height: 155px;
@@ -101,6 +99,7 @@ export const OptionLink = styled(Link)`
   line-height: 21px;
   padding-left: 4px;
   padding-right: 4px;
+  text-decoration: none;
   text-align: center;
   text-transform: uppercase;
 `;

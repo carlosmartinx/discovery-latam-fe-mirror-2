@@ -1,43 +1,60 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Box, Heading } from 'rebass';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import { Box, Heading, Flex } from 'rebass';
 import MiniCard from '../mini-card';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   LinkClose, TopBar, MenuElem,
-  WrapperFlex, ItemsMenu, WrapperMenu,
+  WrapperFlex, WrapperMenu, LinkSeries,
   DataChannel, WrapperBox, LinkBack,
 } from './styled';
 
 const Menu = ({ channels }) => {
   const [effect, setEffect] = useState('opened');
-  const [series, setSeries] = useState('hidden');
+  const [more, setMore] = useState('hidden');
+  const [series, setSeries] = useState(channels[0].series);
 
   return (
     <div>
-      <WrapperFlex flexDirection="column" className={effect}>
+      <WrapperFlex className={effect}>
         <WrapperMenu>
-          <WrapperBox flexDirection="row" className={series}>
-            <Box>
+          <WrapperBox flexDirection="row" className={more}>
+            <Box width="100%">
               <TopBar p={2}><LinkClose onClick={() => setEffect('closed')} /></TopBar>
-              <ItemsMenu flexDirection="row" flexWrap="wrap" py={4}>
+              <Flex width="100%" flexDirection="row" flexWrap="wrap" py={4}>
                 {channels.map(item => (
-                  <MenuElem width={1 / 6} m={1} mr={0}>
-                    <MiniCard title={item.title} logo={item.logo} url={item.url} onClick={() => setSeries('normal')} />
+                  <MenuElem key={item.shortname} width={1 / 6} m={1} mr={0}>
+                    <MiniCard
+                      title={item.title}
+                      logo={item.logo}
+                      url={item.url}
+                      shortname={item.shortname}
+                      itemClicked={(key) => {
+                        setMore('show');
+                        console.log(channels.find(obj => obj.shortname === key));
+                        setSeries(channels.find(obj => obj.shortname === key).series);
+                      }
+                      }
+                    />
                   </MenuElem>
                 ))}
-              </ItemsMenu>
+              </Flex>
             </Box>
-            <Box>
+            <Box width="100%">
               <TopBar p={2}>
-                <LinkBack onClick={() => setSeries('normal')} />
-                <Heading>Series TLC</Heading>
+                <LinkBack onClick={() => setMore('normal')} />
+                <Heading fontSize={2}>Series</Heading>
               </TopBar>
               <DataChannel>
-                Data
+                {series.map(serie => (
+                  <LinkSeries
+                    mx={2}
+                    py={2}
+                    key={serie.url}
+                    href={serie.url}
+                  >
+                    {serie.title}
+                  </LinkSeries>
+                ))}
               </DataChannel>
             </Box>
           </WrapperBox>

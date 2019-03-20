@@ -1,10 +1,9 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Flex, Box } from 'rebass';
+import { Flex, Box, Link } from 'rebass';
 import get from 'lodash/get';
 
-export const WrapperFlex = styled(Flex)`
+export const WrapperFlex = styled.div`
+  font-family: ${props => get(props, 'theme.fonts.sans', '')};
   &.opened {
     &:before {
       content: '';
@@ -28,20 +27,20 @@ export const WrapperMenu = styled.div`
   left: 0;
   top: 0;
   max-width: ${props => get(props, 'theme.breakpoints[0]', '')};
+
+  &{WrapperFlex}.closed & {
+    left: -100%;
+    transition: left 0.5s;
+  }
 `;
 export const WrapperBox = styled(Flex)`
   left: 0;
   position: relative;
+  transition: left 0.5s;
   width: 200%;
-  &.normal {
-    left: 0;
-  }
-  &.showSeries {
+  &.show {
     left: -100%;
   }
-`;
-export const ItemsMenu = styled(Flex)`
-  max-width: ${props => get(props, 'theme.breakpoints[0]', '')};
 `;
 export const DataChannel = styled.div`
   width: ${props => get(props, 'theme.breakpoints[0]', '')};
@@ -74,4 +73,13 @@ export const LinkBack = styled(BaseButton)`
 `;
 export const MenuElem = styled(Box)`
   min-width: 128px;
+`;
+export const LinkSeries = styled(Link)`
+  border-bottom: 1px solid ${props => get(props, 'theme.colors.w2', '')};
+  color: ${props => get(props, 'theme.colors.black', '')};
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-hight: 24px;
+  text-decoration: none;
 `;
