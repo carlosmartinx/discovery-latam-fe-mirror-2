@@ -28,7 +28,8 @@
     ],
     "resolver": "jest-pnp-resolver",
     "testMatch": [
-      "<rootDir>/src/**/*.spec.js"
+      "<rootDir>/src/**/*.spec.js",
+      "!<rootDir>/src/**/*.stories.{js,jsx}"
     ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
