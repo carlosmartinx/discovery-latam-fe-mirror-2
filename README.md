@@ -84,7 +84,7 @@ import { FormattedMessage } from 'react-intl';
 ...
 ```
 
-Once the translations are finished, u need run `yarn build:int --lang=[lang]` where `[lang]` is the expected lang (pt for brazil) in app root folder. 
+Once the translations are finished, u need run `yarn build:intl --lang=[lang]` where `[lang]` is the expected lang (pt for brazil) in app root folder. 
 
 This will create 2 folders in `*root*/modules/core/public`: 
 - *locale*: contains n files:
