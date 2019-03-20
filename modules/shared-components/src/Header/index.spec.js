@@ -7,7 +7,7 @@ import Header from '.';
 
 const mountWrapper = renderer.create(<Header />);
 
-xdescribe('Header Component', () => {
+describe('Header Component', () => {
   it('should render self and subcomponents', () => {
     expect(mountWrapper.toJSON()).toMatchSnapshot();
   });

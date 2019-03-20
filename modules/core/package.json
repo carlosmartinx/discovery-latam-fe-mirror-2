@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "@discovery-web-app/shared-components": "^0.1.1",
+    "@storybook/addon-backgrounds": "^5.0.2",
     "keymirror-nested": "^1.0.3",
     "lodash": "^4.17.11",
     "react": "^16.8.4",
@@ -56,6 +57,7 @@
       "linebreak-style": 0,
       "no-named-as-default": 0,
       "no-named-as-default-member": 0,
+      "import/no-extraneous-dependencies": 0,
       "react/jsx-filename-extension": [
         1,
         {
