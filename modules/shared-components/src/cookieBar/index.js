@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Flex } from 'rebass';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import useCookie from '@use-hook/use-cookie';
 
 import {
