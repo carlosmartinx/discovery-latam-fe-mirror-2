@@ -18,7 +18,7 @@ storiesOf('BulletTile', module)
     }
   )
   .add('Light Theme Default', () => 
-    <BulletTitle barcolor='default'> </BulletTitle>, {
+    <BulletTitle barcolor='default' backtheme='light'> </BulletTitle>, {
       backgrounds: [],
     }
   )
@@ -30,7 +30,7 @@ storiesOf('BulletTile', module)
     }
   )
   .add('Light theme - Change color bar', () => 
-    <BulletTitle barcolor={text('Color', '#eb122b')}> </BulletTitle>, {
+    <BulletTitle barcolor={text('Color', '#eb122b')} backtheme='light'> </BulletTitle>, {
       backgrounds: [],
     }
   )
