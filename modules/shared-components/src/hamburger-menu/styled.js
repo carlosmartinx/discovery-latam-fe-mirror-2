@@ -24,7 +24,6 @@ export const WrapperMenu = styled.div`
   height: 100%;
   overflow: hidden;
   overflow-y: auto;
-  position: relative;
   position: fixed;
   left: 0;
   top: 0;
