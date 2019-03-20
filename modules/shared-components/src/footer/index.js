@@ -14,7 +14,7 @@ const Footer = ({
   terms = 'TÉRMINOS Y CONDICIONES POLÍTICA DE PRIVACIDAD',
   copyright = '© 2018 Discovery Networks International. All rights reserved.',
 }) => (
-  <Root flexDirection="column">
+  <Root className="footer" flexDirection="column">
     <Card alignItems="center">
       <LinkChannel logo={mainLogo} link={mainLinkLogo} title="Discovery" />
     </Card>
