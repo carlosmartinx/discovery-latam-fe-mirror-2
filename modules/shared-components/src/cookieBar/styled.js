@@ -29,7 +29,7 @@ export const Content = styled(Text)`
   line-height: 20px;
 
   & a {
-    color: #000;
+    color: ${props => get(props, 'theme.colors.black', '')};
   }
 `;
 
