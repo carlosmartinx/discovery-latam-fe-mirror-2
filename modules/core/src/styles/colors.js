@@ -5,6 +5,7 @@ export default {
   g1: '#979797',
   w3: '#d2d2d2',
   w2: '#ececec',
+  w1: '#f9f9f9',
   white: '#ffffff',
   apPrmary: '#0073ff',
   apSecondary: '#1eb4ff',
