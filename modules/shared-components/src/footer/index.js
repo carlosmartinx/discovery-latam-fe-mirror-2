@@ -6,62 +6,8 @@ import { Root, Card } from './styled';
 // eslint-disable-next-line import/named
 import { LinkChannel } from './index.channel';
 
-const channels = [
-  {
-    title: 'Discovery',
-    url: 'https://www.tudiscovery.com/discovery',
-    logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
-    shortname: 'discovery',
-  },
-  {
-    title: 'TLC',
-    url: 'https://www.tudiscovery.com/tlc',
-    logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/TLC-Logo-white_0.png',
-    shortname: 'tlc',
-  },
-  {
-    title: 'Turbo',
-    url: 'https://www.tudiscovery.com/turbo',
-    logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/TURBO-Logo-white_0.png',
-    shortname: 'turbo',
-  },
-  {
-    title: 'Science',
-    url: 'https://www.tudiscovery.com/science',
-    logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-11/DScience.png',
-    shortname: 'science',
-  },
-  {
-    title: 'DiscoveryHH',
-    url: 'https://www.tudiscovery.com/discoveryhh',
-    logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
-    shortname: 'discoveryhh',
-  },
-  {
-    title: 'Animal Planet',
-    url: 'https://tudiscovery.com/animal-planet',
-    logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/ANIMAL-PLANET-Logo-white_0.png',
-    shortname: 'animal-planet',
-  },
-  {
-    title: 'Kids',
-    url: 'https://www.discoverykidsplay.com/',
-    logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/DKIDS-Logo-white_0.png',
-    shortname: 'www.discoverykidsplay.com',
-  },
-  {
-    title: 'Food',
-    url: 'http://foodnetworklatam.com/',
-    logo: 'https://drive.google.com/uc?export=view&id=17v4dWVrntS4yQScVYaed-UiOgR5naTRe',
-    shortname: 'food',
-  },
-];
-
-const mainLinkLogoEs = 'https://www.tudiscovery.com?langcode=es';
-const mainLinkLogoPt = 'https://www.tudiscovery.com?langcode=pt';
-
 const Footer = ({
-  langcode, termsEs, termsPt, copyrightEs, copyrightPt,
+  langcode, termsEs, termsPt, copyrightEs, copyrightPt, mainLinkLogoEs, mainLinkLogoPt, channels,
 }) => (
   <Root flexDirection="column">
     <Card alignItems="center">
@@ -94,6 +40,14 @@ Footer.propTypes = {
   termsPt: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   copyrightEs: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   copyrightPt: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  mainLinkLogoEs: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  mainLinkLogoPt: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  channels: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    shortname: PropTypes.string.isRequired,
+  })),
 };
 
 Footer.defaultProps = {
@@ -102,7 +56,8 @@ Footer.defaultProps = {
   termsPt: 'TERMOS E CONDIÇÕES POLÍTICA DE PRIVACIDADE',
   copyrightEs: '© 2018 Discovery Networks International. All rights reserved.',
   copyrightPt: '© 2018 Discovery Networks International. Todos os direitos reservados.',
-
+  mainLinkLogoEs: 'https://www.tudiscovery.com?langcode=es',
+  mainLinkLogoPt: 'https://www.tudiscovery.com?langcode=pt',
 };
 
 export default Footer;

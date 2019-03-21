@@ -32,7 +32,6 @@ LinkChannel.defaultProps = {
   image: '',
   link: '/',
   title: '',
-
 };
 
 export default LinkChannel;
