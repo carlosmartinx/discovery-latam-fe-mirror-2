@@ -62,12 +62,6 @@ export const Check = styled(Flex)`
   font-size: ${props => get(props, 'theme.fontSizes[0]', '')}px;
 `;
 
-export const CookieA = styled.a`
-  color: ${props => get(props, 'theme.colors.black', '')};
-  line-height: 20px;
-  margin: 0;
-`;
-
 export const Label = styled(Text)`
   display: inline-block;
   line-height: 20px;
