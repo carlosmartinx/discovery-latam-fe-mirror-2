@@ -3,14 +3,18 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import {
-  Root, Card, LinkWrapper, ImgLogo, Content,
+  Tab, Card, LinkWrapper, ImgLogo, Content,
 } from './styled';
+import PanoramicTab from '../panoramic-tab';
 
-export const SliderItem = ({
+const SliderItem = ({
   sliders, sponsor, channel, description, title, url,
 }) => (
-  <Root flexDirection="column">
-    <Card p={[1, 2, 3, 4]} width={1} alignItems="left">
+  <Tab>
+    <PanoramicTab
+      sponsor={sponsor}
+    />
+    {/*<Card p={[1, 2, 3, 4]} width={1} alignItems="left">
       {sponsor.map(spon => (
         <LinkWrapper
           href={spon.url}
@@ -34,8 +38,8 @@ export const SliderItem = ({
       <Content width={[1, 1, 10 / 12]}>
         {description}
       </Content>
-    </Card>
-  </Root>
+      </Card>*/}
+  </Tab>
 );
 
 SliderItem.propTypes = {

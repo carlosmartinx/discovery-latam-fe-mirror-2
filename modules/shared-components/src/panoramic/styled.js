@@ -63,3 +63,7 @@ export const Icon = styled.svg`
   stroke: ${props => get(props, 'theme.colors.white', '')};
   stroke-width: 2px;
 `;
+
+export const Tab = styled(Box)`
+    float: left;
+`

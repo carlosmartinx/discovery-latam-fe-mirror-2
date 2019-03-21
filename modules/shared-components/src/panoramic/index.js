@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Slider from 'react-slick';
-import { Card } from './styled';
+import { Tab } from './styled';
 // eslint-disable-next-line import/named
 import { SliderItem } from './SliderItem';
 
@@ -20,18 +20,20 @@ const Settings = {
 const Panoramic = ({langcode, sliders}) => {
   return (
       <Slider {...Settings}>
-        {sliders.map((slide, i) => (
-          <SliderItem
-            // eslint-disable-next-line
-            key={i}
-            sliders={sliders}
-            sponsor={slide.sponsor}
-            channel={slide.channel}
-            description={slide.slide}
-            title={slide.title}
-            url={slide.url}
-            langcode={langcode}
-          />
+        {sliders.map((slide, index) => (
+          <Tab key={index}>
+            <SliderItem
+              // eslint-disable-next-line
+              key={index}
+              sliders={sliders}
+              sponsor={slide.sponsor}
+              channel={slide.channel}
+              description={slide.slide}
+              title={slide.title}
+              url={slide.url}
+              langcode={langcode}
+            />
+          </Tab>
         ))}
       </Slider>
     );
@@ -56,7 +58,7 @@ Panoramic.propTypes = {
       image_file: PropTypes.string,
       image_url: PropTypes.string,
     }).isRequired,
-    region: PropTypes.string.isRequired,
+    region: PropTypes.arrayOf(PropTypes.string.isRequired),
     title: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
