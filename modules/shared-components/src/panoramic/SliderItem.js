@@ -6,7 +6,7 @@ import {
   Root, Card, LinkWrapper, ImgLogo, Content,
 } from './styled';
 
-const SliderItem = ({
+export const SliderItem = ({
   sliders, sponsor, channel, description, title, url,
 }) => (
   <Root flexDirection="column">

@@ -91,7 +91,7 @@ const sliders = [
   },
 ];
 
-storiesOf('BulletTile', module)
+storiesOf('Panoramic', module)
   .addDecorator(withKnobs)
   .add('Slider Langcode es', () =>
     <Panoramic langcode='es' sliders={sliders} />, {
