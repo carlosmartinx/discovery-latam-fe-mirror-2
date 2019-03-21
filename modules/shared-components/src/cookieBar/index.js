@@ -9,7 +9,6 @@ import {
   Content,
   Accept,
   Check,
-  CookieA,
   Label,
   Icon,
   Input,
@@ -17,7 +16,7 @@ import {
 } from './styled';
 
 const CookieBar = ({
-  langcode, legal, acceptText, btnText
+  addCheck, legal, acceptText, btnText
 }) => {
   const [onCheckChange, setonCheckChange] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -33,7 +32,7 @@ const CookieBar = ({
   };
 
   const barVisible = !(clicked === false && termsandconditions === 'false');
-  const checkLang = langcode === 'pt';
+  const checkText = addCheck === 'show';
 
   return (
     <Root
@@ -42,18 +41,18 @@ const CookieBar = ({
       m="auto"
     >
       <Flex
-        flexDirection={checkLang ? (['column', 'column', 'row']) : ('column')}
+        flexDirection={checkText ? (['column', 'column', 'row']) : ('column')}
       >
         <Inner
-          flexDirection={checkLang ? ('column') : (['column', 'column', 'row'])}
-          alignItems={checkLang ? '' : ('center')}
+          flexDirection={checkText ? ('column') : (['column', 'column', 'row'])}
+          alignItems={checkText ? '' : ('center')}
           width={9 / 12}
           m="auto"
         >
           <Content width={[1, 1, 10 / 12]}>
             {legal}
           </Content>
-          {langcode === 'pt' ? (
+          {addCheck === 'show' ? (
             <Check mt={1}>
               <Flex
                 width={1}
@@ -113,17 +112,17 @@ const CookieBar = ({
 };
 
 CookieBar.propTypes = {
-  langcode: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  addCheck: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   legal: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   acceptText: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   btnText: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
 CookieBar.defaultProps = {
-  langcode: 'en',
-  legal: 'legal text',
-  acceptText: 'accept text.',
-  btnText: 'Accept',
+  addCheck: 'true',
+  legal: 'Acepta nuestros tèrminos y condiciones',
+  acceptText: 'Declaro que conozco los términos y condiciones',
+  btnText: 'Aceptar',
 };
 
 export default CookieBar;

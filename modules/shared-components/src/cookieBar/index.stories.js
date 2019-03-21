@@ -50,8 +50,8 @@ y las
 storiesOf('CookieBar', module)
   .addDecorator(withKnobs)
   .add('Brasil', () => 
-    <CookieBar langcode={text('language', 'pt')} legal={ptContent} acceptText={acceptlegal} btnText={"Aceitar"}></CookieBar>
+    <CookieBar addCheck={'show'} legal={ptContent} acceptText={acceptlegal} btnText={"Aceitar"}></CookieBar>
   )
   .add('Latam', () => 
-    <CookieBar langcode='es' legal={esContent} btnText={"Aceptar"}></CookieBar>
+    <CookieBar legal={esContent} btnText={"Aceptar"}></CookieBar>
   )
