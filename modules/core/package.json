@@ -29,6 +29,7 @@
     "react-intl": "^2.8.0",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
+    "react-slick": "^0.23.2",
     "react-test-renderer": "^16.8.4",
     "rebass": "^3.0.1",
     "redux": "^4.0.1",
