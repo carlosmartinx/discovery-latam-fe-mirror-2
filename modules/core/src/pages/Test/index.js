@@ -23,7 +23,7 @@ export const Test = props => { // the export is needed for tests
       </Box>
       <Box>
         <Text>Info en el State</Text>
-        <Heading color="blue">{props.testState.test}</Heading>
+        <Heading name="headingState" color="blue">{props.testState.test}</Heading>
       </Box>
     </Flex>
   );

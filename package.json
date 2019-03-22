@@ -76,7 +76,8 @@
     "run:core": "cd modules/core && yarn",
     "run:shared-components": "cd modules/shared-components && yarn",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:intl": "yarn run:core build:intl"
   },
   "eslintConfig": {
     "plugins": [
@@ -84,6 +85,7 @@
     ],
     "extends": "airbnb",
     "rules": {
+      "import/no-extraneous-dependencies": 0,
       "react/jsx-filename-extension": [
         1,
         {

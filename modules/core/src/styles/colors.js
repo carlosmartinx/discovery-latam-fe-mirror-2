@@ -5,7 +5,8 @@ export default {
   g1: '#979797',
   w3: '#d2d2d2',
   w2: '#ececec',
-  white: '#f9f9f9',
+  w1: '#f9f9f9',
+  white: '#ffffff',
   apPrmary: '#0073ff',
   apSecondary: '#1eb4ff',
   turboPrimary: '#ff2a06',
@@ -32,6 +33,8 @@ export default {
   whatsApp: '#25d366',
   mail: '#333333',
   gMail: '#d44638',
+  dPrimary: '#246ad3',
+  dSecondary: '#00255b',
   blueLigth: '#00255B',
   orange: '#E14833',
 };

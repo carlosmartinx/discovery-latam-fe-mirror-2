@@ -6,7 +6,7 @@ describe('TEST actionCreators', () => {
     const expectedAction = { type: TYPES.TEST.SET.REQUEST };
     expect(testSetRequest()).toEqual(expectedAction);
   });
-  it('should create testSetRequest AC', () => {
+  it('should create testSetSuccess AC', () => {
     const data = 'test';
 
     const expectedAction = {
