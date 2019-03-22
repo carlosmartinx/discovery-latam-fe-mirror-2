@@ -54,30 +54,16 @@ const channels = [
   },
 ];
 
-const termsEs = 'TÉRMINOS Y CONDICIONES POLÍTICA DE PRIVACIDAD';
-const termsPt = 'TERMOS E CONDIÇÕES POLÍTICA DE PRIVACIDADE';
-
-const copyrightEs = '© 2018 Discovery Networks International. All rights reserved.';
-const copyrightPt = '© 2018 Discovery Networks International. Todos os direitos reservados.';
-
-const mainLinkLogoEs = 'https://www.tudiscovery.com?langcode=es';
-const mainLinkLogoPt = 'https://www.tudiscovery.com?langcode=pt';
+const terms = 'TÉRMINOS Y CONDICIONES POLÍTICA DE PRIVACIDAD';
+const copyright = '© 2018 Discovery Networks International. All rights reserved.';
+const mainLinkLogo = 'https://www.tudiscovery.com?langcode=es';
 
 storiesOf('Footer', module)
   .add('in spanish langcode', () => (
     <Footer
-      terms={termsEs}
-      copyright={copyrightEs}
-      mainLinkLogo={mainLinkLogoEs}
-      channels={channels}
-    />
-  ))
-
-  .add('in portuguese langcode', () => (
-    <Footer
-      terms={termsPt}
-      copyright={copyrightPt}
-      mainLinkLogo={mainLinkLogoPt}
+      terms={terms}
+      copyright={copyright}
+      mainLinkLogo={mainLinkLogo}
       channels={channels}
     />
   ));
