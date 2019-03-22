@@ -85,6 +85,7 @@
     ],
     "extends": "airbnb",
     "rules": {
+      "eslint-disable-next-line import/no-extraneous-dependencies": 0,
       "import/no-extraneous-dependencies": 0,
       "react/jsx-filename-extension": [
         1,
