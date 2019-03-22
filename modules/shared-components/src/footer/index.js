@@ -7,11 +7,11 @@ import { Root, Card } from './styled';
 import { LinkChannel } from './index.channel';
 
 const Footer = ({
-  langcode, termsEs, termsPt, copyrightEs, copyrightPt, mainLinkLogoEs, mainLinkLogoPt, channels,
+  terms, copyright, mainLinkLogo, channels,
 }) => (
   <Root flexDirection="column">
     <Card alignItems="center">
-      <LinkChannel image="https://drive.google.com/uc?export=view&id=18j3V7Iv5hHSiVN2rS5t1T48kpRM1LaNT" link={langcode === 'es' ? mainLinkLogoEs : mainLinkLogoPt} title="Logo" />
+      <LinkChannel image="https://drive.google.com/uc?export=view&id=18j3V7Iv5hHSiVN2rS5t1T48kpRM1LaNT" link={mainLinkLogo} title="Logo" />
     </Card>
     <Card>
       {channels.map((channel, i) => (
@@ -26,22 +26,19 @@ const Footer = ({
       ))}
     </Card>
     <Card p={1}>
-      {langcode === 'es' ? termsEs : termsPt }
+      {terms}
     </Card>
     <Card p={1}>
-      {langcode === 'es' ? copyrightEs : copyrightPt }
+      {copyright}
     </Card>
   </Root>
 );
 
 Footer.propTypes = {
   langcode: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  termsEs: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  termsPt: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  copyrightEs: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  copyrightPt: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  mainLinkLogoEs: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  mainLinkLogoPt: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  terms: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  copyright: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  mainLinkLogo: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   channels: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
@@ -52,12 +49,10 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   langcode: 'es',
-  termsEs: 'TÉRMINOS Y CONDICIONES POLÍTICA DE PRIVACIDAD',
+  terms: 'TÉRMINOS Y CONDICIONES POLÍTICA DE PRIVACIDAD',
   termsPt: 'TERMOS E CONDIÇÕES POLÍTICA DE PRIVACIDADE',
-  copyrightEs: '© 2018 Discovery Networks International. All rights reserved.',
-  copyrightPt: '© 2018 Discovery Networks International. Todos os direitos reservados.',
-  mainLinkLogoEs: 'https://www.tudiscovery.com?langcode=es',
-  mainLinkLogoPt: 'https://www.tudiscovery.com?langcode=pt',
+  copyright: '© 2018 Discovery Networks International. All rights reserved.',
+  mainLinkLogo: 'https://www.tudiscovery.com?langcode=pt',
 };
 
 export default Footer;
