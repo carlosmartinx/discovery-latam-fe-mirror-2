@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Image, Link } from 'rebass';
-import { WrapperSponsor, Line, SponsorText } from './styled';
+import { WrapperSponsor, Line, SponsorText, BoxSponsor } from './styled';
 
 const Sponsor = ({ data, title, variation = 'long' }) => (
   <div>
-    <WrapperSponsor>
-      { variation === 'long' ? (
+    { variation === 'long' ? (
+      <WrapperSponsor>
         <Flex flexDirection="row" alignItems="center">
           <SponsorText>{title}</SponsorText>
           <Link href={data.url}>
@@ -15,15 +15,15 @@ const Sponsor = ({ data, title, variation = 'long' }) => (
             <Image height="50px" ml={3} src={data.secondary_logo_svg}></Image>
           </Link>
         </Flex>
-        ) : (
-        <Flex alignItems="flex-end">
-          <Link href={data.url}>
-            <Image height="50px" src={data.circular_logo}></Image>
-          </Link>
-        </Flex>
-        )
-      }
-    </WrapperSponsor>
+      </WrapperSponsor>
+      ) : (
+      <BoxSponsor alignSelf="flex-end" >
+        <Link href={data.url}>
+          <Image height="50px" src={data.circular_logo}></Image>
+        </Link>
+      </BoxSponsor>
+      )
+    }
   </div>
 );
 

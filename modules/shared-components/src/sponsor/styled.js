@@ -6,6 +6,9 @@ import get from 'lodash/get';
 
 export const WrapperSponsor = styled(Flex)`
   color: ${props => get(props, 'theme.colors.w2', '')};
+  position: absolute;
+  left: 0;
+  top: 0;
 `;
 
 export const Line = styled.span`
@@ -17,4 +20,10 @@ export const Line = styled.span`
 
 export const SponsorText = styled(Text)`
   font-size: 11px;
+`;
+
+export const BoxSponsor = styled(Flex)`
+  position: absolute;
+  right: 0;
+  top: 0;
 `;
