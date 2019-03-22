@@ -1,10 +1,11 @@
 /* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
-import Slider from 'react-slick';
 import { Tab } from "./styled";
 
 import ProgrammingTab from '../programming-tab';
+import SliderSlick from '../slider-slick';
+// import SliderSlick from '@discovery-web-app/shared-components';
 
 const settings = {
     dots: false,
@@ -41,15 +42,18 @@ const settings = {
     ]
 };
 
-const ProgrammingSlider = ({ days }) => (
-    <Slider {...settings}>
-        {days.map((day, index) => (
+const getItems = days => {
+    return days.map((day, index) => {
+        return (
             <Tab key={index}>
                 <ProgrammingTab day={day.day} date={day.date} />
             </Tab>
-          
-        ))}
-    </Slider>
+        );
+    });
+};
+
+const ProgrammingSlider = ({ days }) => (
+    <SliderSlick settings={settings} items={getItems(days)} />
 );
 
 ProgrammingSlider.propTypes = {
