@@ -8,7 +8,7 @@ import {
   DataChannel, WrapperBox, LinkBack,
 } from './styled';
 
-const Menu = ({ channels }) => {
+const Menu = ({ channels = [] }) => {
   const [effect, setEffect] = useState('opened');
   const [more, setMore] = useState('hidden');
   const [series, setSeries] = useState(channels[0].series);
@@ -30,7 +30,6 @@ const Menu = ({ channels }) => {
                       shortname={item.shortname}
                       itemClicked={(key) => {
                         setMore('show');
-                        console.log(channels.find(obj => obj.shortname === key));
                         setSeries(channels.find(obj => obj.shortname === key).series);
                       }
                       }
@@ -64,8 +63,7 @@ const Menu = ({ channels }) => {
   );
 };
 Menu.propTypes = {
-  // eslint-disable-next-line react/require-default-props
-  channels: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
+  channels: PropTypes.array,
 };
 
 export default Menu;
