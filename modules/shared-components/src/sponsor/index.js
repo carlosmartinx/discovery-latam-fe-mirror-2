@@ -30,7 +30,12 @@ const Sponsor = ({ data, title, variation }) => (
 );
 
 Sponsor.propTypes = {
-  data: PropTypes.shape,
+  data: PropTypes.shape({
+    url: PropTypes.string,
+    circular_logo: PropTypes.string,
+    secondary_logo_svg: PropTypes.string,
+    logo_svg: PropTypes.string,
+  }),
   title: PropTypes.string,
   variation: PropTypes.string,
 };
