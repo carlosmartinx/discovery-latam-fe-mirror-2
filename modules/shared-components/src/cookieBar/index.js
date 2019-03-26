@@ -16,7 +16,7 @@ import {
 } from './styled';
 
 const CookieBar = ({
-  addCheck, legal, acceptText, btnText
+  addCheck, legal, acceptText, btnText,
 }) => {
   const [onCheckChange, setonCheckChange] = useState(false);
   const [clicked, setClicked] = useState(false);
