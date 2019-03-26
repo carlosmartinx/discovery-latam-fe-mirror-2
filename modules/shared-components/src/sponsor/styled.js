@@ -1,5 +1,3 @@
-/* eslint-disable */
-import React from 'react';
 import { Flex, Text } from 'rebass';
 import styled from 'styled-components';
 import get from 'lodash/get';

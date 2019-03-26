@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react';
-import { Box } from 'rebass';
 import { storiesOf } from '@storybook/react';
 import Sponsor from '.';
 
