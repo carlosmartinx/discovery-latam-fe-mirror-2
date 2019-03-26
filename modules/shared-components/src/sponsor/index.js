@@ -9,7 +9,7 @@ const Sponsor = ({ data, title, variation = 'long' }) => (
       <WrapperSponsor>
         <Flex flexDirection="row" alignItems="center">
           <SponsorText>{title}</SponsorText>
-          <Link href={data.url}>
+          <Link href={data.url} rel="nofollow" target="_blank">
             <Image height="50px" mx={3} src={data.logo_svg}></Image>
             <Line />
             <Image height="50px" ml={3} src={data.secondary_logo_svg}></Image>
@@ -18,7 +18,7 @@ const Sponsor = ({ data, title, variation = 'long' }) => (
       </WrapperSponsor>
       ) : (
       <BoxSponsor alignSelf="flex-end" >
-        <Link href={data.url}>
+        <Link href={data.url} rel="nofollow" target="_blank">
           <Image height="50px" src={data.circular_logo}></Image>
         </Link>
       </BoxSponsor>
