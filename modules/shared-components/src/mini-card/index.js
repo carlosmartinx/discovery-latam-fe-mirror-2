@@ -8,7 +8,7 @@ import {
 } from './styled';
 
 const MiniCard = ({
-  logo, title, url = '/', itemClicked, shortname,
+  logo, title, url = '/', itemClicked, shortname, idChannel,
 }) => {
   const [effect, setEffect] = useState('normal');
 
@@ -19,13 +19,13 @@ const MiniCard = ({
           <WrapperFront flexDirection="column" py={1}>
             <LinkOptions onClick={() => setEffect('flipped')}>...</LinkOptions>
             <LinkWrapper href={url}>
-              <ImgWrapper alignItems="center" mx="auto">
+              <ImgWrapper className={idChannel} alignItems="center" mx="auto">
                 <ImgLogo src={logo} />
               </ImgWrapper>
               <TextNav mt={1} w={[1]}>{title}</TextNav>
             </LinkWrapper>
           </WrapperFront>
-          <WrapperBack flexDirection="column">
+          <WrapperBack flexDirection="column" className={idChannel}>
             <Box alignSelf="flex-end" my={1}>
               <LinkBack p={2} onClick={() => setEffect('normal')} />
             </Box>
@@ -43,8 +43,8 @@ MiniCard.propTypes = {
   title: PropTypes.string.isRequired,
   itemClicked: PropTypes.func.isRequired,
   shortname: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/require-default-props
-  url: PropTypes.string,
+  idChannel: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default MiniCard;

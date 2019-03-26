@@ -1,25 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
-    <title>atoms/Icons/ui/navigation/singlearrow left/filled</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M10.62,0.99 C10.13,0.5 9.34,0.5 8.85,0.99 L0.54,9.3 C0.15,9.69 0.15,10.32 0.54,10.71 L8.85,19.02 C9.34,19.51 10.13,19.51 10.62,19.02 C11.11,18.53 11.11,17.74 10.62,17.25 L3.38,10 L10.63,2.75 C11.11,2.27 11.11,1.47 10.62,0.99 Z" id="path-1"></path>
-    </defs>
-    <g id="atoms/Icons/ui/navigation/singlearrow-left/filled" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="round-arrow_back_ios-24px">
-            <polygon id="Shape" opacity="0.87" points="0 0 24 0 24 24 0 24"></polygon>
-            <g id="atoms/Color/Basic/-Black-#000000" transform="translate(6.000000, 2.000000)">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
-                <g mask="url(#mask-2)" fill="#000000" id="Color/Basic/-#000000">
-                    <g transform="translate(-6.000000, -2.000000)">
-                        <rect x="0" y="0" width="24" height="24"></rect>
-                    </g>
-                </g>
-            </g>
-        </g>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M10.62.99C10.13.5 9.34.5 8.85.99L.54 9.3c-.39.39-.39 1.02 0 1.41l8.31 8.31c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L3.38 10l7.25-7.25c.48-.48.48-1.28-.01-1.76z" id="a"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path opacity=".87" d="M0 0h24v24H0z"/>
+    <g transform="translate(6 2)">
+      <mask id="b" fill="#fff">
+        <use xlink:href="#a"/>
+      </mask>
+      <use fill="#000" fill-rule="nonzero" xlink:href="#a"/>
+      <g mask="url(#b)" fill="#000">
+        <path d="M-6-2h24v24H-6z"/>
+      </g>
     </g>
+  </g>
 </svg>

@@ -41,6 +41,31 @@ export const WrapperFront = styled(Wrapper)`
 export const WrapperBack = styled(Wrapper)`
   background: ${props => get(props, 'theme.colors.apPrmary', '')};
   transform: rotateY(180deg);
+
+  &.discovery {
+    background: ${props => get(props, 'theme.colors.discovery', '')};
+  }
+  &.tlc {
+    background: ${props => get(props, 'theme.colors.tlc', '')};
+  }
+  &.kids {
+    background: ${props => get(props, 'theme.colors.kids', '')};
+  }
+  &.animalPlanet {
+    background: ${props => get(props, 'theme.colors.animalPlanet', '')};
+  }
+  &.discoveryhh {
+    background: ${props => get(props, 'theme.colors.discoveryhh', '')};
+  }
+  &.turbo {
+    background: ${props => get(props, 'theme.colors.turbo', '')};
+  }
+  &.science {
+    background: ${props => get(props, 'theme.colors.science', '')};
+  }
+  &.id {
+    background: ${props => get(props, 'theme.colors.id', '')};
+  }
 `;
 export const LinkWrapper = styled(Link)`
   color: ${props => get(props, 'theme.colors.tdBackground1', '')};
@@ -75,8 +100,35 @@ export const ImgWrapper = styled(Flex)`
   background: ${props => get(props, 'theme.colors.g3', '')};
   border-radius: 50%;
   height: 72px;
+  padding: 8px;
   width: 72px;
+
+  &.discovery {
+    background: ${props => get(props, 'theme.colors.discovery', '')};
+  }
+  &.tlc {
+    background: ${props => get(props, 'theme.colors.tlc', '')};
+  }
+  &.kids {
+    background: ${props => get(props, 'theme.colors.kids', '')};
+  }
+  &.animalPlanet {
+    background: ${props => get(props, 'theme.colors.animalPlanet', '')};
+  }
+  &.discoveryhh {
+    background: ${props => get(props, 'theme.colors.discoveryhh', '')};
+  }
+  &.turbo {
+    background: ${props => get(props, 'theme.colors.turbo', '')};
+  }
+  &.science {
+    background: ${props => get(props, 'theme.colors.science', '')};
+  }
+  &.id {
+    background: ${props => get(props, 'theme.colors.id', '')};
+  }
 `;
+
 export const ImgLogo = styled(Image)`
   display: block;
   height: auto;

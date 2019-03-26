@@ -10,5 +10,5 @@ const logo = "https://cdn.admin-discoverybrasil.com/sites/default/files/logos/hh
 
 storiesOf('Mini Card', module)
   .add('with image', () => {
-    return <Flex flexDirection="column"><Box width={[ 1 / 8 ]}><MiniCard logo={logo} title="Food" onClick={action('opened')} shortName="animalPlanet" key="hey"></MiniCard></Box></Flex>
+    return <Flex flexDirection="column"><Box width={[ 1 / 8 ]}><MiniCard logo={logo} title="Food" onClick={action('opened')} shortName="animalPlanet" key="hey" idChannel="discovery"></MiniCard></Box></Flex>
   });

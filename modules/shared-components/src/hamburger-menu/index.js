@@ -28,6 +28,7 @@ const Menu = ({ channels = [] }) => {
                       logo={item.logo}
                       url={item.url}
                       shortname={item.shortname}
+                      idChannel={item.id_channel}
                       itemClicked={(key) => {
                         setMore('show');
                         setSeries(channels.find(obj => obj.shortname === key).series);
@@ -62,6 +63,7 @@ const Menu = ({ channels = [] }) => {
     </div>
   );
 };
+
 Menu.propTypes = {
   channels: PropTypes.array,
 };

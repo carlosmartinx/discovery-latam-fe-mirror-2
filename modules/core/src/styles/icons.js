@@ -1,7 +1,7 @@
-import Close from '../icons/close.svg';
-import Back from '../icons/back.svg';
+import close from '../icons/close.svg';
+import back from '../icons/back.svg';
 
 export default {
-  close: Close,
-  back: Back,
+  close,
+  back,
 };
