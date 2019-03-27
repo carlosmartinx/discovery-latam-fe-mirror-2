@@ -149,7 +149,8 @@ const terms = [{
   url: '/',
 }];
 const copyright = '© 2018 Discovery Networks International. All rights reserved.';
-const mainLinkLogo = 'https://www.tudiscovery.com?langcode=es';
+const mainLinkLogo = 'https://www.tudiscovery.com';
+const discoveryLogo = 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/logos/tu_discovery.png';
 
 storiesOf('Footer', module)
   .add('eight icons', () => (
@@ -158,6 +159,7 @@ storiesOf('Footer', module)
       copyright={copyright}
       mainLinkLogo={mainLinkLogo}
       channels={channels}
+      discoveryLogo={discoveryLogo}
     />
   ))
   .add('thirteen icons', () => (

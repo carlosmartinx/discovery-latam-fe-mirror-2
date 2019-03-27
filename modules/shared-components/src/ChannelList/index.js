@@ -10,7 +10,7 @@ export const ChannelList = ({
     {channels.map((channel, i) => (
       <Card p={[1, 2]} key={i}>
         <LinkWrapper href={channel.url} title={channel.title} channels={channels} target="_blank">
-          <ImgLogo src={channel.logo} link={channel.url} title={channel.title} mx="auto" />
+          <ImgLogo src={channel.logo} title={channel.title} mx="auto" />
         </LinkWrapper>
       </Card>
     ))}

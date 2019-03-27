@@ -6,12 +6,12 @@ import { Root, Card, LinkWrapper, ImgLogo, TermsLink } from './styled';
 import { ChannelList } from '../ChannelList';
 
 const Footer = ({
-  terms, copyright, mainLinkLogo, channels,
+  terms, copyright, mainLinkLogo, channels, discoveryLogo,
 }) => (
   <Root flexDirection="column" p={4}>
     <Card alignItems="center">
     <LinkWrapper href={mainLinkLogo} target="_blank">
-      <ImgLogo src="https://dev-discoverylatam.pantheonsite.io/sites/default/files/logos/tu_discovery.png" link={mainLinkLogo} title="Logo" mx="auto" />
+      <ImgLogo src={discoveryLogo} alt="Discovery" mx="auto" />
     </LinkWrapper>
     </Card>
     <ChannelList
@@ -30,11 +30,11 @@ const Footer = ({
 );
 
 Footer.propTypes = {
-  langcode: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   terms: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   })),
+  discoveryLogo: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   copyright: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   mainLinkLogo: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   channels: PropTypes.arrayOf(PropTypes.shape({
@@ -46,9 +46,9 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
-  langcode: 'es',
   copyright: '© 2018 Discovery Networks International. All rights reserved.',
   mainLinkLogo: 'https://www.tudiscovery.com',
+  discoveryLogo: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/logos/tu_discovery.png',
 };
 
 export default Footer;
