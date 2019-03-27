@@ -1,10 +1,5 @@
-/* eslint-disable */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-// import {
-//   withKnobs,
-//   text,
-// } from '@storybook/addon-knobs';
 
 import SliderSlick from '.';
 
@@ -15,6 +10,17 @@ const settings = {
   slide: 'span',
   slidesToShow: 1,
   slidesToScroll: 1,
+  arrows: true,
+  accessibility: false,
+  lazyLoad: 'ondemand'
+};
+const settings4 = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slide: 'span',
+  slidesToShow: 4,
+  slidesToScroll: 4,
   arrows: true,
   accessibility: false,
   lazyLoad: 'ondemand'
@@ -54,5 +60,16 @@ const items = [
 
 storiesOf('SliderSlick', module)
   .add('Slider Slick', () => 
-    <SliderSlick settings={settings} items={items} />
+    <SliderSlick settings={settings}>
+      {items.map((item, index) => (
+        <div key={index}>{item}</div> 
+      ))}
+    </SliderSlick>
   )
+  .add('Slider Slick 4 Items', () => 
+    <SliderSlick settings={settings4}>
+      {items.map((item, index) => (
+        <div key={index}>{item}</div> 
+      ))}
+    </SliderSlick>
+  );
