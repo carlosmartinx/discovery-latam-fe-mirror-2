@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Root, Card, LinkWrapper, ImgLogo, TermsLink,
 } from './styled';
-import { ChannelList } from '../channel-list';
+import ChannelList from '../channel-list';
 
 const Footer = ({
   terms, copyright, mainLinkLogo, channels, discoveryLogo,
