@@ -110,6 +110,7 @@
       "no-named-as-default": 0,
       "no-named-as-default-member": 0,
       "import/no-extraneous-dependencies": 0,
+      "import/no-named-as-default": 0,
       "react/jsx-filename-extension": [
         1,
         {
