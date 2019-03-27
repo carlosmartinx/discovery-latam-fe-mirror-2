@@ -49,21 +49,122 @@ const channels = [
   {
     title: 'Food',
     url: 'http://foodnetworklatam.com/',
-    logo: 'https://drive.google.com/uc?export=view&id=17v4dWVrntS4yQScVYaed-UiOgR5naTRe',
+    logo: "https://cdn.admin-discoverybrasil.com/sites/default/files/logos/food.svg",
     shortname: 'food',
   },
 ];
 
-const terms = 'TÉRMINOS Y CONDICIONES POLÍTICA DE PRIVACIDAD';
+const channelsPt = [
+  {
+    title: "Discovery",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/Discovery-Logo-white.png?itok=w5Ja6xYX",
+    url: "/discovery",
+    shortname: "discovery",
+    id_channel: "discovery"
+  },
+  {
+    title: "Animal Planet",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/ANIMAL-PLANET-Logo-white_1.png?itok=eMEkNj5_",
+    url: "/animal-planet",
+    shortname: "animal-planet",
+    id_channel: "animalPlanet"
+  },
+  {
+    title: "Kids",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/2018-12/DKIDS-Logo-white_0.png?itok=T8LyFkU9",
+    url: "https://www.discoverykidsplay.com/",
+    shortname: "www.discoverykidsplay.com",
+    id_channel: "kids"
+  },
+  {
+    title: "Discovery HH",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/HH-Logo-white.png?itok=WejcFFdB",
+    url: "/discoveryhh",
+    shortname: "discoveryhh",
+    id_channel: "discovery-HH"
+  },
+  {
+    title: "Turbo",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/TURBO-Logo-white_0.png?itok=WoAqldl3",
+    url: "/turbo",
+    shortname: "turbo",
+    id_channel: "turbo"
+  },
+  {
+    title: "TLC",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/2018-12/TLC-Logo-white_0.png?itok=6QyGrDU-",
+    url: "/tlc",
+    shortname: "tlc",
+    id_channel: "tlc"
+  },
+  {
+    title: "ID",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/ID-Logo-white.png?itok=3W3bjlrn",
+    url: "/id",
+    shortname: "id",
+    id_channel: "id"
+  },
+  {
+    title: "Science",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/science_white_0.png?itok=MjXUMDpe",
+    url: "https://www.discoverybrasil.com/programacion/discovery-science",
+    shortname: "discovery-science",
+    id_channel: "science"
+  },
+  {
+    title: "Discovery Civilization",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/civilization_white_0.png?itok=mMRJpeSd",
+    url: "https://www.discoverybrasil.com/programacion/discovery-civilization",
+    shortname: "discovery-civilization",
+    id_channel: "discoveryCivilization"
+  },
+  {
+    title: "Discovery Theater",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/theater_white_0.png?itok=N4jEM86b",
+    url: "https://www.discoverybrasil.com/programacion/discovery-hd-theater",
+    shortname: "discovery-hd-theater",
+    id_channel: "discoveryTheater"
+  },
+  {
+    title: "Discovery World",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/logos/world_2.png?itok=AeOJGY9a",
+    url: "https://www.discoverybrasil.com/programacion/discovery-world",
+    shortname: "discovery-world",
+    id_channel: "discoveryWorld"
+  },
+  {
+    title: "FOOD",
+    logo: "https://cdn.admin-tudiscovery.com/sites/default/files/styles/logos_footer/public/2018-12/FoodNetwork_LOGO_Blanco_0.png?itok=5gsobGY7",
+    url: "http://foodnetworklatam.com/",
+    shortname: "foodnetworklatam.com",
+    id_channel: "food"
+  }
+]
+
+const terms = [{
+  text: 'Términos y condiciones',
+  url: '/',
+}, {
+  text: 'Política de privacidad',
+  url: '/',
+}];
 const copyright = '© 2018 Discovery Networks International. All rights reserved.';
 const mainLinkLogo = 'https://www.tudiscovery.com?langcode=es';
 
 storiesOf('Footer', module)
-  .add('in spanish langcode', () => (
+  .add('eight icons', () => (
     <Footer
       terms={terms}
       copyright={copyright}
       mainLinkLogo={mainLinkLogo}
       channels={channels}
+    />
+  ))
+  .add('thirteen icons', () => (
+    <Footer
+      terms={terms}
+      copyright={copyright}
+      mainLinkLogo={mainLinkLogo}
+      channels={channelsPt}
     />
   ));

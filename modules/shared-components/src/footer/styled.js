@@ -41,3 +41,17 @@ export const ImgLogo = styled(Image)`
   max-width: 100%;
   max-height: 40px;
 `;
+
+export const TermsLink = styled(Link)`
+  display: inline-block;
+  color: ${props => get(props, 'theme.colors.white', '')};
+  font-size: calc(${props => get(props, 'theme.fontSizes.0', '')}px - 1px);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:not(:last-child):after {
+    content: "/";
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+`;
