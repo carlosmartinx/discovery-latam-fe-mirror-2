@@ -8,10 +8,10 @@
     "modules/*"
   ],
   "dependencies": {
-    "@storybook/addon-actions": "^5.0.1",
-    "@storybook/addon-links": "^5.0.1",
-    "@storybook/addons": "^5.0.1",
-    "@storybook/react": "^5.0.1",
+    "@storybook/addon-actions": "5.0.1",
+    "@storybook/addon-links": "5.0.1",
+    "@storybook/addons": "5.0.1",
+    "@storybook/react": "5.0.1",
     "@svgr/webpack": "4.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
@@ -78,32 +78,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build:intl": "yarn run:core build:intl"
-  },
-  "eslintConfig": {
-    "plugins": [
-      "react"
-    ],
-    "extends": "airbnb",
-    "rules": {
-      "import/no-extraneous-dependencies": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "*/*/src/serviceWorker.js"
-  ],
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
   },
   "husky": {
     "hooks": {
