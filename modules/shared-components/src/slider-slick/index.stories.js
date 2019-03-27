@@ -12,7 +12,7 @@ const settings = {
   slidesToScroll: 1,
   arrows: true,
   accessibility: false,
-  lazyLoad: 'ondemand'
+  lazyLoad: 'ondemand',
 };
 const settings4 = {
   dots: true,
@@ -23,7 +23,7 @@ const settings4 = {
   slidesToScroll: 4,
   arrows: true,
   accessibility: false,
-  lazyLoad: 'ondemand'
+  lazyLoad: 'ondemand',
 };
 const items = [
   (
@@ -55,21 +55,21 @@ const items = [
     <div>
       <h3>6</h3>
     </div>
-  )
+  ),
 ];
 
 storiesOf('SliderSlick', module)
-  .add('Slider Slick', () => 
+  .add('Slider Slick', () => (
     <SliderSlick settings={settings}>
-      {items.map((item, index) => (
-        <div key={index}>{item}</div> 
+      {items.map(item => (
+        <div>{item}</div>
       ))}
     </SliderSlick>
-  )
-  .add('Slider Slick 4 Items', () => 
+  ))
+  .add('Slider Slick 4 Items', () => (
     <SliderSlick settings={settings4}>
-      {items.map((item, index) => (
-        <div key={index}>{item}</div> 
+      {items.map(item => (
+        <div>{item}</div>
       ))}
     </SliderSlick>
-  );
+  ));

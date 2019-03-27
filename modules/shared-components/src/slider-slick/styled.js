@@ -1,8 +1,8 @@
-import React from 'react';
 import { Box } from 'rebass';
 import styled from 'styled-components';
 import get from 'lodash/get';
 
+// eslint-disable-next-line import/prefer-default-export
 export const BoxSlider = styled(Box)`
   .slick-prev {
     background-image: url(${props => get(props, 'theme.icons.slidearrowleftfilled', '')});
