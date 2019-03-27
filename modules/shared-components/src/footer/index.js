@@ -48,7 +48,7 @@ Footer.propTypes = {
 Footer.defaultProps = {
   langcode: 'es',
   copyright: '© 2018 Discovery Networks International. All rights reserved.',
-  mainLinkLogo: 'https://www.tudiscovery.com?langcode=pt',
+  mainLinkLogo: 'https://www.tudiscovery.com',
 };
 
 export default Footer;
