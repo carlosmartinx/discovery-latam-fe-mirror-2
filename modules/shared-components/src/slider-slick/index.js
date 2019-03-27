@@ -1,24 +1,22 @@
-/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 import Slider from 'react-slick';
+import { BoxSlider } from "./styled";
 
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const SliderSlick = ({ settings, items }) => (
+const SliderSlick = ({ settings, children }) => (
+  <BoxSlider>
     <Slider {...settings}>
-        {items.map((item, index) => (
-            <div key={index}>
-                {item}
-            </div>
-        ))}
+      {children}
     </Slider>
+  </BoxSlider>
 );
 
 SliderSlick.propTypes = {
-    settings: PropTypes.object.isRequired,
-    items: PropTypes.any.isRequired
+  children: PropTypes.node,
+  settings: PropTypes.object.isRequired
 };
 
 export default SliderSlick;
