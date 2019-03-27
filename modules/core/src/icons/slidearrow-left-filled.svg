@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>atoms/Icons/ui/navigation/slidearrow left/filled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="15.5" cy="15.5" r="15.5"></circle>
+        <path d="M7.08,0.66 C6.75333333,0.333333333 6.22666667,0.333333333 5.9,0.66 L0.36,6.2 C0.1,6.46 0.1,6.88 0.36,7.14 L5.9,12.68 C6.22666667,13.0066667 6.75333333,13.0066667 7.08,12.68 C7.40666667,12.3533333 7.40666667,11.8266667 7.08,11.5 L2.25333333,6.66666667 L7.08666667,1.83333333 C7.40666667,1.51333333 7.40666667,0.98 7.08,0.66 Z" id="path-3"></path>
+    </defs>
+    <g id="atoms/Icons/ui/navigation/slidearrow-left/filled" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="atoms/Icons/interaction/slidearrow_left_2">
+            <g id="atoms/Color/Basic/-#000000" opacity="0.7">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FF0000" xlink:href="#path-1"></use>
+                <g id="atoms/Color/Basic/-Black-#000000" mask="url(#mask-2)" fill="#000000">
+                    <rect id="Color/Basic/-#000000" x="0" y="0" width="31" height="31"></rect>
+                </g>
+            </g>
+            <g id="atoms/Icons/ui/navigation/singlearrow-left/filled" transform="translate(7.000000, 7.000000)">
+                <g id="round-arrow_back_ios-24px">
+                    <polygon id="Shape" opacity="0.87" points="0 0 16 0 16 16 0 16"></polygon>
+                    <g id="atoms/Color/Basic/-Black-#000000" transform="translate(4.000000, 1.333333)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-3"></use>
+                        <g id="atoms/Color/Basic/-W1-#ffffff" mask="url(#mask-4)" fill="#FFFFFF">
+                            <g transform="translate(-4.000000, -1.333333)" id="Color/Basic/-#ffffff">
+                                <rect x="0" y="0" width="16" height="16"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

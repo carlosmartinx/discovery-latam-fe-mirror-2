@@ -7,6 +7,7 @@ export const BoxSlider = styled(Box)`
   .slick-prev {
     background-image: url(${props => get(props, 'theme.icons.slidearrowleftfilled', '')});
     left: 0;
+    z-index: 99;
     &:hover, &:focus {
       background-image: url(${props => get(props, 'theme.icons.slidearrowleftfilled', '')});
     }
