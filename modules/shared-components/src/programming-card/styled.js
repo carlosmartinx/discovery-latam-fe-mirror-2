@@ -4,15 +4,14 @@ import styled from "styled-components";
 import get from 'lodash/get';
 
 export const Card = styled(Flex)`
-    border-bottom: 2px solid ${props => get(props, 'theme.colors.blueLigth', '')};
+    border-bottom: 2px solid ${props => get(props, 'theme.colors.dPrimary', '')};
     padding: 9px 0 6px 0;
     color: ${props => get(props, 'theme.colors.white', '')};
-    background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
     justify-content: center;
 `
 
 export const DateShow = styled(Flex)`
-    background-color: ${props => get(props, 'theme.colors.blueLigth', '')};
+    background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
     width: 193px;
     height: 109px;
     text-align: center;
@@ -64,8 +63,3 @@ export const Description = styled(Box)`
     font-weight: 300;
     line-height: 20px;
 `;
-
-// export const Bullet = styled(Box)`
-//   height: 16px;
-//   width: 24px;
-// `;

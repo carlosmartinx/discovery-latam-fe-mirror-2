@@ -36,6 +36,18 @@ const days = [
   {
       day: 'Domingo',
       date: '24/3'
+  },
+  {
+      day: 'Lunes',
+      date: '25/3'
+  },
+  {
+      day: 'Martes',
+      date: '25/3'
+  },
+  {
+      day: 'Miercoles',
+      date: '26/3'
   }
 ];
 

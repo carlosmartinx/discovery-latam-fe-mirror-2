@@ -2,15 +2,13 @@ import { Box, Text } from "rebass";
 import styled from "styled-components";
 import get from 'lodash/get';
 
-export const BoxSlider = styled(Box)`
-  margin: 0 -4px;
-`
-
-export const Tab = styled(Box)`
-  padding: 0 4px;
-  cursor: pointer;
+export const Item = styled(Box)`
+  background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
   color: ${props => get(props, 'theme.colors.white', '')};
   text-align: center;
+  &.active {
+    background-color: ${props => get(props, 'theme.colors.dSecondary', '')};
+  }
 `
 
 export const Day = styled(Text)`

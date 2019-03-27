@@ -1,63 +1,83 @@
-/* eslint-disable */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Tab } from "./styled";
+import { BoxSlider, Tab } from "./styled";
 
-import ProgrammingTab from '../programming-tab';
+import ProgrammingSliderItem from '../programming-slider-item';
 import SliderSlick from '../slider-slick';
 // import SliderSlick from '@discovery-web-app/shared-components';
 
-const settings = {
+const ProgrammingSlider = ({ days }) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems(days);
+  }, []);
+
+  const onClickTab = day => {
+    let itemsNew = [];
+    items.map((itemDay) => {
+      if (itemDay.date == day.date) {
+        itemDay.active = true;
+      } else {
+        itemDay.active = false;
+      }
+
+      itemsNew.push(itemDay);
+    });
+
+    setItems(itemsNew);
+  };
+
+  let settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slide: 'span',
-    slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToShow: 9,
+    slidesToScroll: 1,
     arrows: true,
     accessibility: false,
     lazyLoad: 'ondemand',
     responsive: [
-        {
+      {
         breakpoint: 1024,
         settings: {
-            slidesToShow: 4,
-            slidesToScroll: 2
-        }
-        },
-        {
-        breakpoint: 480,
-        settings: {
-            slidesToShow: 3,
-            slidesToScroll: 2
-        }
-        },
-        {
-        breakpoint: 320,
-        settings: {
-            slidesToShow: 2,
+            slidesToShow: 7,
             slidesToScroll: 1
         }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+            slidesToShow: 6,
+            slidesToScroll: 1
         }
+      },
+      {
+        breakpoint: 414,
+        settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1
+        }
+      }
     ]
-};
+  };
 
-const getItems = days => {
-    return days.map((day, index) => {
-        return (
-            <Tab key={index}>
-                <ProgrammingTab day={day.day} date={day.date} />
-            </Tab>
-        );
-    });
+  return (
+    <BoxSlider>
+      <SliderSlick settings={settings}>
+        {items.map((day) => (
+          <Tab key={day.day} onClick={() => onClickTab(day)}>
+            <ProgrammingSliderItem active={day.active?true:false} day={day.day} date={day.date} />
+          </Tab>
+        ))}
+      </SliderSlick>
+    </BoxSlider>
+  );
 };
-
-const ProgrammingSlider = ({ days }) => (
-    <SliderSlick settings={settings} items={getItems(days)} />
-);
 
 ProgrammingSlider.propTypes = {
-    days: PropTypes.array.isRequired
+  days: PropTypes.array.isRequired
 };
 
 export default ProgrammingSlider;
