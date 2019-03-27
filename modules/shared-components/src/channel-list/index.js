@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Root, Card, LinkWrapper, ImgLogo } from './styled';
+import {
+  Root, Card, LinkWrapper, ImgLogo,
+} from './styled';
 
 export const ChannelList = ({
   channels,
   py,
 }) => (
   <Root flexDirection="row" py={py}>
-    {channels.map((channel, i) => (
-      <Card p={[1, 2]} key={i}>
+    {channels.map(channel => (
+      <Card p={[1, 2]} key={channel.title}>
         <LinkWrapper href={channel.url} title={channel.title} channels={channels} target="_blank">
           <ImgLogo src={channel.logo} title={channel.title} mx="auto" />
         </LinkWrapper>

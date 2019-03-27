@@ -1,26 +1,26 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Root, Card, LinkWrapper, ImgLogo, TermsLink } from './styled';
-import { ChannelList } from '../ChannelList';
+import {
+  Root, Card, LinkWrapper, ImgLogo, TermsLink,
+} from './styled';
+import { ChannelList } from '../channel-list';
 
 const Footer = ({
   terms, copyright, mainLinkLogo, channels, discoveryLogo,
 }) => (
   <Root flexDirection="column" p={4}>
     <Card alignItems="center">
-    <LinkWrapper href={mainLinkLogo} target="_blank">
-      <ImgLogo src={discoveryLogo} alt="Discovery" mx="auto" />
-    </LinkWrapper>
+      <LinkWrapper href={mainLinkLogo} target="_blank">
+        <ImgLogo src={discoveryLogo} alt="Discovery" mx="auto" />
+      </LinkWrapper>
     </Card>
     <ChannelList
       channels={channels}
       py={4}
     />
     <Card p={1}>
-      {terms.map((term, i) => (
-        <TermsLink href={term.url} key={i}>{term.text}</TermsLink>
+      {terms.map(term => (
+        <TermsLink href={term.url}>{term.text}</TermsLink>
       ))}
     </Card>
     <Card p={1}>
@@ -33,7 +33,7 @@ Footer.propTypes = {
   terms: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-  })),
+  })).isRequired,
   discoveryLogo: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   copyright: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   mainLinkLogo: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
@@ -42,7 +42,7 @@ Footer.propTypes = {
     url: PropTypes.string.isRequired,
     logo: PropTypes.string.isRequired,
     shortname: PropTypes.string.isRequired,
-  })),
+  })).isRequired,
 };
 
 Footer.defaultProps = {

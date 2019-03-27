@@ -1,6 +1,6 @@
 import {
-    Box, Link, Image, Flex,
-  } from 'rebass';
+  Box, Link, Image, Flex,
+} from 'rebass';
 import styled from 'styled-components';
 import get from 'lodash/get';
 

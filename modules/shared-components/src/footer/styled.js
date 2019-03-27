@@ -2,11 +2,9 @@
 import {
   Box, Flex, Link, Image,
 } from 'rebass';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import styled from 'styled-components';
 import get from 'lodash/get';
 
-// eslint-disable-next-line import/prefer-default-export
 export const Root = styled(Flex)`
   background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
