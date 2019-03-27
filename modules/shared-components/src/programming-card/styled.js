@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Box, Flex, Heading } from "rebass";
 import styled from "styled-components";
 import get from 'lodash/get';

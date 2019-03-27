@@ -1,10 +1,5 @@
-/* eslint-disable */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-// import {
-//   withKnobs,
-//   text,
-// } from '@storybook/addon-knobs';
 
 import ProgrammingSlider from '.';
 
@@ -52,6 +47,10 @@ const days = [
 ];
 
 storiesOf('ProgrammingSlider', module)
-  .add('Programming Slider', () => 
-    <ProgrammingSlider days={days} />
-  )
+  .add('Programming Slider', () =>
+    <ProgrammingSlider days={days} />, {
+      backgrounds: [{
+        name: 'black', value: 'rgba(0,14,38)', default: true
+      }]
+    }
+  );

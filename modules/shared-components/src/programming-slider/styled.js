@@ -4,6 +4,21 @@ import get from 'lodash/get';
 
 export const BoxSlider = styled(Box)`
   margin: 0 -4px;
+  .slick-next {
+  }
+  .slick-prev {
+    z-index: 99;
+  }
+  .slick-prev, .slick-next {
+    background-size: 48px 48px;
+    width: 48px;
+    height: 48px;
+    &:hover, &:focus {
+      background-size: 48px 48px;
+      width: 48px;
+      height: 48px;
+    }
+  }
 `
 
 export const Tab = styled(Box)`

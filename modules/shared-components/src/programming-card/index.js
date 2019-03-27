@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 import { Card, Headline, DateShow, InfoShow, TimeDay, Time, Day, Episode, Description } from "./styled";
