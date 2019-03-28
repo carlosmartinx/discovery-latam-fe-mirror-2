@@ -1,7 +1,6 @@
 // Libraries
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 // Components
 import Routes from './routes';
@@ -11,9 +10,13 @@ import Routes from './routes';
  * modal, toasts...etc
  */
 const AppRouter = () => (
-  <Router>
-    <Routes />
-  </Router>
+  <div id="app">
+    <div id="content">
+      <Routes />
+    </div>
+  </div>
 );
 
-export default AppRouter;
+export default withRouter(
+  AppRouter,
+);

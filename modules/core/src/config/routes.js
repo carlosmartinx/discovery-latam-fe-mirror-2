@@ -1,18 +1,17 @@
 // Libraries
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-// eslint-disable-next-line import/no-unresolved
 import Loadable from 'react-loadable';
 
 const Loading = () => <div>Loading</div>;
 
 const Home = Loadable({
-  loader: () => import('../pages/Home'),
+  loader: () => import(/* webpackChunkName: "home" */ '../pages/Home'),
   loading: Loading,
 });
 
 const Test = Loadable({
-  loader: () => import('../pages/Test'),
+  loader: () => import(/* webpackChunkName: "test" */ '../pages/Test'),
   loading: Loading,
 });
 
