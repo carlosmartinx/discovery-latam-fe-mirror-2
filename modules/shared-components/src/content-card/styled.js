@@ -132,6 +132,6 @@ export const ImageWrapper = styled.div`
   }
 
   ${Link} {
-
+    outline: 0;
   }
 `;
