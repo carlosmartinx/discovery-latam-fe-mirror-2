@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { Box } from 'rebass';
 import get from 'lodash/get';
-import ShareList, { ShareListMobile } from './index';
+import Share from '.';
 
 import Facebook from '../../icons/facebook.svg';
 import Twitter from '../../icons/twitter.svg';
@@ -62,7 +62,7 @@ storiesOf('Share', module)
   .addDecorator(withKnobs)
   .add('Desktop', () => (
     <Box>
-      <ShareList shareList={shareDesktop} />
+      <Share shareList={shareDesktop} />
     </Box>
   ), {
     backgrounds: [{
@@ -71,14 +71,14 @@ storiesOf('Share', module)
   })
   .add('Desktop Light', () => (
     <Box>
-      <ShareList backTheme="light" shareList={shareDesktop} />
+      <Share backTheme="light" shareList={shareDesktop} />
     </Box>
   ), {
     backgrounds: [],
   })
   .add('Mobile', () => (
     <Box>
-      <ShareListMobile shareList={shareMobile} />
+      <Share shareList={shareMobile} mobile />
     </Box>
   ), {
     backgrounds: [{
