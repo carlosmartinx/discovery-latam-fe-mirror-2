@@ -106,7 +106,7 @@ You need to have serve installed globally to start it with a static server `npm 
 $ yarn serve
 ```
 
-Furthermore, you could start it with SSR
+Furthermore, you could start it with Server Side Rendering
 
 ```sh
 $ yarn serve:ssr
