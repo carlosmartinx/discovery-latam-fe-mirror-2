@@ -16,7 +16,7 @@ const SliderSlick = ({ settings, children }) => (
 
 SliderSlick.propTypes = {
   children: PropTypes.node.isRequired,
-  settings: PropTypes.objectOf(PropTypes.object).isRequired,
+  settings: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]).isRequired,
 };
 
 export default SliderSlick;

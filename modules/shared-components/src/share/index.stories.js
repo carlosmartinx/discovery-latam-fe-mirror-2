@@ -38,24 +38,36 @@ const shareDesktop = [
 
 const shareMobile = [
   {
+    id: 1,
     icon: Facebook,
+    color: 'white',
     url: '',
     background: props => get(props, 'theme.colors.facebook', ''),
+    title: '',
   },
   {
+    id: 2,
     icon: Twitter,
+    color: 'white',
     url: '',
     background: props => get(props, 'theme.colors.twitter', ''),
+    title: '',
   },
   {
+    id: 3,
     icon: Whatsapp,
+    color: 'white',
     url: '',
     background: props => get(props, 'theme.colors.whatsApp', ''),
+    title: '',
   },
   {
+    id: 4,
     icon: Email,
+    color: 'white',
     url: '',
     background: props => get(props, 'theme.colors.mail', ''),
+    title: '',
   }];
 
 storiesOf('Share', module)
