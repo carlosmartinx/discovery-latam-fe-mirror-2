@@ -36,7 +36,7 @@ Every component must have the following ***CamelCase*** structure
 
 1st for all, u need install lerna globally `npm install -g lerna`.
 
-Run `lerna boostrap` for download all *node_modules* for all ***modules*** and link the among them.
+Run `lerna bootstrap` for download all *node_modules* for all ***modules*** and link the among them.
 
 Then run `yarn transpile` for build all the components in ther respective dist folders.
 
