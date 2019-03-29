@@ -20,7 +20,6 @@ const VideoBackground = ({ videoURL }) => {
 
 VideoBackground.propTypes = {
   videoURL: PropTypes.string.isRequired,
-
 };
 
 export default VideoBackground;
