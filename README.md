@@ -36,13 +36,13 @@ Every component must have the following ***CamelCase*** structure
 
 1st for all, u need install lerna globally `npm install -g lerna`.
 
-Run `lerna boostrap` for download all *node_modules* for all ***modules*** and link the among them.
+Run `yarn` for download all *node_modules* for all ***modules*** and link the among them.
 
 Then run `yarn transpile` for build all the components in ther respective dist folders.
 
 All main commands must be executed in root app folder.
 
-***IMPORTANT***: everytime that u make changes in ***modules*** make sure update the version in `package.json`. Is needed update only the last number and run `lerna bootstrap` in app root folder again.
+***IMPORTANT***: everytime that u make changes in ***modules*** make sure update the version in `package.json`. Is needed update only the last number and run `yarn` in app root folder again.
 
 ## Working in *core*
 
@@ -94,6 +94,23 @@ This will create 2 folders in `*root*/modules/core/public`:
 
 U need to edit *[lang].json* which has the new translate ids. Once tranlated, run `yarn build:int` to add the *[lang].json* tranlations to *data.json* translate file.
 
+## Build to Prod
+
+```sh
+$ yarn build
+```
+
+You need to have serve installed globally to start it with a static server `npm install -g serve`.
+
+```sh
+$ yarn serve
+```
+
+Furthermore, you could start it with SSR
+
+```sh
+$ yarn serve:ssr
+```
 
 -----
 For more information please visit:
