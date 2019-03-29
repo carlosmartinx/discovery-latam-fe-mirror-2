@@ -9,7 +9,7 @@ phases:
       - sudo apt install --no-install-recommends yarn
       - yarn --version
       - npm install -g lerna
-      - lerna bootstrap
+      - yarn
       - yarn transpile
       - yarn build-storybook
       - aws s3 sync storybook-static s3://www.tudiscoveryla-uat.com --delete
