@@ -4,6 +4,7 @@ import ContentCard from '../content-card/index';
 import SliderSlick from '../slider-slick/index';
 import { BaseCarousel, Grid } from './styled';
 
+
 const FourItemCarousel = ({
   sliderContent, numItemsDesktop, numItemsMobile, numItemsTablet,
 }) => {
