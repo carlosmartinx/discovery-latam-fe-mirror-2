@@ -1,6 +1,5 @@
 // Libraries
-import React from 'react';
-import { withRouter } from 'react-router';
+import React, { Fragment } from 'react';
 
 // Components
 import Routes from './routes';
@@ -10,13 +9,9 @@ import Routes from './routes';
  * modal, toasts...etc
  */
 const AppRouter = () => (
-  <div id="app">
-    <div id="content">
-      <Routes />
-    </div>
-  </div>
+  <Fragment>
+    <Routes />
+  </Fragment>
 );
 
-export default withRouter(
-  AppRouter,
-);
+export default AppRouter;

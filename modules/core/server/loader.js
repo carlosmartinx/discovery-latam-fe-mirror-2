@@ -12,9 +12,9 @@ import { Frontload, frontloadServerRender } from 'react-frontload';
 import Loadable from 'react-loadable';
 
 // Our store, entrypoint, and manifest
-import createStore from '../config/store';
-import App from '../App';
-import manifest from '../../build/asset-manifest.json';
+import createStore from '../src/config/store';
+import App from '../src/App';
+import manifest from '../build/asset-manifest.json';
 
 // LOADER
 export default (req, res) => {
@@ -43,7 +43,7 @@ export default (req, res) => {
 
   // Load in our HTML file from our build
   fs.readFile(
-    path.resolve(__dirname, '../../build/index.html'),
+    path.resolve(__dirname, '../build/index.html'),
     'utf8',
     // eslint-disable-next-line consistent-return
     (err, htmlData) => {
@@ -107,7 +107,6 @@ export default (req, res) => {
           // We need to tell Helmet to compute the right meta tags, title, and such
           const helmet = Helmet.renderStatic();
 
-          // NOTE: Disable if you desire
           // Let's output the title, just to see SSR is working as intended
           // eslint-disable-next-line no-console
           console.info('THE TITLE', helmet.title.toString());

@@ -150,7 +150,7 @@
     "start": "node scripts/start.js",
     "test": "jest --coverage --verbose --color -u",
     "serve": "serve -s build",
-    "serve:ssr": "cross-env NODE_ENV=production node ./src/server/index.js"
+    "serve:ssr": "cross-env NODE_ENV=production node ./server"
   },
   "version": "0.1.0"
 }

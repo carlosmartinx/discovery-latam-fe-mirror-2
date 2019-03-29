@@ -64,7 +64,7 @@
   "scripts": {
     "transpile": "lerna run transpile",
     "start": "yarn run:core start",
-    "build": "lerna run build",
+    "build": "yarn run:core build",
     "test": "lerna run test --stream",
     "lint": "lerna run lint",
     "clean": "lerna clean --yes",
