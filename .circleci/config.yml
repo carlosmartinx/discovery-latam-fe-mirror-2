@@ -24,6 +24,9 @@ jobs:
       # run transpile!
       - run: yarn transpile
 
+      # run build!
+      - run: yarn build
+
       - save_cache:
           paths:
             - ~/Discovery-Latam-FE
