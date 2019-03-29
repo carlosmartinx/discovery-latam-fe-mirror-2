@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo Entering build phase...
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      - sudo apt update
+      - sudo apt install --no-install-recommends yarn
+      - yarn --version
+      - npm install -g lerna
+      - yarn
+      - yarn transpile
+      - yarn build-storybook
+      - aws s3 sync storybook-static s3://www.tudiscoveryla-uat.com --delete

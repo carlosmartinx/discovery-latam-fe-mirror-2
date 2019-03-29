@@ -1,7 +1,5 @@
 // Libraries
-import React from 'react';
-// import PropTypes from 'prop-types';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, { Fragment } from 'react';
 
 // Components
 import Routes from './routes';
@@ -11,9 +9,9 @@ import Routes from './routes';
  * modal, toasts...etc
  */
 const AppRouter = () => (
-  <Router>
+  <Fragment>
     <Routes />
-  </Router>
+  </Fragment>
 );
 
 export default AppRouter;
