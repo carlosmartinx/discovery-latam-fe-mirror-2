@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router-dom';
 import 'jest-styled-components';
 import { Button, Heading } from 'rebass';
 import _ from 'lodash';
@@ -27,7 +28,9 @@ const props = {
   testAction: () => { actionClicked = true; },
   testState: { ...initialState },
 };
-const mountWrapper = renderer.create(<Test {...props} />);
+const mountWrapper = renderer.create(
+  <MemoryRouter initialEntries={['/']} keyLength={0}><Test {...props} /></MemoryRouter>,
+);
 
 describe('components', () => {
   describe('Test', () => {

@@ -16,9 +16,13 @@ const withIntl = (Component) => {
     // Define user's language. Different browsers have the user locale defined
     // on different fields on the `navigator` object, so we make sure to account
     // for these different by checking all of them
-    let language = (navigator.languages && navigator.languages[0])
-    || navigator.language
-    || navigator.userLanguage;
+    let language = 'es-ES';
+
+    if (typeof navigator !== 'undefined') {
+      language = (navigator.languages && navigator.languages[0])
+      || navigator.language
+      || navigator.userLanguage;
+    }
 
     if (appState.lang === '') {
       appSetLangAction(language);

@@ -64,20 +64,18 @@
   "scripts": {
     "transpile": "lerna run transpile",
     "start": "yarn run:core start",
-    "build": "lerna run build",
+    "build": "yarn run:core build",
     "test": "lerna run test --stream",
-    "test:core": "run:core test",
     "lint": "lerna run lint",
     "clean": "lerna clean --yes",
-    "lint:core": "yarn run:core lint",
-    "fix:core": "yarn run:core lint --fix",
-    "fix:shared-components": "yarn run:shared-components lint --fix",
     "fixall": "npm-run-all --parallel fix:*",
     "run:core": "cd modules/core && yarn",
     "run:shared-components": "cd modules/shared-components && yarn",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build:intl": "yarn run:core build:intl"
+    "build:intl": "yarn run:core build:intl",
+    "serve": "yarn run:core serve",
+    "serve:ssr": "yarn run:core serve:ssr"
   },
   "husky": {
     "hooks": {
