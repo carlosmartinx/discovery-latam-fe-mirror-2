@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ContentCard from '../content-card/index';
 import SliderSlick from '../slider-slick/index';
@@ -6,7 +6,15 @@ import { BaseGallery, GalleryGrid } from './styled';
 
 
 const SliderGallery = ({ sliderContent }) => {
-  const isMobile = window.innerWidth < 768;
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
   const settings = {
     arrows: true,
     dots: false,
@@ -16,10 +24,9 @@ const SliderGallery = ({ sliderContent }) => {
     infinite: false,
     lazyLoad: 'ondemand',
   };
-
   return (
     <BaseGallery>
-      {isMobile === false
+      {width > 768
         ? (
           <SliderSlick settings={settings}>
             {sliderContent.map(slide => (
