@@ -11,6 +11,11 @@ export const Root = styled(Flex)`
   right: 0;
   bottom: 0;
   z-index: 8;
+
+  @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
+    display: ${props => (props.mobile === false ? 'none'
+    : 'flex')};
+  }
 `;
 
 export const Title = styled(Flex)`

@@ -14,7 +14,7 @@ export const Headline = styled(Heading)`
   color: ${props => (props.themeColor === 'dark'
     ? get(props, 'theme.colors.white', '')
     : get(props, 'theme.colors.black', ''))};
-  line-height: 48px
+  line-height: 48px;
   margin-bottom: ${props => get(props, 'theme.space[1]', '')}px;
   text-transform: none;
 

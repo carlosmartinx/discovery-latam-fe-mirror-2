@@ -4,7 +4,7 @@ export { default as ChannelList } from './channel-list';
 export { default as BulletTitle } from './bullet-title';
 export { default as GalleryTitle } from './gallery-title';
 export { default as SliderGallery } from './slider-gallery';
-export { default as Carosuel } from './four-items-carousel';
+export { default as Carousel } from './four-items-carousel';
 export { default as Share } from './share';
 export { default as ContentCard } from './content-card';
 export { default as CookieBar } from './cookie-bar';
