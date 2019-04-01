@@ -1,12 +1,8 @@
 import React from 'react';
+import { LazyBox } from './styled';
 
 export const Loading = () => (
-  // eslint-disable-next-line react/react-in-jsx-scope
-  <div>
-    Loading...Loading...Loading...Loading...
-    Loading...Loading...Loading...Loading...
-    Loading...Loading...Loading...Loading...
-  </div>
+  <LazyBox />
 );
 
 export default Loading;

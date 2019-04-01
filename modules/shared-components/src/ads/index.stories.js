@@ -12,19 +12,27 @@ const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
 storiesOf('Ads', module)
   .add('Desktop 728x90 Light', () => (
     <Ads
-      adSlotSize={[728, 90]}
       adTitle={title}
       bgColor={bgLight}
-      adUnitText={unitText}
-      adSlotId={esCodes.mob_leaderboard_bottom}
+      adSlotConfig={[{
+        adSlotSize: [728, 90],
+        adUnitText: unitText,
+        adSlotId: esCodes.leaderboard_mid,
+      }, {
+        adSlotSize: [300, 50],
+        adUnitText: unitText,
+        adSlotId: esCodes.mob_leaderboard_bottom,
+      }]}
     />
   ))
   .add('Desktop 300x250 Dark', () => (
     <Ads
-      adSlotSize={[300, 250]}
       bgColor={bgDark}
       adTitle={title}
-      adUnitText={unitText}
-      adSlotId={esCodes.mob_leaderboard_mid}
+      adSlotConfig={[{
+        adSlotSize: [300, 250],
+        adUnitText: unitText,
+        adSlotId: esCodes.mob_leaderboard_mid,
+      }]}
     />
   ));
