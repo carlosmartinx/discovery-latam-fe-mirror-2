@@ -1,0 +1,20 @@
+{
+  "en": {
+    "Home.Hello": "Hello",
+    "Home.GoToTest": "Go to Test page!",
+    "Test.Heading": "TEST",
+    "Test.TestText": "Probando!",
+    "Test.StateData": "Info en el State!",
+    "Test.ActualLang": "Idioma Actual",
+    "Test.ChangeLang": "Cambiar Idioma!"
+  },
+  "pt": {
+    "Home.Hello": "Ola",
+    "Home.GoToTest": "nós vamos para a página de teste!",
+    "Test.Heading": "TESTAR",
+    "Test.TestText": "Testando!",
+    "Test.StateData": "informação no estado!",
+    "Test.ActualLang": "Idioma Atual",
+    "Test.ChangeLang": ""
+  }
+}

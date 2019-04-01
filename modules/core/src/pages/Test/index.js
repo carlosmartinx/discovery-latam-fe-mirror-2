@@ -1,48 +1,57 @@
-/* eslint-disable */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Flex, Text, Box, Heading, Button } from 'rebass';
+import {
+  Flex, Text, Box, Heading, Button,
+} from 'rebass';
+import Page from '../../components/page';
 import testAction from '../../actions/test';
 
-const Test = props => {
+export const Test = (props) => {
+  const { testState } = props;
   const [text, setText] = useState('');
   return (
-    <Flex flexDirection="column">
-      <Box>
-        <Heading color="blue">TEST</Heading>
-      </Box>
-      <Box>
-        <Text>Probando</Text>
-        <input
-          type="test"
-          value={text}
-          onChange={evt => setText(evt.target.value)}
-        />
-        <Button onClick={() => props.testAction(text)}>click</Button>
-      </Box>
-      <Box>
-        <Text>Info en el State</Text>
-        <Heading color="blue">{props.testState.test}</Heading>
-      </Box>
-    </Flex>
+    <Page id="testpage" title="Test" description="This is a test page.">
+      <Flex id="testContainer" flexDirection="column">
+        <Box id="testHeader">
+          <Heading color="blue">TEST</Heading>
+        </Box>
+        <Box id="testContent">
+          <Text>Probando</Text>
+          <input
+            type="test"
+            value={text}
+            onChange={evt => setText(evt.target.value)}
+          />
+          <Button onClick={() => props.testAction(text)}>click</Button>
+        </Box>
+        <Box>
+          <Text>Info en el State</Text>
+          <Heading name="headingState" color="blue">{testState.test}</Heading>
+        </Box>
+      </Flex>
+    </Page>
   );
 };
 
+Test.displayName = 'Test';
+
 Test.propTypes = {
-  testState: PropTypes.object,
-  testAction: PropTypes.func
+  testState: PropTypes.shape({
+    loading: PropTypes.bool,
+  }).isRequired,
+  testAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  testState: state.test
+  testState: state.test,
 });
 
 const mapDispatchToProps = {
-  testAction
+  testAction,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Test);

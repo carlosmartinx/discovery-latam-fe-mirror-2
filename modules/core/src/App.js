@@ -1,17 +1,13 @@
+import { withRouter } from 'react-router';
 // Libraries
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { compose } from 'redux';
 
 // Components
 import Router from './config/router';
+import withThemeProvider from './components/HoC/withThemeProvider';
+import withIntl from './components/HoC/withIntl';
 
-// styles
-import theme from './styles/mainTheme';
-
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <Router />
-  </ThemeProvider>
-);
-
-export default App;
+export default withRouter(compose(
+  withIntl,
+  withThemeProvider,
+)(Router));

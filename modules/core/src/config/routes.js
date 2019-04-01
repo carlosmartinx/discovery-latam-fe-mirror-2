@@ -1,10 +1,21 @@
 // Libraries
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
-// Pages
-import Home from '../pages/Home';
-import Test from '../pages/Test';
+const Loading = () => <div>Loading</div>;
+
+const Home = Loadable({
+  loader: () => import(/* webpackChunkName: "home" */ '../pages/Home'),
+  loading: Loading,
+  modules: ['homepage'],
+});
+
+const Test = Loadable({
+  loader: () => import(/* webpackChunkName: "test" */ '../pages/Test'),
+  loading: Loading,
+  modules: ['test'],
+});
 
 const Routes = () => (
   <Switch>

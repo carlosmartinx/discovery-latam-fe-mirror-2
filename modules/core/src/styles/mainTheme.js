@@ -1,17 +1,14 @@
+const globalColors = require('./colors');
+const globalLayout = require('./layout');
+const globalIcons = require('./icons');
+
 export default {
-  breakpoints: ['40em', '52em', '64em'],
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
-  colors: {
-    blue: '#07c',
-    lightgray: '#f6f6ff',
-  },
-  space: [0, 4, 8, 16, 32, 64, 128, 256],
+  breakpoints: globalLayout.default,
+  fontSizes: [12, 14, 16, 20, 24, 28, 32, 40, 48, 64],
+  colors: globalColors.default,
+  space: [0, 8, 16, 24, 32, 40, 48],
   fonts: {
-    sans: 'system-ui, sans-serif',
-    mono: 'Menlo, monospace',
+    sans: 'Fira Sans, sans-serif',
   },
-  shadows: {
-    small: '0 0 4px rgba(0, 0, 0, .125)',
-    large: '0 0 24px rgba(0, 0, 0, .125)',
-  },
+  icons: globalIcons.default,
 };
