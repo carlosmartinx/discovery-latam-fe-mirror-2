@@ -17,6 +17,7 @@ export const WrapperFlex = styled.div`
     }
   }
 `;
+
 export const WrapperMenu = styled.div`
   background: ${props => get(props, 'theme.colors.tdBlueGray', '')};
   display: block;
@@ -33,6 +34,7 @@ export const WrapperMenu = styled.div`
     transition: left 0.5s;
   }
 `;
+
 export const WrapperBox = styled(Flex)`
   left: 0;
   position: relative;
@@ -42,9 +44,11 @@ export const WrapperBox = styled(Flex)`
     left: -100%;
   }
 `;
+
 export const DataChannel = styled.div`
   width: ${props => get(props, 'theme.breakpoints[0]', '')};
 `;
+
 export const TopBar = styled(Flex)`
   background: ${props => get(props, 'theme.colors.tdBackground1', '')};
   color: ${props => get(props, 'theme.colors.white', '')};
@@ -53,6 +57,7 @@ export const TopBar = styled(Flex)`
   text-transform: uppercase;
   align-items: center;
 `;
+
 const BaseButton = styled.button`
   background-color: transparent;
   background-repeat: no-repeat;
@@ -63,17 +68,21 @@ const BaseButton = styled.button`
   height: 20px;
   width: 20px;
 `;
+
 export const LinkClose = styled(BaseButton)`
   background-image: url(${props => get(props, 'theme.icons.close', '')});
   filter: brightness(100%);
 `;
+
 export const LinkBack = styled(BaseButton)`
   background-image: url(${props => get(props, 'theme.icons.back', '')});
   filter: invert(100%);
 `;
+
 export const MenuElem = styled(Box)`
   min-width: 128px;
 `;
+
 export const LinkSeries = styled(Link)`
   border-bottom: 1px solid ${props => get(props, 'theme.colors.w2', '')};
   color: ${props => get(props, 'theme.colors.black', '')};
