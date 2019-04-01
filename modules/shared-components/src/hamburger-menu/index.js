@@ -29,6 +29,7 @@ const Menu = ({ channels = [] }) => {
                       url={item.url}
                       shortname={item.shortname}
                       idChannel={item.id_channel}
+                      series={item.series ? true : false}
                       itemClicked={(key) => {
                         setMore('show');
                         setSeries(channels.find(obj => obj.shortname === key).series);
@@ -45,7 +46,7 @@ const Menu = ({ channels = [] }) => {
                 <Heading fontSize={2}>Series</Heading>
               </TopBar>
               <DataChannel>
-                {series.map(serie => (
+                {series ? series.map(serie => (
                   <LinkSeries
                     mx={2}
                     py={2}
@@ -54,7 +55,7 @@ const Menu = ({ channels = [] }) => {
                   >
                     {serie.title}
                   </LinkSeries>
-                ))}
+                )): <Box/>}
               </DataChannel>
             </Box>
           </WrapperBox>

@@ -82,16 +82,14 @@ const data = [
     url: "/discoveryhh",
     logo: "https://dev-discoverylatam.pantheonsite.io/sites/default/files/2018-12/HH-Logo-white.png",
     shortname: "discoveryhh",
-    id_channel: "discoveryhh",
-    series: []
+    id_channel: "discoveryhh"
   },
   {
     title: "Turbo",
     url: "/turbo",
     logo: "https://dev-discoverylatam.pantheonsite.io/sites/default/files/2018-12/TURBO-Logo-white_0.png",
     shortname: "turbo",
-    id_channel: "turbo",
-    series: []
+    id_channel: "turbo"
   },
   {
     title: "Science",
@@ -182,25 +180,7 @@ const itemMenu = [
     url: "/tlc",
     logo: "https://dev-discoverylatam.pantheonsite.io/sites/default/files/2018-12/TLC-Logo-white_0.png",
     shortname: "tlc",
-    id_channel: "tlc",
-    series: [
-      {
-        title: "La médium",
-        url: "/tlc/la-medium"
-      },
-      {
-        title: "Madres adolescentes",
-        url: "/tlc/madres-adolescentes"
-      },
-      {
-        title: "Retatuadores",
-        url: "/tlc/retatuadores"
-      },
-      {
-        title: "Soy Jazz",
-        url: "/tlc/soy-jazz"
-      }
-    ]
+    id_channel: "tlc"
   },
 ];
 

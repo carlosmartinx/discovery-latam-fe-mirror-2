@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Box } from 'rebass';
+import { Box, Flex } from 'rebass';
 import {
   Card, LinkOptions, LinkWrapper, ImgLogo,
   TextNav, WrapperFront, WrapperBack, OptionLink,
@@ -8,7 +8,7 @@ import {
 } from './styled';
 
 const MiniCard = ({
-  logo, title, url = '/', itemClicked, shortname, idChannel,
+  logo, title, url = '/', itemClicked, shortname, idChannel, series,
 }) => {
   const [effect, setEffect] = useState('normal');
 
@@ -29,8 +29,16 @@ const MiniCard = ({
             <Box alignSelf="flex-end" my={1}>
               <LinkBack p={2} onClick={() => setEffect('normal')} />
             </Box>
-            <OptionLink py={1} m={1} href={`${shortname}/tv/programacion`}>Programación</OptionLink>
-            <OptionLink py={1} m={1} onClick={() => itemClicked(shortname)}>Series</OptionLink>
+            {series === true ? 
+              (
+              <Flex flexDirection="column">
+                <OptionLink py={1} m={1} href={`${shortname}/tv/programacion`}>Programación</OptionLink>
+                <OptionLink py={1} m={1} onClick={() => itemClicked(shortname)}>Series</OptionLink>
+              </Flex>
+              ) : (
+                <OptionLink py={1} m={1} href={`${shortname}/tv/programacion`}>Programación</OptionLink>
+              )
+            }
           </WrapperBack>
         </Card>
       </EffectBox>
@@ -45,6 +53,7 @@ MiniCard.propTypes = {
   shortname: PropTypes.string.isRequired,
   idChannel: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  serie: PropTypes.bool.isRequired
 };
 
 export default MiniCard;
