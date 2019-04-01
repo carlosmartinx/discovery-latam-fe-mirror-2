@@ -81,7 +81,7 @@ const items = [
   }];
 
 const Gallery = () => (
-  <Page id="gallery">
+  <Page id="gallery" background="green">
     <BoxBase m="auto">
       <HeadlineWrapper alignItems="flex-end">
         <Box width={[1, 4 / 6, 9 / 12]}>

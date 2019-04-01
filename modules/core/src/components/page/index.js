@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import Helmet from 'react-helmet';
+import StyledPage from './styled';
 // import logo from '../../assets/logo.jpg';
 
 const SITE_URL = process.env.NODE_ENV === 'development'
@@ -83,11 +84,11 @@ class Page extends Component {
 
   render() {
     const {
-      children, id, className, location, ...rest
+      children, id, className, location, background, ...rest
     } = this.props;
 
     return (
-      <div id={id} className={className}>
+      <StyledPage id={id} className={className} background={background}>
         <Helmet
           htmlAttributes={{
             lang: 'en',
@@ -106,7 +107,7 @@ class Page extends Component {
           meta={Page.getMetaTags(rest, location.pathname)}
         />
         {children}
-      </div>
+      </StyledPage>
     );
   }
 }
@@ -114,6 +115,7 @@ class Page extends Component {
 Page.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
+  background: PropTypes.string,
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }).isRequired,
@@ -122,6 +124,7 @@ Page.propTypes = {
 
 Page.defaultProps = {
   className: '',
+  background: '',
 };
 
 export default withRouter(Page);

@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import get from 'lodash/get';
 import { Box, Flex } from 'rebass';
 
-export const Page = styled.div`
-    background: red;
-`;
 
 export const BoxBase = styled(Box)`
   max-width: ${props => get(props, 'theme.breakpoints.3', '')};
