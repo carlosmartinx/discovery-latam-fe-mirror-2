@@ -29,7 +29,7 @@ const Menu = ({ channels = [] }) => {
                       url={item.url}
                       shortname={item.shortname}
                       idChannel={item.id_channel}
-                      series={item.series ? true : false}
+                      series={!!item.series}
                       itemClicked={(key) => {
                         setMore('show');
                         setSeries(channels.find(obj => obj.shortname === key).series);
@@ -55,7 +55,7 @@ const Menu = ({ channels = [] }) => {
                   >
                     {serie.title}
                   </LinkSeries>
-                )): <Box/>}
+                )) : <Box />}
               </DataChannel>
             </Box>
           </WrapperBox>
@@ -66,7 +66,15 @@ const Menu = ({ channels = [] }) => {
 };
 
 Menu.propTypes = {
-  channels: PropTypes.array,
+  channels: PropTypes.arrayOf(PropTypes.shape({
+    logo: PropTypes.string,
+    title: PropTypes.string,
+    itemClicked: PropTypes.func,
+    shortname: PropTypes.string,
+    idChannel: PropTypes.string,
+    url: PropTypes.string,
+    series: PropTypes.bool,
+  })).isRequired,
 };
 
 export default Menu;
