@@ -2,45 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ContentCard from '../content-card/index';
 import SliderSlick from '../slider-slick/index';
-import { BaseCarousel, Grid } from './styled';
+import { BaseGallery, GalleryGrid } from './styled';
 
 
-const Carousel = ({
-  sliderContent, numItemsDesktop, numItemsMobile, numItemsTablet,
-}) => {
+const SliderGallery = ({ sliderContent }) => {
+  const isMobile = window.innerWidth < 768;
   const settings = {
     arrows: true,
-    dots: true,
+    dots: false,
     speed: 500,
-    slidesToShow: numItemsDesktop,
-    slidesToScroll: numItemsDesktop,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     infinite: false,
     lazyLoad: 'ondemand',
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          dots: false,
-          arrows: false,
-          slidesToShow: numItemsMobile,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          arrows: false,
-          dots: false,
-          slidesToShow: numItemsTablet,
-          slidesToScroll: 2,
-        },
-      },
-    ],
   };
 
   return (
-    <BaseCarousel>
-      {sliderContent.length >= 5
+    <BaseGallery>
+      {isMobile === false
         ? (
           <SliderSlick settings={settings}>
             {sliderContent.map(slide => (
@@ -49,18 +28,18 @@ const Carousel = ({
           </SliderSlick>
         )
         : (
-          <Grid flexDirection={['column', 'column', 'row', 'row']}>
+          <GalleryGrid flexDirection={['column', 'column', 'row', 'row']}>
             {sliderContent.map(slide => (
               <ContentCard {...slide} />
             ))}
-          </Grid>
+          </GalleryGrid>
         )
       }
-    </BaseCarousel>
+    </BaseGallery>
   );
 };
 
-Carousel.propTypes = {
+SliderGallery.propTypes = {
   sliderContent: PropTypes.arrayOf(PropTypes.shape({
     backtheme: PropTypes.string,
     background: PropTypes.string,
@@ -81,15 +60,6 @@ Carousel.propTypes = {
     link: PropTypes.string,
     variation: PropTypes.string,
   })).isRequired,
-  numItemsDesktop: PropTypes.number,
-  numItemsTablet: PropTypes.number,
-  numItemsMobile: PropTypes.number,
 };
 
-Carousel.defaultProps = {
-  numItemsDesktop: 4,
-  numItemsTablet: 2.1,
-  numItemsMobile: 1.1,
-};
-
-export default Carousel;
+export default SliderGallery;

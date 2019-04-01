@@ -1,3 +1,13 @@
 export { default as Button } from './comp-button';
 export { default as Footer } from './footer';
 export { default as ChannelList } from './channel-list';
+export { default as BulletTitle } from './bullet-title';
+export { default as GalleryTitle } from './gallery-title';
+export { default as SliderGallery } from './slider-gallery';
+export { default as Carosuel } from './four-items-carousel';
+export { default as Share } from './share';
+export { default as ContentCard } from './content-card';
+export { default as CookieBar } from './cookie-bar';
+export { default as SliderContentCard } from './slider-content-card';
+export { default as TuneInOpening } from './tune-in-opening';
+export { default as VideoButton } from './video-button';

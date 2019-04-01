@@ -17,9 +17,16 @@ const Test = Loadable({
   modules: ['test'],
 });
 
+const Gallery = Loadable({
+  loader: () => import(/* webpackChunkName: "test" */ '../pages/Gallery'),
+  loading: Loading,
+  modules: ['gallery'],
+});
+
 const Routes = () => (
   <Switch>
     <Route path="/test" component={Test} />
+    <Route path="/gallery" component={Gallery} />
     <Route component={Home} />
   </Switch>
 );
