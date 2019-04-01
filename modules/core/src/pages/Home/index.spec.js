@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { MemoryRouter } from 'react-router-dom';

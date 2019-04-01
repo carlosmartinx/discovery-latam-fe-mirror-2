@@ -39,7 +39,7 @@ const Carousel = ({
   };
 
   return (
-    <BaseCarousel>
+    <BaseCarousel pb={[0, 0, 3, 4]}>
       {sliderContent.length >= 5
         ? (
           <SliderSlick settings={settings}>
