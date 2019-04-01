@@ -15,7 +15,7 @@ const items = [
     headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
   }, {
     key: 2,
-    backtheme: 'ligh',
+    backtheme: 'light',
     channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
     channelAlt: 'Discovery Channel',
     title: 'Headline 2',
