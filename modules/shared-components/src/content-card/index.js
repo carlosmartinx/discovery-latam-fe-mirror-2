@@ -71,20 +71,22 @@ const ContentCard = ({
       ) : '' }
     </ImageWrapper>
 
-    <ContentWrapper themeColor={card.backtheme} isFullySponsored={card.isFullySponsored}>
+    <ContentWrapper sponsor={!!card.sponsor}>
       <HeadlineWrapper>
         {card.channel && <ChannelLogo src={card.channel.logo_svg} height="30" alt={card.channel.name} />}
         {card.title
         && (
         <Link href={card.url}>
-          <Title>{card.title}</Title>
+          <Title themeColor={card.backtheme}>{card.title}</Title>
         </Link>
         )}
       </HeadlineWrapper>
       {card.description
         && (
         <Link href={card.url}>
-          <Description isFullySponsored={card.isFullySponsored}>{card.description}</Description>
+          <Description themeColor={card.backtheme} sponsor={!!card.sponsor}>
+            {card.description}
+          </Description>
         </Link>
         )
       }
@@ -116,6 +118,7 @@ ContentCard.propTypes = {
       url: PropTypes.string,
     }),
     url: PropTypes.string,
+    backtheme: PropTypes.string,
   }).isRequired,
   variationSponsor: PropTypes.string,
 };
