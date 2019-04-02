@@ -6,7 +6,8 @@ import videoplayfilled from '../icons/video-play-filled.svg';
 import volumeonfilled from '../icons/volume-on-filled.svg';
 import volumeofffilled from '../icons/volume-off-filled.svg';
 import program from '../icons/program.svg';
-
+import close from '../icons/close.svg';
+import back from '../icons/back.svg';
 
 export default {
   slidearrowleftfilled,
@@ -17,4 +18,6 @@ export default {
   volumeonfilled,
   volumeofffilled,
   program,
+  close,
+  back,
 };
