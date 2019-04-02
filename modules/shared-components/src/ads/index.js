@@ -47,8 +47,8 @@ export const Ads = ({
     const mediaQueryListD = window.matchMedia('(min-width: 768px)');
 
     // Adding listeners to init media queries with matchMedia
-    mediaQueryList.addListener(handleMediaQueryChangeMobile.bind(this));
-    mediaQueryListD.addListener(handleMediaQueryChangeDesktop.bind(this));
+    mediaQueryList.addListener(handleMediaQueryChangeMobile);
+    mediaQueryListD.addListener(handleMediaQueryChangeDesktop);
     handleMediaQueryChangeMobile(mediaQueryList);
     handleMediaQueryChangeDesktop(mediaQueryListD);
 
@@ -56,8 +56,8 @@ export const Ads = ({
 
     return () => {
       // Removing listeners to media queries with matchMedia
-      mediaQueryList.removeListener(handleMediaQueryChangeMobile.bind(this));
-      mediaQueryListD.removeListener(handleMediaQueryChangeDesktop.bind(this));
+      mediaQueryList.removeListener(handleMediaQueryChangeMobile);
+      mediaQueryListD.removeListener(handleMediaQueryChangeDesktop);
     };
   });
 
