@@ -12,6 +12,11 @@ const imgStyle = {
 export const Root = styled(Box)`
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
   position: relative;
+
+  ${BoxSponsor} {
+    top: ${props => get(props, 'theme.space[1]', '')}px;
+    right: ${props => get(props, 'theme.space[1]', '')}px;
+  }
 `;
 
 export const HeaderImage = styled.img`
@@ -125,11 +130,6 @@ export const Description = styled.p`
 
 export const ImageWrapper = styled.div`
   position: relative;
-
-  ${BoxSponsor} {
-    top: ${props => get(props, 'theme.space[2]', '')}px;
-    right: ${props => get(props, 'theme.space[2]', '')}px;
-  }
 
   ${Link} {
     outline: 0;
