@@ -44,14 +44,14 @@ const FourItemCarousel = ({
         ? (
           <SliderSlick settings={settings}>
             {sliderContent.map(slide => (
-              <ContentCard {...slide} />
+              <ContentCard card={slide} />
             ))}
           </SliderSlick>
         )
         : (
           <Grid flexDirection={['column', 'column', 'row', 'row']}>
             {sliderContent.map(slide => (
-              <ContentCard {...slide} />
+              <ContentCard card={slide} />
             ))}
           </Grid>
         )

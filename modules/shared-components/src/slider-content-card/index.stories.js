@@ -4,52 +4,130 @@ import { storiesOf } from '@storybook/react';
 import SliderContentCard from '.';
 
 const data = {
-  name: 'Discovery',
-  circular_logo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
+  name: 'Milo',
+  background_color: '#24A136',
+  font_color: '#DEFDEF',
+  background_image: {
+    image_file: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/logos/logo_discovery_header.png',
+    image_url: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/styles/recomendados/public/logos/logo_discovery_header.png?itok=snofP29a',
+    image_1_1: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/styles/recomendados_mobile/public/logos/logo_discovery_header.png?itok=CcBOPVoH',
+    image_alt: 'Discovery',
+    image_title: 'Discovery',
+  },
+  logo: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/styles/logos_footer/public/sponsors/logo/civilization_white_0.png?itok=5qsiBQjm',
+  circular_logo: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/styles/logos_footer/public/sponsors/logo/Group%402x.png?itok=GbFcoHFD',
+  logo_svg: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/sponsors/logo/Bitmap%20Copy.svg',
+  secondary_logo_svg: 'https://dev-discoverylatam.pantheonsite.io/sites/default/files/sponsors/logo/Rectangle.svg',
   url: 'https://tudiscovery.com/',
 };
 
 const items = [
   {
-    key: 1,
-    background: 'image',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    description: 'Description',
-    sponsor: data,
-    variation: 'short',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
   }, {
-    key: 2,
-    backtheme: 'ligh',
-    title: 'Headline 2',
-    description: 'Description',
-    sponsor: data,
-    variation: 'short',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-    label: 'label',
-    duration: '30:30',
-    totalTime: '10:10',
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
   }, {
-    key: 3,
-    background: 'image',
-    title: 'Headline 3',
-    description: 'Description',
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
     sponsor: data,
-    variation: 'short',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  }];
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
+  },
+];
 
 const oneItem = [
   {
-    key: 1,
-    background: 'image',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    description: 'Description',
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
     sponsor: data,
-    variation: 'short',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
   },
 ];
 

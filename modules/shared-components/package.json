@@ -67,7 +67,9 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ],
-    "plugins": ["babel-plugin-styled-components"],
+    "plugins": [
+      "babel-plugin-styled-components"
+    ],
     "env": {
       "test": {
         "plugins": [
@@ -83,10 +85,12 @@
     "@use-hook/use-cookie": "^0.1.3",
     "lodash": "^4.17.11",
     "react": "^16.8.4",
-    "react-test-renderer": "^16.8.4",
-    "styled-components": "^4.1.3",
+    "react-dfp": "^0.11.0",
+    "react-lazyload": "^2.5.0",
     "react-slick": "^0.23.2",
-    "slick-carousel": "^1.8.1"
+    "react-test-renderer": "^16.8.4",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.0",
