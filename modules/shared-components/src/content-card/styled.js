@@ -12,6 +12,11 @@ const imgStyle = {
 export const Root = styled(Box)`
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
   position: relative;
+
+  ${BoxSponsor} {
+    top: ${props => get(props, 'theme.space[1]', '')}px;
+    right: ${props => get(props, 'theme.space[1]', '')}px;
+  }
 `;
 
 export const HeaderImage = styled.img`
@@ -43,7 +48,7 @@ export const PlayIcon = styled(Box)`
 `;
 
 export const GalleryIcon = styled(Box)`
-  background: url(${props => get(props, 'theme.icons.gallerycardfilled', '')});
+  background: url(${props => get(props, 'theme.icons.gallerfilled', '')});
   background-repeat: no-repeat;
   background-size: 100%;
   height: 32px;
@@ -87,10 +92,10 @@ export const TotalDuration = styled(Box)`
 
 export const ContentWrapper = styled(Flex)`
   bottom: ${props => get(props, 'theme.space[0]', '')}px;
-  border-bottom: ${props => (props.isFullySponsored === true ? `3px solid${get(props, 'theme.colors.dPrimary')}` : '0')};
+  border-bottom: ${props => (props.sponsor ? `3px solid${get(props, 'theme.colors.dPrimary')}` : '0')};
   flex-direction: column;
-  padding: ${props => (props.isFullySponsored === true ? '0 16px' : '16px 0')};
-  position: ${props => (props.isFullySponsored === true ? 'absolute' : 'inherit')}
+  padding: ${props => (props.sponsor ? '0 16px' : '16px 0')};
+  position: ${props => (props.sponsor ? 'absolute' : 'inherit')}
   left: ${props => get(props, 'theme.space[0]', '')}px;
   right: ${props => get(props, 'theme.space[0]', '')}px;
   & a {
@@ -116,7 +121,7 @@ export const Description = styled.p`
   color: ${props => (props.backtheme === 'dark'
     ? get(props, 'theme.colors.black', '')
     : get(props, 'theme.colors.white', ''))};
-  display: ${props => (props.isFullySponsored === true ? 'none' : 'block')};
+  display: ${props => (props.sponsor ? 'none' : 'block')};
   font-size: ${props => get(props, 'theme.fontSizes[2]', '')}px;
   line-height: 24px;
   margin: ${props => get(props, 'theme.space[0]', '')}px;
@@ -125,11 +130,6 @@ export const Description = styled.p`
 
 export const ImageWrapper = styled.div`
   position: relative;
-
-  ${BoxSponsor} {
-    top: ${props => get(props, 'theme.space[2]', '')}px;
-    right: ${props => get(props, 'theme.space[2]', '')}px;
-  }
 
   ${Link} {
     outline: 0;

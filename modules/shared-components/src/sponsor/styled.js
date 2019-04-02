@@ -7,6 +7,7 @@ export const WrapperSponsor = styled(Flex)`
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
 `;
 
 export const Line = styled.span`
@@ -24,4 +25,5 @@ export const BoxSponsor = styled(Flex)`
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 1;
 `;

@@ -5,146 +5,401 @@ import Carousel from '.';
 
 const items = [
   {
-    background: 'image',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
+    title: 'Comida por machete',
+    type: 'image',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    description: 'Dani se siente hambrienta y apartada de su nuevo grupo, así que decide explorar los alrededores, encontrando nuevos amigos con los que podrá negociar comida por el uso de su machete.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2018-12/Comida%20por%20machete.jpeg?itok=sNzT-afs',
+      image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2018-12/Comida%20por%20machete.jpeg?itok=CJtDQgD-',
+      image_alt: 'Comida por machete',
+    },
+    url: '/discovery/supervivencia-al-desnudo-edicion-extrema/video/comida-por-machete',
+    categories: [{
+      name: 'aventura',
+      url: '/temas/aventura',
+    }, {
+      name: 'supervivencia',
+      url: '/temas/supervivencia',
+    }],
+    channel: {
+      name: 'Discovery',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
+      url: '/discovery',
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/discovery.svg',
+    },
   }, {
-    backtheme: 'ligh',
-    background: 'video',
-    title: 'Headline 2',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-    label: 'label',
-    duration: '30:30',
-    totalTime: '10:10',
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
   }, {
-    background: 'image',
-    title: 'Headline 3',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'gallery',
-    title: 'Headline 4',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'image',
-    title: 'Headline 5',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'image',
-    title: 'Headline 6',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'image',
-    title: 'Headline 7',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'image',
-    title: 'Headline 8',
-    href: 'http://www.tudiscovery.com',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
+    title: 'Comida por machete',
+    type: 'image',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    description: 'Dani se siente hambrienta y apartada de su nuevo grupo, así que decide explorar los alrededores, encontrando nuevos amigos con los que podrá negociar comida por el uso de su machete.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2018-12/Comida%20por%20machete.jpeg?itok=sNzT-afs',
+      image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2018-12/Comida%20por%20machete.jpeg?itok=CJtDQgD-',
+      image_alt: 'Comida por machete',
+    },
+    url: '/discovery/supervivencia-al-desnudo-edicion-extrema/video/comida-por-machete',
+    categories: [{
+      name: 'aventura',
+      url: '/temas/aventura',
+    }, {
+      name: 'supervivencia',
+      url: '/temas/supervivencia',
+    }],
+    channel: {
+      name: 'Discovery',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
+      url: '/discovery',
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/discovery.svg',
+    },
+  }, {
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
+  }, {
+    title: 'Comida por machete',
+    type: 'image',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    description: 'Dani se siente hambrienta y apartada de su nuevo grupo, así que decide explorar los alrededores, encontrando nuevos amigos con los que podrá negociar comida por el uso de su machete.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2018-12/Comida%20por%20machete.jpeg?itok=sNzT-afs',
+      image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2018-12/Comida%20por%20machete.jpeg?itok=CJtDQgD-',
+      image_alt: 'Comida por machete',
+    },
+    url: '/discovery/supervivencia-al-desnudo-edicion-extrema/video/comida-por-machete',
+    categories: [{
+      name: 'aventura',
+      url: '/temas/aventura',
+    }, {
+      name: 'supervivencia',
+      url: '/temas/supervivencia',
+    }],
+    channel: {
+      name: 'Discovery',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
+      url: '/discovery',
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/discovery.svg',
+    },
+  }, {
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
+  }, {
+    title: 'Comida por machete',
+    type: 'image',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    description: 'Dani se siente hambrienta y apartada de su nuevo grupo, así que decide explorar los alrededores, encontrando nuevos amigos con los que podrá negociar comida por el uso de su machete.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2018-12/Comida%20por%20machete.jpeg?itok=sNzT-afs',
+      image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2018-12/Comida%20por%20machete.jpeg?itok=CJtDQgD-',
+      image_alt: 'Comida por machete',
+    },
+    url: '/discovery/supervivencia-al-desnudo-edicion-extrema/video/comida-por-machete',
+    categories: [{
+      name: 'aventura',
+      url: '/temas/aventura',
+    }, {
+      name: 'supervivencia',
+      url: '/temas/supervivencia',
+    }],
+    channel: {
+      name: 'Discovery',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
+      url: '/discovery',
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/discovery.svg',
+    },
+  }, {
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
   }];
-
-const threeItems = [
-  {
-    background: 'image',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    description: 'Description',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    label: 'label',
-    duration: '30:30',
-    totalTime: '10:10',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'video',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    label: 'label',
-    duration: '30:30',
-    totalTime: '10:10',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'gallery',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-];
 
 const fourItems = [
   {
-    background: 'video',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    label: 'label',
-    duration: '30:30',
-    totalTime: '10:10',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
+    title: 'Comida por machete',
+    type: 'image',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    description: 'Dani se siente hambrienta y apartada de su nuevo grupo, así que decide explorar los alrededores, encontrando nuevos amigos con los que podrá negociar comida por el uso de su machete.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2018-12/Comida%20por%20machete.jpeg?itok=sNzT-afs',
+      image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2018-12/Comida%20por%20machete.jpeg?itok=CJtDQgD-',
+      image_alt: 'Comida por machete',
+    },
+    url: '/discovery/supervivencia-al-desnudo-edicion-extrema/video/comida-por-machete',
+    categories: [{
+      name: 'aventura',
+      url: '/temas/aventura',
+    }, {
+      name: 'supervivencia',
+      url: '/temas/supervivencia',
+    }],
+    channel: {
+      name: 'Discovery',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
+      url: '/discovery',
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/discovery.svg',
+    },
+  }, {
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
+  }, {
+    title: 'Comida por machete',
+    type: 'image',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    description: 'Dani se siente hambrienta y apartada de su nuevo grupo, así que decide explorar los alrededores, encontrando nuevos amigos con los que podrá negociar comida por el uso de su machete.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2018-12/Comida%20por%20machete.jpeg?itok=sNzT-afs',
+      image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2018-12/Comida%20por%20machete.jpeg?itok=CJtDQgD-',
+      image_alt: 'Comida por machete',
+    },
+    url: '/discovery/supervivencia-al-desnudo-edicion-extrema/video/comida-por-machete',
+    categories: [{
+      name: 'aventura',
+      url: '/temas/aventura',
+    }, {
+      name: 'supervivencia',
+      url: '/temas/supervivencia',
+    }],
+    channel: {
+      name: 'Discovery',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
+      url: '/discovery',
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/discovery.svg',
+    },
+  }, {
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
   },
+];
+
+const threeItems = [
   {
-    background: 'video',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    label: 'label',
-    duration: '30:30',
-    totalTime: '10:10',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'video',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    channelLogo: 'https://cdn.admin-discoverybrasil.com/sites/default/files/logos/discovery.svg',
-    channelAlt: 'Discovery Channel',
-    label: 'label',
-    duration: '30:30',
-    totalTime: '10:10',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
-  },
-  {
-    background: 'gallery',
-    backtheme: 'dark',
-    title: 'Headline 1',
-    headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
+    title: 'Comida por machete',
+    type: 'image',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    description: 'Dani se siente hambrienta y apartada de su nuevo grupo, así que decide explorar los alrededores, encontrando nuevos amigos con los que podrá negociar comida por el uso de su machete.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2018-12/Comida%20por%20machete.jpeg?itok=sNzT-afs',
+      image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2018-12/Comida%20por%20machete.jpeg?itok=CJtDQgD-',
+      image_alt: 'Comida por machete',
+    },
+    url: '/discovery/supervivencia-al-desnudo-edicion-extrema/video/comida-por-machete',
+    categories: [{
+      name: 'aventura',
+      url: '/temas/aventura',
+    }, {
+      name: 'supervivencia',
+      url: '/temas/supervivencia',
+    }],
+    channel: {
+      name: 'Discovery',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/Discovery-Logo-white.png',
+      url: '/discovery',
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/discovery.svg',
+    },
+  }, {
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
+  }, {
+    title: 'Creando un parque temático para niños',
+    region: ['Latam'],
+    fecha: '1543597509',
+    duration: {
+      minutes: '1',
+      seconds: '55',
+    },
+    type: 'video',
+    description: 'Tyson y su equipo reciben un encargo de la compañía International Princess World, un parque temático para niños que será presentado en China.',
+    preview_image: {
+      image_1_1: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/slider_mobile/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=NphyXaO9', image_url: 'https://cdn.admin-tudiscovery.com/sites/default/files/styles/destacados/public/2EC4E30229B343DFA43DE87F56F1838D.jpg?itok=WCZhnBNj', image_file: '2EC4E30229B343DFA43DE87F56F1838D.jpg', image_alt: 'Creando un parque temático para niños',
+    },
+    url: '/discoveryhh/casitas-para-jugar/video/creando-un-parque-tematico-para-ninos',
+    categories: [{ name: 'hogar', url: '/temas/hogar' }, { name: 'jardim', url: '/temas/jardin' }],
+    channel: {
+      name: 'DiscoveryHH',
+      logo: 'https://cdn.admin-tudiscovery.com/sites/default/files/2018-12/HH-Logo-white.png',
+      url: '/discoveryhh',
+      codigos: {
+        Latam: 'DHLA-SP', Brasil: 'DHBR-PRT', Mexico: 'DHME-SP', Argentina: 'DHAR-SP', Venezuela: 'DHTV-SP',
+      },
+      codes: [{ Latam: 'DSLA-SP' }, { Brasil: 'DCBR-PRT' }, { Mexico: 'DCME-SP' }, { Argentina: 'DCAR-SP' }, { Venezuela: 'DCVE-SP' }, { Latam: 'TULA-SP' }, { Brasil: 'THDB-PRT' }, { Latam: 'APLA-SP' }, { Brasil: 'APBR-PRT' }, { Argentina: 'APAR-SP' }, { Latam: 'DHLA-SP' }, { Brasil: 'DHBR-PRT' }, { Mexico: 'DHME-SP' }, { Argentina: 'DHAR-SP' }, { Venezuela: 'DHTV-SP' }],
+      logo_svg: 'https://cdn.admin-tudiscovery.com/sites/default/files/logos/hh.svg',
+    },
   },
 ];
 
