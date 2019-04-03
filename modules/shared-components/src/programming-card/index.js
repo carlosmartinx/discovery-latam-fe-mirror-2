@@ -1,8 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Card, Headline, DateShow, InfoShow, TimeDay, Time, Day, Episode, Description } from "./styled";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  Card, Headline, DateShow, InfoShow, TimeDay, Time, Day, Episode, Description,
+} from './styled';
 
-const ProgrammingCard = ({ title, episode, description, time, date }) => (
+const ProgrammingCard = ({
+  title, episode, description, time, date,
+}) => (
   <Card>
     <DateShow>
       <TimeDay>
@@ -23,7 +27,7 @@ ProgrammingCard.propTypes = {
   episode: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired
+  date: PropTypes.string.isRequired,
 };
 
 export default ProgrammingCard;

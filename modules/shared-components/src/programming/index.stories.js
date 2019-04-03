@@ -7,76 +7,91 @@ const countries = [
   {
     name: 'Latam',
     code: 'DSLA-SP',
-    active: true
+    active: true,
   },
   {
     name: 'Mexico',
-    code: 'DCME-SP'
+    code: 'DCME-SP',
+    active: false,
   },
   {
     name: 'Argentina',
-    code: 'DCAR-SP'
-  }
+    code: 'DCAR-SP',
+    active: false,
+  },
 ];
 
 const days = [
   {
-    day: 'Lunes',
+    text: 'Lunes',
     date: '18/3',
-    active: true
+    active: true,
   },
   {
-    day: 'Martes',
-    date: '19/3'
+    text: 'Martes',
+    date: '19/3',
+    active: false,
   },
   {
-    day: 'Miercoles',
-    date: '20/3'
+    text: 'Miercoles',
+    date: '20/3',
+    active: false,
   },
   {
-    day: 'Jueves',
-    date: '21/3'
+    text: 'Jueves',
+    date: '21/3',
+    active: false,
   },
   {
-    day: 'Viernes',
-    date: '22/3'
+    text: 'Viernes',
+    date: '22/3',
+    active: false,
   },
   {
-    day: 'Sabado',
-    date: '23/3'
+    text: 'Sabado',
+    date: '23/3',
+    active: false,
   },
   {
-    day: 'Domingo',
-    date: '24/3'
+    text: 'Domingo',
+    date: '24/3',
+    active: false,
   },
   {
-    day: 'Lunes',
-    date: '25/3'
+    text: 'Lunes',
+    date: '25/3',
+    active: false,
   },
   {
-    day: 'Martes',
-    date: '26/3'
+    text: 'Martes',
+    date: '26/3',
+    active: false,
   },
   {
-    day: 'Miercoles',
-    date: '27/3'
+    text: 'Miercoles',
+    date: '27/3',
+    active: false,
   },
   {
-    day: 'Jueves',
-    date: '28/3'
+    text: 'Jueves',
+    date: '28/3',
+    active: false,
   },
   {
-    day: 'Jueves',
-    date: '29/3'
+    text: 'Jueves',
+    date: '29/3',
+    active: false,
   },
   {
-    day: 'Viernes',
-    date: '30/3'
+    text: 'Viernes',
+    date: '30/3',
+    active: false,
   },
   {
-    day: 'Sabado',
-    date: '31/3'
-  }
+    text: 'Sabado',
+    date: '31/3',
+    active: false,
+  },
 ];
 
 const shows = [
@@ -86,7 +101,7 @@ const shows = [
     episode: 'Nombre del episodio',
     description: 'asdasd ad a d as das',
     time: '1:00',
-    date: '23'
+    date: '23',
   },
   {
     id: 2,
@@ -94,7 +109,7 @@ const shows = [
     episode: 'Nombre del episodio 2',
     description: 'asdasd asdasd asdasd',
     time: '2:00',
-    date: '23'
+    date: '23',
   },
   {
     id: 3,
@@ -102,7 +117,7 @@ const shows = [
     episode: 'Nombre del episodio 3',
     description: 'asdasd asdasd',
     time: '3:00',
-    date: '23'
+    date: '23',
   },
   {
     id: 4,
@@ -110,15 +125,15 @@ const shows = [
     episode: 'Nombre del episodio 4',
     description: 'asdasd asdasd',
     time: '4:00',
-    date: '23'
-  }
+    date: '23',
+  },
 ];
 
 storiesOf('Programming', module)
-  .add('Programming', () =>
-    <Programming countries={countries} days={days} shows={shows} />, {
-      backgrounds: [{
-        name: 'black', value: 'rgba(0,14,38)', default: true
-      }]
-    }
-  );
+  .add('Programming', () => (
+    <Programming countries={countries} days={days} shows={shows} />
+  ), {
+    backgrounds: [{
+      name: 'black', value: 'rgba(0,14,38)', default: true,
+    }],
+  });

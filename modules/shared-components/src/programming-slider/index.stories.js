@@ -5,52 +5,62 @@ import ProgrammingSlider from '.';
 
 const days = [
   {
-      day: 'Lunes',
-      date: '18/3'
+    text: 'Lunes',
+    date: '18/3',
+    active: true,
   },
   {
-      day: 'Martes',
-      date: '19/3'
+    text: 'Martes',
+    date: '19/3',
+    active: false,
   },
   {
-      day: 'Miercoles',
-      date: '20/3'
+    text: 'Miercoles',
+    date: '20/3',
+    active: false,
   },
   {
-      day: 'Jueves',
-      date: '21/3'
+    text: 'Jueves',
+    date: '21/3',
+    active: false,
   },
   {
-      day: 'Viernes',
-      date: '22/3'
+    text: 'Viernes',
+    date: '22/3',
+    active: false,
   },
   {
-      day: 'Sabado',
-      date: '23/3'
+    text: 'Sabado',
+    date: '23/3',
+    active: false,
   },
   {
-      day: 'Domingo',
-      date: '24/3'
+    text: 'Domingo',
+    date: '24/3',
+    active: false,
   },
   {
-      day: 'Lunes',
-      date: '25/3'
+    text: 'Lunes',
+    date: '25/3',
+    active: false,
   },
   {
-      day: 'Martes',
-      date: '25/3'
+    text: 'Martes',
+    date: '25/3',
+    active: false,
   },
   {
-      day: 'Miercoles',
-      date: '26/3'
-  }
+    text: 'Miercoles',
+    date: '26/3',
+    active: false,
+  },
 ];
 
 storiesOf('ProgrammingSlider', module)
-  .add('Programming Slider', () =>
-    <ProgrammingSlider days={days} />, {
-      backgrounds: [{
-        name: 'black', value: 'rgba(0,14,38)', default: true
-      }]
-    }
-  );
+  .add('Programming Slider', () => (
+    <ProgrammingSlider days={days} />
+  ), {
+    backgrounds: [{
+      name: 'black', value: 'rgba(0,14,38)', default: true,
+    }],
+  });

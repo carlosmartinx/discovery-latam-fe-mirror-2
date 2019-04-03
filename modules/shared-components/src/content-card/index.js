@@ -53,16 +53,16 @@ const ContentCard = ({
               <LabelContainer>
                 <DurationLabel p={1}>{card.season}</DurationLabel>
                 <DurationNumber p={1}>
-                  {card.duration.minutes}
-                  :
-                  {card.duration.seconds}
+                  { card.duration.minutes }
+                  { ':' }
+                  { card.duration.seconds }
                 </DurationNumber>
               </LabelContainer>
             )
             : (
               <TotalDuration p={1}>
                 {card.duration.minutes}
-                :
+                { ':' }
                 {card.duration.seconds}
               </TotalDuration>
             )

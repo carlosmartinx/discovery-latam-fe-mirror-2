@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { Countries, Country } from "./styled";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Countries, Country } from './styled';
 
 const ProgrammingCountries = ({ countries }) => {
   const [items, setItems] = useState([]);
@@ -9,16 +9,17 @@ const ProgrammingCountries = ({ countries }) => {
     setItems(countries);
   }, []);
 
-  const onClickTab = country => {
-    let itemsNew = [];
-    items.map((itemCountry) => {
-      if (itemCountry.code == country.code) {
-        itemCountry.active = true;
+  const onClickTab = (country) => {
+    const itemsNew = [];
+    items.forEach((itemCountry) => {
+      const item = itemCountry;
+      if (itemCountry.code === country.code) {
+        item.active = true;
       } else {
-        itemCountry.active = false;
+        item.active = false;
       }
 
-      itemsNew.push(itemCountry);
+      itemsNew.push(item);
     });
 
     setItems(itemsNew);
@@ -26,10 +27,10 @@ const ProgrammingCountries = ({ countries }) => {
 
   return (
     <Countries>
-      {countries.map((country) => (
+      {countries.map((country, index) => (
         <Country
-          key={country.code}
-          className={country.active?'active':''}
+          key={country.code || index}
+          className={country.active ? 'active' : ''}
           onClick={() => onClickTab(country)}
         >
           {country.name}
@@ -40,7 +41,11 @@ const ProgrammingCountries = ({ countries }) => {
 };
 
 ProgrammingCountries.propTypes = {
-  countries: PropTypes.array.isRequired
+  countries: PropTypes.arrayOf(PropTypes.shape({
+    code: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    active: PropTypes.bool,
+  })).isRequired,
 };
 
 export default ProgrammingCountries;

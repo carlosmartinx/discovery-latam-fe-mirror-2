@@ -32,12 +32,9 @@ const MiniCard = ({
             {series === true
               ? (
                 <Flex flexDirection="column">
-                  <OptionLink py={1} m={1} href={`${shortname}/tv/programacion`}>
-                    Programación
-                  </OptionLink>
-                  <OptionLink py={1} m={1} onClick={() => itemClicked(shortname)}>
-                    Series
-                  </OptionLink>
+                  <OptionLink py={1} m={1} href={`${shortname}/tv/programacion`}>Programación</OptionLink>
+                  {/* eslint-disable-next-line max-len */}
+                  <OptionLink py={1} m={1} onClick={() => itemClicked(shortname)}>Series</OptionLink>
                 </Flex>
               ) : (
                 <OptionLink py={1} m={1} href={`${shortname}/tv/programacion`}>Programación</OptionLink>

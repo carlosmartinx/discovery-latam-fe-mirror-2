@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { BoxSlider, Tab } from "./styled";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { BoxSlider, Tab } from './styled';
 
 import ProgrammingSliderItem from '../programming-slider-item';
 import SliderSlick from '../slider-slick';
-// import SliderSlick from '@discovery-web-app/shared-components';
 
 const ProgrammingSlider = ({ days }) => {
   const [items, setItems] = useState([]);
@@ -13,22 +12,23 @@ const ProgrammingSlider = ({ days }) => {
     setItems(days);
   }, []);
 
-  const onClickTab = day => {
-    let itemsNew = [];
-    items.map((itemDay) => {
-      if (itemDay.date == day.date) {
-        itemDay.active = true;
+  const onClickTab = (day) => {
+    const itemsNew = [];
+    items.forEach((itemDay) => {
+      const item = itemDay;
+      if (itemDay.date === day.date) {
+        item.active = true;
       } else {
-        itemDay.active = false;
+        item.active = false;
       }
 
-      itemsNew.push(itemDay);
+      itemsNew.push(item);
     });
 
     setItems(itemsNew);
   };
 
-  let settings = {
+  const settings = {
     dots: false,
     infinite: false,
     speed: 500,
@@ -42,42 +42,46 @@ const ProgrammingSlider = ({ days }) => {
       {
         breakpoint: 1024,
         settings: {
-            slidesToShow: 7,
-            slidesToScroll: 1
-        }
+          slidesToShow: 7,
+          slidesToScroll: 1,
+        },
       },
       {
         breakpoint: 768,
         settings: {
-            slidesToShow: 6,
-            slidesToScroll: 1
-        }
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        },
       },
       {
         breakpoint: 414,
         settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
     <BoxSlider>
       <SliderSlick settings={settings}>
-        {items.map((day) => (
-          <Tab key={day.day} onClick={() => onClickTab(day)}>
-            <ProgrammingSliderItem active={day.active?true:false} day={day.day} date={day.date} />
+        {items.map((day => (
+          <Tab key={day.text} onClick={() => onClickTab(day)}>
+            <ProgrammingSliderItem active={day.active} day={day.text} date={day.date} />
           </Tab>
-        ))}
+        )))}
       </SliderSlick>
     </BoxSlider>
   );
 };
 
 ProgrammingSlider.propTypes = {
-  days: PropTypes.array.isRequired
+  days: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    active: PropTypes.bool,
+  })).isRequired,
 };
 
 export default ProgrammingSlider;

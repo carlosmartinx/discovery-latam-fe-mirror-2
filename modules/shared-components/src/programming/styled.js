@@ -1,12 +1,11 @@
-import { Box } from "rebass";
-import styled from "styled-components";
+import { Box } from 'rebass';
+import styled from 'styled-components';
 import get from 'lodash/get';
 
 export const Countries = styled(Box)`
-  background-color: ${props => get(props, 'theme.colors.blueLigth', '')};
+  background-color: ${props => get(props, 'theme.colors.dSecondary', '')};
   text-align: right;
-`
-
+`;
 export const Country = styled(Box)`
   border-left: 1px solid ${props => get(props, 'theme.colors.w3', '')};
   padding: 6px 16px;
@@ -21,4 +20,4 @@ export const Country = styled(Box)`
   &.active {
     color: ${props => get(props, 'theme.colors.white', '')};
   }
-`
+`;
