@@ -1,5 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import get from 'lodash/get';
+import Facebook from '@discovery-web-app/shared-components/icons/facebook.svg';
+import Twitter from '@discovery-web-app/shared-components/icons/twitter.svg';
+import Email from '@discovery-web-app/shared-components/icons/email.svg';
+import Whatsapp from '@discovery-web-app/shared-components/icons/whatsapp.svg';
+
 import Article from '.';
 
 const ArticleData = {
@@ -343,7 +349,72 @@ const ArticleData = {
   id: '4650',
 };
 
+const shareData = {
+  shareDesktop: [
+    {
+      id: 1,
+      icon: Facebook,
+      color: 'blue',
+      url: '',
+      background: props => get(props, 'theme.colors.facebook', ''),
+      title: 'Comparte',
+    },
+    {
+      id: 2,
+      icon: Twitter,
+      color: 'bluetw',
+      url: '',
+      background: props => get(props, 'theme.colors.twitter', ''),
+      title: '',
+    },
+    {
+      id: 4,
+      icon: Email,
+      color: 'red',
+      url: '',
+      background: props => get(props, 'theme.colors.mail', ''),
+      title: '',
+    },
+  ],
+  shareMobile: [
+    {
+      id: 1,
+      icon: Facebook,
+      color: 'white',
+      url: '',
+      background: props => get(props, 'theme.colors.facebook', ''),
+      title: '',
+    },
+    {
+      id: 2,
+      icon: Twitter,
+      color: 'white',
+      url: '',
+      background: props => get(props, 'theme.colors.twitter', ''),
+      title: '',
+    },
+    {
+      id: 3,
+      icon: Whatsapp,
+      color: 'white',
+      url: '',
+      background: props => get(props, 'theme.colors.whatsApp', ''),
+      title: '',
+    },
+    {
+      id: 4,
+      icon: Email,
+      color: 'white',
+      url: '',
+      background: props => get(props, 'theme.colors.mail', ''),
+      title: '',
+    },
+  ],
+};
+
 storiesOf('Article', module)
-  .add('Article main layout', () => (
-    <Article data={ArticleData} />
-  ));
+  .add('Article main layout', () => <Article data={ArticleData} shareData={shareData} />, {
+    backgrounds: [{
+      name: 'Dark', value: 'rgba(0,14,38)', default: true,
+    }],
+  });

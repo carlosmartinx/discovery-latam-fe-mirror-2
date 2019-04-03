@@ -17,12 +17,17 @@ export const Root = styled(Box)`
     font-weight: bold;
     line-height: 32px;
     margin: 20px auto;
-    max-width: 70%;
+    width: calc((100% * 5) / 6);
     word-break: break-all;
 
     @media (min-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
       font-size: ${props => get(props, 'theme.fontSizes.5', '')}px;
       line-height: 36px;
+      width: calc((100% * 4) / 6);
+    }
+
+    @media (min-width: ${props => get(props, 'theme.breakpoints.3', '')}) {
+      width: calc((100% * 8) / 12)%;
     }
   }
 

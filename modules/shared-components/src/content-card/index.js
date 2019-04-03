@@ -50,6 +50,7 @@ const ContentCard = ({
           <PlayIcon m="auto" />
           {card.season
             ? (
+              card.duration && (
               <LabelContainer>
                 <DurationLabel p={1}>{card.season}</DurationLabel>
                 <DurationNumber p={1}>
@@ -58,13 +59,16 @@ const ContentCard = ({
                   {card.duration.seconds}
                 </DurationNumber>
               </LabelContainer>
+              )
             )
             : (
-              <TotalDuration p={1}>
-                {card.duration.minutes}
-                :
-                {card.duration.seconds}
-              </TotalDuration>
+              card.duration && (
+                <TotalDuration p={1}>
+                  {card.duration.minutes}
+                  :
+                  {card.duration.seconds}
+                </TotalDuration>
+              )
             )
           }
         </Header>

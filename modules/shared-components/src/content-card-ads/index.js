@@ -14,14 +14,11 @@ export const ContentCardBigAds = ({ dataSliderContent, adsData }) => (
     </ItemsBox>
 
     <ItemsBox width={[1, 1, 4 / 12]}>
-      {adsData.map(ad => (
-        <Ads
-          bgColor={ad.bgColor}
-          adTitle={ad.adTitle}
-          adSlotConfig={ad.adSlotConfig}
-          key={ad.adTitle}
-        />
-      ))}
+      {<Ads
+        bgColor={adsData.bgColor}
+        adTitle={adsData.adTitle}
+        adSlotConfig={adsData.adSlotConfig}
+      />}
     </ItemsBox>
   </Root>
 );
@@ -47,7 +44,7 @@ ContentCardBigAds.propTypes = {
     link: PropTypes.string,
     variation: PropTypes.string,
   })).isRequired,
-  adsData: PropTypes.arrayOf(PropTypes.shape({
+  adsData: PropTypes.objectOf(PropTypes.shape({
     adTitle: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
     bgColor: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     adSlotConfig: PropTypes.arrayOf(PropTypes.shape({
