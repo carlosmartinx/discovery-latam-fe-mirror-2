@@ -49,7 +49,7 @@ export const ShareModule = styled(Box)`
 export const ModuleBox = styled(Box)`
   ${ModuleBoxMain};
   
-  @media (min-width: ${props => get(props, 'theme.breakpoints.0', '')}) {
+  @media (min-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
     padding: 0;
   }
 `;
@@ -63,7 +63,7 @@ export const DescCard = styled(Box)`
   display: block;
   ${ModuleBoxMain};
   
-  @media (min-width: ${props => get(props, 'theme.breakpoints.0', '')}) {
+  @media (min-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
     padding: 0;
   }
   
