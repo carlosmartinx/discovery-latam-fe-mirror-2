@@ -11,6 +11,11 @@ const appReducer = (state = initialState, { type, payload }) => {
         ...state,
         lang: payload.lang,
       };
+    case TYPES.APP.HOME:
+      return {
+        ...state,
+        home: payload.home,
+      };
     default:
       return state;
   }

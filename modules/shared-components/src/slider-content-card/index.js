@@ -27,6 +27,7 @@ const SliderContentCard = ({ sliderContent }) => {
         {sliderContent.map(slide => (
           <ContentCard
             card={slide}
+            key={slide.key}
           />
         ))}
       </SliderSlick>
@@ -38,9 +39,11 @@ SliderContentCard.propTypes = {
   sliderContent: PropTypes.arrayOf(PropTypes.shape({
     backtheme: PropTypes.string,
     background: PropTypes.string,
-    headerSource: PropTypes.string.isRequired,
     label: PropTypes.string,
-    duration: PropTypes.string,
+    duration: PropTypes.shape({
+      minutes: PropTypes.string,
+      seconds: PropTypes.string,
+    }),
     totalTime: PropTypes.string,
     isFullySponsored: PropTypes.bool,
     title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),

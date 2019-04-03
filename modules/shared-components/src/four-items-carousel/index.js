@@ -44,7 +44,7 @@ const FourItemCarousel = ({
         ? (
           <SliderSlick settings={settings}>
             {sliderContent.map(slide => (
-              <ContentCard card={slide} />
+              <ContentCard card={slide} key={slide.key} />
             ))}
           </SliderSlick>
         )
@@ -60,8 +60,30 @@ const FourItemCarousel = ({
   );
 };
 
+
 FourItemCarousel.propTypes = {
-  sliderContent: PropTypes.element,
+  sliderContent: PropTypes.arrayOf(PropTypes.shape({
+    backtheme: PropTypes.string,
+    background: PropTypes.string,
+    label: PropTypes.string,
+    duration: PropTypes.shape({
+      minutes: PropTypes.string,
+      seconds: PropTypes.string,
+    }),
+    totalTime: PropTypes.string,
+    isFullySponsored: PropTypes.bool,
+    title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    sponsor: PropTypes.shape({
+      name: PropTypes.string,
+      circular_logo: PropTypes.string,
+      url: PropTypes.string,
+    }),
+    channelLogo: PropTypes.string,
+    channelAlt: PropTypes.string,
+    link: PropTypes.string,
+    variation: PropTypes.string,
+  })),
   numItemsDesktop: PropTypes.number,
   numItemsTablet: PropTypes.number,
   numItemsMobile: PropTypes.number,

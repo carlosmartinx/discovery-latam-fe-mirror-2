@@ -1,9 +1,5 @@
 [
   {
-    "id": "Home.Hello",
-    "defaultMessage": "Hello"
-  },
-  {
     "id": "Home.GoToTest",
     "defaultMessage": "Go to Test page!"
   }
