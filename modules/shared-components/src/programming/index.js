@@ -24,11 +24,7 @@ const Programming = ({ countries, days, shows }) => (
       {shows.map((show, index) => (
         <ProgrammingCard
           key={show.id || index}
-          title={show.title}
-          episode={show.episode}
-          description={show.description}
-          time={show.time}
-          date={show.date}
+          show={show}
         />
       ))}
     </Box>
@@ -53,6 +49,7 @@ Programming.propTypes = {
     description: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
+    idChannel: PropTypes.string.isRequired,
   })).isRequired,
 };
 

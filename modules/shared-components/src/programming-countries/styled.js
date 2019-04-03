@@ -6,8 +6,8 @@ export const Countries = styled(Box)`
   text-align: right;
 `;
 export const Country = styled(Box)`
-  border-left: 1px solid ${props => get(props, 'theme.colors.w3', '')};
-  padding: 6px 16px;
+  border-left:2px solid ${props => get(props, 'theme.colors.w3', '')};
+  padding: 2px ${props => get(props, 'theme.space[1]', '')}px;
   font-weight: 600;
   font-size: ${props => get(props, 'theme.fontSizes[2]', '16')}px;
   line-height: 24px;
@@ -18,5 +18,6 @@ export const Country = styled(Box)`
   color: ${props => get(props, 'theme.colors.w3', '')};
   &.active {
     color: ${props => get(props, 'theme.colors.white', '')};
+    border-left:2px solid ${props => get(props, 'theme.colors.dPrimary', '')};
   }
 `;

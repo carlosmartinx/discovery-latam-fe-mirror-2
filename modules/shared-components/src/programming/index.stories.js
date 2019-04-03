@@ -102,6 +102,7 @@ const shows = [
     description: 'asdasd ad a d as das',
     time: '1:00',
     date: '23',
+    idChannel: 'discovery',
   },
   {
     id: 2,
@@ -110,6 +111,7 @@ const shows = [
     description: 'asdasd asdasd asdasd',
     time: '2:00',
     date: '23',
+    idChannel: 'discovery',
   },
   {
     id: 3,
@@ -118,6 +120,7 @@ const shows = [
     description: 'asdasd asdasd',
     time: '3:00',
     date: '23',
+    idChannel: 'discovery',
   },
   {
     id: 4,
@@ -126,6 +129,7 @@ const shows = [
     description: 'asdasd asdasd',
     time: '4:00',
     date: '23',
+    idChannel: 'discovery',
   },
 ];
 

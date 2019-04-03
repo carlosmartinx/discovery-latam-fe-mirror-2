@@ -23,7 +23,30 @@ export const TimeDay = styled(Box)`
 `;
 export const Time = styled(Box)`
   display: inline;
-  color: ${props => get(props, 'theme.colors.orange', '')};
+  &.discovery {
+    color: ${props => get(props, 'theme.colors.discovery', '')};
+  }
+  &.tlc {
+    color: ${props => get(props, 'theme.colors.tlc', '')};
+  }
+  &.kids {
+    color: ${props => get(props, 'theme.colors.kids', '')};
+  }
+  &.animalPlanet {
+    color: ${props => get(props, 'theme.colors.animalPlanet', '')};
+  }
+  &.discoveryhh {
+    color: ${props => get(props, 'theme.colors.discoveryhh', '')};
+  }
+  &.turbo {
+    color: ${props => get(props, 'theme.colors.turbo', '')};
+  }
+  &.science {
+    color: ${props => get(props, 'theme.colors.science', '')};
+  }
+  &.id {
+    color: ${props => get(props, 'theme.colors.id', '')};
+  }
   font-size: ${props => get(props, 'theme.fontSizes[8]', '48')}px;
   font-weight: bold;
   line-height: 48px;
