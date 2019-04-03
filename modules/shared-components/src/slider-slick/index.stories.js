@@ -12,7 +12,7 @@ const settings = {
   slidesToScroll: 1,
   arrows: true,
   accessibility: false,
-  lazyLoad: 'ondemand'
+  lazyLoad: 'ondemand',
 };
 const settings4 = {
   dots: true,
@@ -23,53 +23,60 @@ const settings4 = {
   slidesToScroll: 4,
   arrows: true,
   accessibility: false,
-  lazyLoad: 'ondemand'
+  lazyLoad: 'ondemand',
 };
+
+// eslint-disable-next-line react/prop-types
+const Slide = ({ value }) => (
+  <div
+    key={value}
+    style={{
+      height: '300px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#ccc',
+      textAlign: 'center',
+      border: '1px solid #000',
+    }}
+  >
+    <h3>{value}</h3>
+  </div>
+);
+
 const items = [
-  (
-    <div>
-      <h3>1</h3>
-    </div>
-  ),
-  (
-    <div>
-      <h3>2</h3>
-    </div>
-  ),
-  (
-    <div>
-      <h3>3</h3>
-    </div>
-  ),
-  (
-    <div>
-      <h3>4</h3>
-    </div>
-  ),
-  (
-    <div>
-      <h3>5</h3>
-    </div>
-  ),
-  (
-    <div>
-      <h3>6</h3>
-    </div>
-  )
+  {
+    key: 1,
+    item: <Slide value={1} />,
+  },
+  {
+    key: 2,
+    item: <Slide value={2} />,
+  },
+  {
+    key: 3,
+    item: <Slide value={3} />,
+  },
+  {
+    key: 4,
+    item: <Slide value={4} />,
+  },
+  {
+    key: 5,
+    item: <Slide value={5} />,
+  },
 ];
 
 storiesOf('SliderSlick', module)
-  .add('Slider Slick', () => 
+  .add('Slider Slick', () => (
     <SliderSlick settings={settings}>
-      {items.map((item, index) => (
-        <div key={index}>{item}</div> 
-      ))}
+      <Slide value={1} />
     </SliderSlick>
-  )
-  .add('Slider Slick 4 Items', () => 
+  ))
+  .add('Slider Slick 4 Items', () => (
     <SliderSlick settings={settings4}>
-      {items.map((item, index) => (
-        <div key={index}>{item}</div> 
+      {items.map(value => (
+        value.item
       ))}
     </SliderSlick>
-  );
+  ));

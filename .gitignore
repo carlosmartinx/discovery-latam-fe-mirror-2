@@ -25,3 +25,4 @@
 #VSC
 **/.vscode/
 *.lock
+yarn.lock

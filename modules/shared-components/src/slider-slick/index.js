@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-import { BoxSlider } from "./styled";
+import { BoxSlider } from './styled';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const SliderSlick = ({ settings, children }) => (
   <BoxSlider>
@@ -15,8 +15,8 @@ const SliderSlick = ({ settings, children }) => (
 );
 
 SliderSlick.propTypes = {
-  children: PropTypes.node,
-  settings: PropTypes.object.isRequired
+  children: PropTypes.node.isRequired,
+  settings: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]).isRequired,
 };
 
 export default SliderSlick;

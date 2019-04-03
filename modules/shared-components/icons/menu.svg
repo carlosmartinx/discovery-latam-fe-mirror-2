@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>atoms/Icons/ui/navigation/menu/outline</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1,12 L17,12 C17.55,12 18,11.55 18,11 C18,10.45 17.55,10 17,10 L1,10 C0.45,10 0,10.45 0,11 C0,11.55 0.45,12 1,12 Z M1,7 L17,7 C17.55,7 18,6.55 18,6 C18,5.45 17.55,5 17,5 L1,5 C0.45,5 0,5.45 0,6 C0,6.55 0.45,7 1,7 Z M0,1 C0,1.55 0.45,2 1,2 L17,2 C17.55,2 18,1.55 18,1 C18,0.45 17.55,0 17,0 L1,0 C0.45,0 0,0.45 0,1 Z" id="path-1"></path>
+    </defs>
+    <g id="atoms/Icons/ui/navigation/menu/outline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="round-menu-24px">
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            <g id="atoms/Color/Basic/-Black-#000000" transform="translate(3.000000, 6.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)" fill="#000000" id="Color/Basic/-#000000">
+                    <g transform="translate(-3.000000, -6.000000)">
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
