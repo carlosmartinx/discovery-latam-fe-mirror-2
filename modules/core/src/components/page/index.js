@@ -6,6 +6,7 @@ import {
   Header, Footer,
 } from '@discovery-web-app/shared-components';
 import StyledPage from './styled';
+import { BoxBase } from '../../pages/Home/styled';
 // import logo from '../../assets/logo.jpg';
 
 const SITE_URL = process.env.NODE_ENV === 'development'
@@ -153,26 +154,28 @@ class Page extends Component {
 
     return (
       <StyledPage id={id} className={className} background={background}>
-        <Header />
-        <Helmet
-          htmlAttributes={{
-            lang: 'en',
-            itemscope: undefined,
-            itemtype: `http://schema.org/${rest.schema || 'WebPage'}`,
-          }}
-          title={
-            rest.title ? rest.title + defaultSep + defaultTitle : defaultTitle
-          }
-          link={[
-            {
-              rel: 'canonical',
-              href: SITE_URL + location.pathname,
-            },
-          ]}
-          meta={Page.getMetaTags(rest, location.pathname)}
-        />
-        {children}
-        <Footer channels={channels} terms={terms} />
+        <BoxBase>
+          <Header />
+          <Helmet
+            htmlAttributes={{
+              lang: 'en',
+              itemscope: undefined,
+              itemtype: `http://schema.org/${rest.schema || 'WebPage'}`,
+            }}
+            title={
+              rest.title ? rest.title + defaultSep + defaultTitle : defaultTitle
+            }
+            link={[
+              {
+                rel: 'canonical',
+                href: SITE_URL + location.pathname,
+              },
+            ]}
+            meta={Page.getMetaTags(rest, location.pathname)}
+          />
+          {children}
+          <Footer channels={channels} terms={terms} />
+        </BoxBase>
       </StyledPage>
     );
   }

@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Flex } from 'rebass';
 import PropTypes from 'prop-types';
+import { Box, Flex } from 'rebass';
 
 // Helpers
 import isEmpty from 'lodash/isEmpty';
 
+import { esCodes } from '@discovery-web-app/shared-components/config/tagCodes';
 
 // Components
 import {
   BulletTitle,
   Carousel,
+  CookieBar,
+  SliderContentCard,
+  Ads,
 } from '@discovery-web-app/shared-components';
 
 // Global Page
@@ -19,14 +23,12 @@ import Page from '../../components/page';
 // Actions
 import { appGetHomeAction } from '../../actions/app';
 
-
 const Home = ({ appState }) => {
   useEffect(() => {
     if (isEmpty(appState.data) && !appState.loading) {
       appGetHomeAction();
     }
   });
-
 
   const items = [
     {
@@ -135,12 +137,65 @@ const Home = ({ appState }) => {
       },
     },
   ];
+
+  const esContent = (
+    <p>
+  Al acceder a nuestro sitio, usted entiende y acepta nuestros Términos y Condiciones.
+  Como la mayoría de los sitios web, los sitios de Discovery utilizan cookies
+  para mejorar su experiencia con nuestro contenido.
+  Para obtener más información acerca de las cookies y cómo administrarlas,
+  por favor lea nuestra Política de privacidad.
+  Declaro que he leído y acepto los
+      {' '}
+      <a href="https://tudiscovery.com/terminos-y-condiciones" rel="noopener noreferrer" target="_blank"> términos y condiciones</a>
+      {' '}
+  y las
+      {' '}
+      <a href="políticas de privacidad" rel="noopener noreferrer" target="_blank"> políticas de privacidad </a>
+    </p>
+  );
+
+  const unitTextEs = 'discoverylatam/';
+  const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
+
   return (
     <Page id="homepage" background="#001534">
-      <Flex flexDirection="column">
-        <BulletTitle barcolor="default" backtheme="dark" titleContent="DESTACADOS" />
+      <Box>
+        <BulletTitle barcolor="default" backtheme="dark" titleContent="Destacados" />
         <Carousel sliderContent={items} />
-      </Flex>
+      </Box>
+      <Box>
+        <BulletTitle barcolor="default" backtheme="dark" titleContent="Recomendados" />
+        <Flex flexDirection={['column', 'column', 'row', 'row']} alignItems="center">
+          <Box width={[1, 1, 8 / 12]}>
+            <SliderContentCard sliderContent={items} />
+          </Box>
+          <Box width={[1, 1, 4 / 12]}>
+            <Ads
+              bgColor="ads-dark"
+              adTitle="Publicidad"
+              adSlotConfig={[{
+                adSlotSize: [300, 250],
+                adUnitText: unitText,
+                adSlotId: esCodes.mob_leaderboard_mid,
+              }]}
+            />
+          </Box>
+        </Flex>
+      </Box>
+      <Box>
+        <BulletTitle barcolor="default" backtheme="dark" titleContent="Entretenimiento real" />
+        <Carousel sliderContent={items} />
+      </Box>
+      <Box>
+        <BulletTitle barcolor="default" backtheme="dark" titleContent="Estilo de vida" />
+        <Carousel sliderContent={items} />
+      </Box>
+      <Box>
+        <BulletTitle barcolor="default" backtheme="dark" titleContent="DISCOVERY K!DS PLAY!" />
+        <Carousel sliderContent={items} />
+      </Box>
+      <CookieBar legal={esContent} btnText="Aceptar" />
     </Page>
   );
 };
