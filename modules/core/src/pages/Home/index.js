@@ -25,7 +25,6 @@ const Home = ({ appState }) => {
     if (isEmpty(appState.data) && !appState.loading) {
       appGetHomeAction();
     }
-    console.log(appState);
   });
 
 
