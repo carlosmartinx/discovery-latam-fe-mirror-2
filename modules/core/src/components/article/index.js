@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Sticky from 'react-sticky-el';
 import {
@@ -21,6 +21,9 @@ import {
 } from './styled';
 
 export const ArticleLayout = ({ data, shareData }) => {
+  const [showMobile, setShowMobile] = useState(false);
+  const [showDesktop, setShowDesktop] = useState(false);
+
   const articleData = data.article || null;
 
   const adsData = {
@@ -46,6 +49,31 @@ export const ArticleLayout = ({ data, shareData }) => {
     titleContent: 'Contenido relacionado',
   };
 
+  useEffect(() => {
+    const handleMediaQueryChangeMobile = (event) => {
+      setShowMobile(!!event.matches);
+    };
+
+    const handleMediaQueryChangeDesktop = (event) => {
+      setShowDesktop(!!event.matches);
+    };
+
+    const mediaQueryList = window.matchMedia('(max-width: 767px)');
+    const mediaQueryListD = window.matchMedia('(min-width: 768px)');
+
+    // Adding listeners to init media queries with matchMedia
+    mediaQueryList.addListener(handleMediaQueryChangeMobile);
+    mediaQueryListD.addListener(handleMediaQueryChangeDesktop);
+    handleMediaQueryChangeMobile(mediaQueryList);
+    handleMediaQueryChangeDesktop(mediaQueryListD);
+
+    return () => {
+      // Removing listeners to media queries with matchMedia
+      mediaQueryList.removeListener(handleMediaQueryChangeMobile);
+      mediaQueryListD.removeListener(handleMediaQueryChangeDesktop);
+    };
+  });
+
   return (
     <Root>
       {data.sponsor && (
@@ -58,11 +86,18 @@ export const ArticleLayout = ({ data, shareData }) => {
         {articleData.short_description && <ShortDesc>{articleData.short_description}</ShortDesc>}
       </DescCard>
       <ImageBox width={[1, 1, 10 / 12]}>
+        {showMobile
+        && (
+          <Share shareList={shareData.shareMobile} mobile />
+        )}
+        {showDesktop
+        && (
         <Sticky topOffset={0}>
           <ShareModule>
             <Share backTheme="light" shareList={shareData.shareDesktop} />
           </ShareModule>
         </Sticky>
+        )}
         { articleData.preview_image && (
           <ArticleImage imageData={articleData.preview_image} />
         )}
