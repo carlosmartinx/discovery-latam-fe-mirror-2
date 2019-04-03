@@ -22,69 +22,71 @@ import {
 } from './styled';
 
 const ContentCard = ({
-  backtheme,
-  background,
-  headerSource,
-  title,
-  sponsor,
-  variation,
-  description,
-  label,
-  duration,
-  totalTime,
-  isFullySponsored,
-  channelLogo,
-  channelAlt,
-  link,
+  card, variationSponsor,
 }) => (
   <Root>
+    { card.sponsor ? <Sponsor data={card.sponsor} variation={variationSponsor} /> : '' }
     <ImageWrapper>
-
-      {isFullySponsored && sponsor && <Sponsor data={sponsor} variation={variation} />}
-      { background === 'gallery' ? (
+      { card.type === 'gallery' ? (
         <Header>
-          <Link href={link}>
-            <img alt="hero" src={headerSource} />
+          <Link href={card.url}>
+            <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
             <GalleryIcon />
           </Link>
         </Header>
 
       ) : '' }
-      { background === 'image' ? (
-        <Link href={link}>
-          <HeaderImage src={headerSource} />
+      { card.type === 'image' ? (
+        <Link href={card.url}>
+          <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
         </Link>
 
       ) : '' }
-      { background === 'video' ? (
+      { card.type === 'video' ? (
         <Header>
-          <Link href={link}>
-            <img alt="hero" src={headerSource} />
+          <Link href={card.url}>
+            <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
           </Link>
           <PlayIcon m="auto" />
-          <LabelContainer>
-            <DurationLabel p={1}>{label}</DurationLabel>
-            <DurationNumber p={1}>{duration}</DurationNumber>
-          </LabelContainer>
-          <TotalDuration p={1}>{totalTime}</TotalDuration>
+          {card.season
+            ? (
+              <LabelContainer>
+                <DurationLabel p={1}>{card.season}</DurationLabel>
+                <DurationNumber p={1}>
+                  {card.duration.minutes}
+                  :
+                  {card.duration.seconds}
+                </DurationNumber>
+              </LabelContainer>
+            )
+            : (
+              <TotalDuration p={1}>
+                {card.duration.minutes}
+                :
+                {card.duration.seconds}
+              </TotalDuration>
+            )
+          }
         </Header>
       ) : '' }
     </ImageWrapper>
 
-    <ContentWrapper themeColor={backtheme} isFullySponsored={isFullySponsored}>
+    <ContentWrapper sponsor={!!card.sponsor}>
       <HeadlineWrapper>
-        {channelLogo && <ChannelLogo src={channelLogo} height="30" alt={channelAlt} />}
-        {title
+        {card.channel && <ChannelLogo src={card.channel.logo_svg} height="30" alt={card.channel.name} />}
+        {card.title
         && (
-        <Link href={link}>
-          <Title>{title}</Title>
+        <Link href={card.url}>
+          <Title themeColor={card.backtheme}>{card.title}</Title>
         </Link>
         )}
       </HeadlineWrapper>
-      {description
+      {card.description
         && (
-        <Link href={link}>
-          <Description isFullySponsored={isFullySponsored}>{description}</Description>
+        <Link href={card.url}>
+          <Description themeColor={card.backtheme} sponsor={!!card.sponsor}>
+            {card.description}
+          </Description>
         </Link>
         )
       }
@@ -93,40 +95,36 @@ const ContentCard = ({
 );
 
 ContentCard.propTypes = {
-  backtheme: PropTypes.string,
-  background: PropTypes.string,
-  headerSource: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  duration: PropTypes.string,
-  totalTime: PropTypes.string,
-  isFullySponsored: PropTypes.bool,
-  title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  sponsor: PropTypes.shape({
-    name: PropTypes.string,
-    circular_logo: PropTypes.string,
+  card: PropTypes.shape({
+    type: PropTypes.string,
+    preview_image: PropTypes.shape({
+      image_url: PropTypes.string.isRequired,
+    }),
+    season: PropTypes.string,
+    duration: PropTypes.shape({
+      minutes: PropTypes.string,
+      seconds: PropTypes.string,
+    }),
+    title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    sponsor: PropTypes.shape({
+      name: PropTypes.string,
+      circular_logo: PropTypes.string,
+      url: PropTypes.string,
+    }),
+    channel: PropTypes.shape({
+      logo_svg: PropTypes.string,
+      name: PropTypes.string,
+      url: PropTypes.string,
+    }),
     url: PropTypes.string,
-  }),
-  channelLogo: PropTypes.string,
-  channelAlt: PropTypes.string,
-  link: PropTypes.string,
-  variation: PropTypes.string,
+    backtheme: PropTypes.string,
+  }).isRequired,
+  variationSponsor: PropTypes.string,
 };
 
 ContentCard.defaultProps = {
-  title: 'Heading',
-  description: 'Description',
-  isFullySponsored: false,
-  backtheme: 'dark',
-  background: 'image',
-  label: 'Label',
-  duration: '30:30',
-  totalTime: '10:10',
-  channelAlt: 'channel Logo',
-  variation: 'short',
-  channelLogo: '',
-  sponsor: {},
-  link: '#',
+  variationSponsor: 'short',
 };
 
 export default ContentCard;

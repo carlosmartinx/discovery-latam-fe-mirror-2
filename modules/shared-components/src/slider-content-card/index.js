@@ -26,7 +26,7 @@ const SliderContentCard = ({ sliderContent }) => {
       <SliderSlick settings={settings}>
         {sliderContent.map(slide => (
           <ContentCard
-            {...slide}
+            card={slide}
           />
         ))}
       </SliderSlick>
