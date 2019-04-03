@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Sponsor from '../../../../shared-components/src/sponsor';
-import ArticleImage from '../../../../shared-components/src/article/article-image';
-import ArticleBodyData from '../../../../shared-components/src/article/article-bodytext';
+import Sponsor from '@discovery-web-app/shared-components/src/sponsor';
+import ArticleImage from '@discovery-web-app/shared-components/src/article/article-image';
+import ArticleBodyData from '@discovery-web-app/shared-components/src/article/article-bodytext';
 import {
   Root, DescCard, ShortDesc, ModuleBox, ImageBox,
 } from './styled';

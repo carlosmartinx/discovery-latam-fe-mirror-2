@@ -26,6 +26,14 @@ export const Root = styled(Box)`
     }
   }
 
+  a {
+    color: ${props => get(props, 'theme.colors.dPrimary', '')};
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   img {
     margin-bottom: 16px;
 
