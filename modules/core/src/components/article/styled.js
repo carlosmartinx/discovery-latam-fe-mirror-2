@@ -3,7 +3,7 @@ import {
 } from 'rebass';
 import styled from 'styled-components';
 import get from 'lodash/get';
-import { WrapperSponsor } from '@discovery-web-app/shared-components/src/sponsor/styled';
+import { WrapperSponsor, SponsorText } from '@discovery-web-app/shared-components/src/sponsor/styled';
 import { Root as ShareRoot, Title, LinkItem } from '@discovery-web-app/shared-components/src/share/styled';
 
 const ModuleBoxMain = {
@@ -20,6 +20,10 @@ export const Root = styled(Flex)`
 
   ${WrapperSponsor} {
     position: relative;
+  }
+
+  ${SponsorText} {
+    color: ${props => get(props, 'theme.colors.black', '')};
   }
 `;
 

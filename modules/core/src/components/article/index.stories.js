@@ -413,8 +413,4 @@ const shareData = {
 };
 
 storiesOf('Article', module)
-  .add('Article main layout', () => <Article data={ArticleData} shareData={shareData} />, {
-    backgrounds: [{
-      name: 'Dark', value: 'rgba(0,14,38)', default: true,
-    }],
-  });
+  .add('Article main layout', () => <Article data={ArticleData} shareData={shareData} />);
