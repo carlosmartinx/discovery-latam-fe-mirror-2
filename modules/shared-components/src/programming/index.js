@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'rebass';
-// import { Root } from "./styled";
 
 import BulletTitle from '../bullet-title';
 import ProgrammingCountries from '../programming-countries';

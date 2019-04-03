@@ -29,13 +29,13 @@ export const Tab = styled(Box)`
 `;
 
 export const Day = styled(Text)`
-    font-weight: 600;
-    line-height: 24px;
-    text-transform: uppercase;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: uppercase;
 `;
 
 export const Date = styled(Text)`
-    font-weight: 300;
-    line-height: 20px;
-    color: ${props => get(props, 'theme.colors.w3', '')};
+  font-weight: 300;
+  line-height: 20px;
+  color: ${props => get(props, 'theme.colors.w3', '')};
 `;

@@ -30,7 +30,7 @@ const ProgrammingCountries = ({ countries }) => {
       {countries.map((country, index) => (
         <Country
           key={country.code || index}
-          className={country.active ? 'active' : ''}
+          className={country.active && 'active'}
           onClick={() => onClickTab(country)}
         >
           {country.name}

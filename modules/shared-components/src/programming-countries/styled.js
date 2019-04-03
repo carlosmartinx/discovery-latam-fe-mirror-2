@@ -9,7 +9,7 @@ export const Country = styled(Box)`
   border-left: 1px solid ${props => get(props, 'theme.colors.w3', '')};
   padding: 6px 16px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: ${props => get(props, 'theme.fontSizes[2]', '16')}px;
   line-height: 24px;
   cursor: pointer;
   text-transform: uppercase;
