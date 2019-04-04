@@ -1,17 +1,11 @@
 import TYPES from '../actions/app/types';
 
 export const initialState = {
-  lang: '',
   home: '',
 };
 
-const appReducer = (state = initialState, { type, payload }) => {
+const homeReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case TYPES.APP.SETLANG:
-      return {
-        ...state,
-        lang: payload.lang,
-      };
     case TYPES.APP.HOME:
       return {
         ...state,
@@ -22,4 +16,4 @@ const appReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-export default appReducer;
+export default homeReducer;

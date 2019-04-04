@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Box, Flex } from 'rebass';
 
-// Helpers
-import isEmpty from 'lodash/isEmpty';
-
 import { esCodes } from '@discovery-web-app/shared-components/config/tagCodes';
+
 
 // Components
 import {
@@ -17,18 +15,19 @@ import {
   Ads,
 } from '@discovery-web-app/shared-components';
 
+// Actions
+import { getHomeAction } from '../../actions/home';
+
 // Global Page
 import Page from '../../components/page';
 
-// Actions
-import { appGetHomeAction } from '../../actions/app';
 
 const Home = ({ appState }) => {
   useEffect(() => {
-    if (isEmpty(appState.data) && !appState.loading) {
-      appGetHomeAction();
-    }
+    getHomeAction();
   });
+
+  global.console.log(appState);
 
   const items = [
     {
@@ -207,11 +206,15 @@ Home.propTypes = {
 
 
 const mapStateToProps = state => ({
-  appState: state.app,
+  appState: state.home,
 });
 
 const mapDispatchToProps = ({
-  appGetHomeAction,
+  getHomeAction,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);
