@@ -24,36 +24,34 @@ import {
 
 const ContentCard = ({
   card, variationSponsor, backtheme,
-}) => {
-  console.log('backtheme', backtheme);
-  return (
-    <Root>
-      { card.sponsor ? <Sponsor data={card.sponsor} variation={variationSponsor} /> : '' }
-      <ImageWrapper>
-        { card.type === 'gallery' ? (
-          <Header>
-            <Link href={card.url}>
-              <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
-              <GalleryIcon />
-            </Link>
-          </Header>
-
-        ) : '' }
-        { card.type === 'image' || card.type === 'article' || card.type === 'programa' ? (
+}) => (
+  <Root>
+    { card.sponsor ? <Sponsor data={card.sponsor} variation={variationSponsor} /> : '' }
+    <ImageWrapper>
+      { card.type === 'gallery' ? (
+        <Header>
           <Link href={card.url}>
-            <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
+            <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
+            <GalleryIcon />
           </Link>
+        </Header>
 
-        ) : '' }
-        { card.type === 'video' ? (
-          <Header>
-            <Link href={card.url}>
-              <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
-            </Link>
-            <PlayIcon m="auto" />
-            {card.season
-              ? (
-                card.duration && (
+      ) : '' }
+      { card.type === 'image' || card.type === 'article' || card.type === 'programa' ? (
+        <Link href={card.url}>
+          <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
+        </Link>
+
+      ) : '' }
+      { card.type === 'video' ? (
+        <Header>
+          <Link href={card.url}>
+            <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
+          </Link>
+          <PlayIcon m="auto" />
+          {card.season
+            ? (
+              card.duration && (
                 <LabelContainer>
                   <DurationLabel p={1}>{card.season}</DurationLabel>
                   <DurationNumber p={1}>
@@ -62,33 +60,33 @@ const ContentCard = ({
                     {card.duration.seconds}
                   </DurationNumber>
                 </LabelContainer>
-                )
               )
-              : (
-                card.duration && (
-                  <TotalDuration p={1}>
-                    {card.duration.minutes}
+            )
+            : (
+              card.duration && (
+              <TotalDuration p={1}>
+                {card.duration.minutes}
                     :
-                    {card.duration.seconds}
-                  </TotalDuration>
-                )
+                {card.duration.seconds}
+              </TotalDuration>
               )
+            )
             }
-          </Header>
-        ) : '' }
-      </ImageWrapper>
+        </Header>
+      ) : '' }
+    </ImageWrapper>
 
-      <ContentWrapper sponsor={!!card.sponsor}>
-        <HeadlineWrapper>
-          {card.channel && <ChannelSVG><ReactSVG src={card.channel.logo_svg} /></ChannelSVG>}
-          {card.title
+    <ContentWrapper sponsor={!!card.sponsor}>
+      <HeadlineWrapper>
+        {card.channel && <ChannelSVG><ReactSVG src={card.channel.logo_svg} /></ChannelSVG>}
+        {card.title
           && (
           <Link href={card.url}>
             <Title backtheme={backtheme}>{card.title}</Title>
           </Link>
           )}
-        </HeadlineWrapper>
-        {card.description
+      </HeadlineWrapper>
+      {card.description
           && (
           <Link href={card.url}>
             <Description backtheme={backtheme} sponsor={!!card.sponsor}>
@@ -97,10 +95,9 @@ const ContentCard = ({
           </Link>
           )
         }
-      </ContentWrapper>
-    </Root>
-  );
-};
+    </ContentWrapper>
+  </Root>
+);
 
 ContentCard.propTypes = {
   card: PropTypes.shape({
