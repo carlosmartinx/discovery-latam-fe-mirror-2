@@ -16,6 +16,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled(ButtonBase)`
-  background-color: #fff;
+  background-color: transparent;
+  filter: invert(100%);
   padding: 0;
 `;
