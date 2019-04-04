@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'rebass';
+import ReactSVG from 'react-svg';
 import Sponsor from '../sponsor/index';
 
 import {
@@ -18,85 +19,88 @@ import {
   DurationNumber,
   TotalDuration,
   GalleryIcon,
-  ChannelLogo,
+  ChannelSVG,
 } from './styled';
 
 const ContentCard = ({
-  card, variationSponsor,
-}) => (
-  <Root>
-    { card.sponsor ? <Sponsor data={card.sponsor} variation={variationSponsor} /> : '' }
-    <ImageWrapper>
-      { card.type === 'gallery' ? (
-        <Header>
+  card, variationSponsor, backtheme,
+}) => {
+  console.log('backtheme', backtheme);
+  return (
+    <Root>
+      { card.sponsor ? <Sponsor data={card.sponsor} variation={variationSponsor} /> : '' }
+      <ImageWrapper>
+        { card.type === 'gallery' ? (
+          <Header>
+            <Link href={card.url}>
+              <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
+              <GalleryIcon />
+            </Link>
+          </Header>
+
+        ) : '' }
+        { card.type === 'image' || card.type === 'article' || card.type === 'programa' ? (
           <Link href={card.url}>
-            <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
-            <GalleryIcon />
+            <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
           </Link>
-        </Header>
 
-      ) : '' }
-      { card.type === 'image' ? (
-        <Link href={card.url}>
-          <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
-        </Link>
+        ) : '' }
+        { card.type === 'video' ? (
+          <Header>
+            <Link href={card.url}>
+              <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
+            </Link>
+            <PlayIcon m="auto" />
+            {card.season
+              ? (
+                card.duration && (
+                <LabelContainer>
+                  <DurationLabel p={1}>{card.season}</DurationLabel>
+                  <DurationNumber p={1}>
+                    {card.duration.minutes}
+                    :
+                    {card.duration.seconds}
+                  </DurationNumber>
+                </LabelContainer>
+                )
+              )
+              : (
+                card.duration && (
+                  <TotalDuration p={1}>
+                    {card.duration.minutes}
+                    :
+                    {card.duration.seconds}
+                  </TotalDuration>
+                )
+              )
+            }
+          </Header>
+        ) : '' }
+      </ImageWrapper>
 
-      ) : '' }
-      { card.type === 'video' ? (
-        <Header>
+      <ContentWrapper sponsor={!!card.sponsor}>
+        <HeadlineWrapper>
+          {card.channel && <ChannelSVG><ReactSVG src={card.channel.logo_svg} /></ChannelSVG>}
+          {card.title
+          && (
           <Link href={card.url}>
-            <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
+            <Title backtheme={backtheme}>{card.title}</Title>
           </Link>
-          <PlayIcon m="auto" />
-          {card.season
-            ? (
-              card.duration && (
-              <LabelContainer>
-                <DurationLabel p={1}>{card.season}</DurationLabel>
-                <DurationNumber p={1}>
-                  {card.duration.minutes}
-                  :
-                  {card.duration.seconds}
-                </DurationNumber>
-              </LabelContainer>
-              )
-            )
-            : (
-              card.duration && (
-                <TotalDuration p={1}>
-                  {card.duration.minutes}
-                  :
-                  {card.duration.seconds}
-                </TotalDuration>
-              )
-            )
-          }
-        </Header>
-      ) : '' }
-    </ImageWrapper>
-
-    <ContentWrapper sponsor={!!card.sponsor}>
-      <HeadlineWrapper>
-        {card.channel && <ChannelLogo src={card.channel.logo_svg} height="30" alt={card.channel.name} />}
-        {card.title
-        && (
-        <Link href={card.url}>
-          <Title themeColor={card.backtheme}>{card.title}</Title>
-        </Link>
-        )}
-      </HeadlineWrapper>
-      {card.description
-        && (
-        <Link href={card.url}>
-          <Description themeColor={card.backtheme} sponsor={!!card.sponsor}>
-            {card.description}
-          </Description>
-        </Link>
-        )
-      }
-    </ContentWrapper>
-  </Root>
-);
+          )}
+        </HeadlineWrapper>
+        {card.description
+          && (
+          <Link href={card.url}>
+            <Description backtheme={backtheme} sponsor={!!card.sponsor}>
+              {card.description}
+            </Description>
+          </Link>
+          )
+        }
+      </ContentWrapper>
+    </Root>
+  );
+};
 
 ContentCard.propTypes = {
   card: PropTypes.shape({
@@ -122,13 +126,14 @@ ContentCard.propTypes = {
       url: PropTypes.string,
     }),
     url: PropTypes.string,
-    backtheme: PropTypes.string,
   }).isRequired,
   variationSponsor: PropTypes.string,
+  backtheme: PropTypes.string,
 };
 
 ContentCard.defaultProps = {
   variationSponsor: 'short',
+  backtheme: 'light',
 };
 
 export default ContentCard;

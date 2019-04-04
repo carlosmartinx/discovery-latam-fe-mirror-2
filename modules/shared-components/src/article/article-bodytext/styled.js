@@ -4,8 +4,7 @@ import {
 import styled from 'styled-components';
 import get from 'lodash/get';
 
-// eslint-disable-next-line import/prefer-default-export
-export const Root = styled(Box)`
+const Root = styled(Box)`
   color: ${props => get(props, 'theme.colors.black', '')};
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
   font-size: calc(${props => get(props, 'theme.fontSizes.2', '')}px + 2px);
@@ -67,3 +66,5 @@ export const Root = styled(Box)`
     }
   }
 `;
+
+export default Root;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
-import { Root } from './styled';
+import Root from './styled';
 
 const ArticleImage = ({ imageData }) => (
   <Root>

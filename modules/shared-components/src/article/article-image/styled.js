@@ -4,8 +4,7 @@ import {
 import styled from 'styled-components';
 import get from 'lodash/get';
 
-// eslint-disable-next-line import/prefer-default-export
-export const Root = styled(Box)`
+const Root = styled(Box)`
   width: 100%;
 
   figure {
@@ -36,3 +35,5 @@ export const Root = styled(Box)`
     width: 100%;
   }
 `;
+
+export default Root;

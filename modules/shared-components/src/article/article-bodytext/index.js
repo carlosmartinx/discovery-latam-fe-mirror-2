@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import renderHTML from 'react-render-html';
-import { Root } from './styled';
+import Root from './styled';
 
 const ArticleBodyData = ({ bodyData }) => (
   <Root>
