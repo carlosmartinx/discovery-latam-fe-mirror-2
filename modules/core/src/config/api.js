@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const config = {
-  baseURL: 'https://www.tudiscovery.com/api/v1/',
+  baseURL: 'https://dev-discoverylatam.pantheonsite.io/discovery_home?langcode=es',
 };
 
 const api = axios.create(config);
