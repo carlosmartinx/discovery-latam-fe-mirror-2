@@ -5,7 +5,7 @@ import {
   HeadlineWrapper,
   ContentWrapper,
   Title,
-  ChannelLogo,
+  ChannelSVG,
 } from '../content-card/styled';
 
 const Panoramic = styled(Box)`
@@ -99,7 +99,7 @@ const Panoramic = styled(Box)`
     padding-bottom: ${props => get(props, 'theme.space[1]', '8')}px
   }
 
-  ${ChannelLogo} {
+  ${ChannelSVG} {
     border-right: 1px solid ${props => get(props, 'theme.colors.white', '#ffffff')}
     padding: ${props => get(props, 'theme.space[1]', '8')}px
     ${props => get(props, 'theme.space[3]', '24')}px

@@ -30,8 +30,15 @@ export const Header = styled(Box)`
   }
 `;
 
-export const ChannelLogo = styled.img`
-  opacity: 0.5;
+export const ChannelSVG = styled(Box)`
+  svg {
+    height: 30px;
+    opacity: 0.3;
+
+    path {
+      fill: ${props => get(props, 'theme.colors.black', '')};
+    }
+  }
 `;
 
 export const PlayIcon = styled(Box)`

@@ -5,7 +5,7 @@ import {
   Root,
   ContentWrapper,
   Title,
-  ChannelLogo,
+  ChannelSVG,
   ImageWrapper,
   Description,
 } from '../content-card/styled';
@@ -22,25 +22,28 @@ export const BaseCarousel = styled(Box)`
   }
 
   .slick-dots {
-
     & li {
-        margin: 0;
-        & button {
-            background: white;
-            border-radius: 8px;
-            height: 8px;
-            padding: 0;
-            width: 8px;
+      margin: 0;
+      & button {
+        background: ${props => (props.backtheme === 'dark'
+    ? get(props, 'theme.colors.black', '')
+    : get(props, 'theme.colors.white', ''))};
+        border-radius: 8px;
+        height: 8px;
+        padding: 0;
+        width: 8px;
+        opacity: 0.3;
 
-            &:before {
-                display: none;
-            }
+        &:before {
+            display: none;
         }
+      }
     }
 
     & .slick-active {
       & button {
-          background: ${props => get(props, 'theme.colors.dPrimary', '')};
+        background: ${props => get(props, 'theme.colors.dPrimary', '')};
+        opacity: 1;
       }
     }
   }
@@ -84,8 +87,10 @@ export const BaseCarousel = styled(Box)`
     }
   }
 
-  ${ChannelLogo} {
-    height: 20px;
+  ${ChannelSVG} {
+    svg {
+      height: 20px;
+    }
   }
 
   ${Description} {
@@ -137,7 +142,7 @@ export const Grid = styled(Flex)`
       width: 50%;
     }
   
-    ${ChannelLogo} {
+    ${ChannelSVG} {
       margin-bottom: ${props => get(props, 'theme.space[1]', '')}px;
     }
   
