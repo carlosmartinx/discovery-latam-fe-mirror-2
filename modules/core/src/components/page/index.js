@@ -6,6 +6,7 @@ import {
   Header, Footer,
 } from '@discovery-web-app/shared-components';
 import StyledPage from './styled';
+import { BoxBase } from '../../utils/styled';
 
 // import logo from '../../assets/logo.jpg';
 
@@ -154,7 +155,9 @@ class Page extends Component {
 
     return (
       <StyledPage id={id} className={className} background={background}>
-        <Header />
+        <BoxBase>
+          <Header />
+        </BoxBase>
         <Helmet
           htmlAttributes={{
             lang: 'en',
@@ -173,7 +176,9 @@ class Page extends Component {
           meta={Page.getMetaTags(rest, location.pathname)}
         />
         {children}
-        <Footer channels={channels} terms={terms} />
+        <BoxBase>
+          <Footer channels={channels} terms={terms} />
+        </BoxBase>
       </StyledPage>
     );
   }

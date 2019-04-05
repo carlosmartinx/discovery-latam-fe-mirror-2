@@ -15,14 +15,13 @@ import {
   PanoramicSlider,
   Ads,
 } from '@discovery-web-app/shared-components';
-import { BoxBase } from './styled';
+import { BoxBase } from '../../utils/styled';
 
 // Actions
 import getHomeAction from '../../actions/home';
 
 // Global Page
 import Page from '../../components/page';
-
 
 const Home = (props) => {
   const { appState } = props;

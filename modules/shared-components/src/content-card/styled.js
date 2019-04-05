@@ -38,6 +38,7 @@ export const PlayIcon = styled(Box)`
   background: url(${props => get(props, 'theme.icons.playerresting', '')});
   background-repeat: no-repeat;
   background-size: 100%;
+  filter: invert(100%);
   bottom: ${props => get(props, 'theme.space[0]', '')}px;
   height: 48px;
   left: ${props => get(props, 'theme.space[0]', '')}px;

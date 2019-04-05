@@ -9,10 +9,5 @@ export const Heading = styled(HeadingBase)`
   }
 `;
 
-export const BoxBase = styled(Box)`
-  max-width: ${props => get(props, 'theme.breakpoints.3', '1440px')};
-  margin: 0 auto;
-  @media (max-width: ${props => get(props, 'theme.breakpoints.2', '768px')}) {
-    padding: 0 ${props => get(props, 'theme.space[2]', '16')}px;
-  }
+export const BoxTest = styled(Box)`
 `;
