@@ -26,6 +26,22 @@ const Home = () => (
             />
           </Text>
         </NavLink>
+        <NavLink exact to="/offline">
+          <Text>
+            <FormattedMessage
+              id="Home.GoToOffline"
+              defaultMessage="Go to Offline page!"
+            />
+          </Text>
+        </NavLink>
+        <NavLink exact to="/lalala">
+          <Text>
+            <FormattedMessage
+              id="Home.GoToUnknownPage"
+              defaultMessage="Go to unknown page!"
+            />
+          </Text>
+        </NavLink>
       </Box>
       <Button />
     </Flex>

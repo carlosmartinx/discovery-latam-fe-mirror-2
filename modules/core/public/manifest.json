@@ -1,15 +1,25 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Discovery",
+  "short_name": "Discovery",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/pwaIcons/icon-general@1x.png",
+      "sizes": "414x414"
+    },
+    {
+      "src": "/pwaIcons/icon-general@2x.png",
+      "sizes": "828x828"
+    },
+    {
+      "src": "/pwaIcons/icon-general@3x.png",
+      "sizes": "1242x1242"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait",
+  "background_color": "#2467d3",
+  "theme_color": "#001534",
+  "direction": "ltr"
 }
+

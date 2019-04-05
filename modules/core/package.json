@@ -87,7 +87,8 @@
     }
   },
   "eslintIgnore": [
-    "*/serviceWorker.js"
+    "*/serviceWorker.js",
+    "*/registerServiceWorker.js"
   ],
   "jest": {
     "coverageThreshold": {

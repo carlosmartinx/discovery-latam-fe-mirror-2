@@ -2,6 +2,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import Offline from '../pages/Offline';
 
 const Loading = () => <div>Loading</div>;
 
@@ -20,6 +21,7 @@ const Test = Loadable({
 const Routes = () => (
   <Switch>
     <Route path="/test" component={Test} />
+    <Route path="/offline" component={Offline} />
     <Route component={Home} />
   </Switch>
 );
