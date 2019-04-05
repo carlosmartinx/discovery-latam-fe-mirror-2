@@ -34,13 +34,11 @@ const ContentCard = ({
             <GalleryIcon />
           </Link>
         </Header>
-
       ) : '' }
-      { card.type === 'image' ? (
+      { card.type === 'article' ? (
         <Link href={card.url}>
           <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
         </Link>
-
       ) : '' }
       { card.type === 'video' ? (
         <Header>
@@ -67,6 +65,15 @@ const ContentCard = ({
               </TotalDuration>
             )
           }
+
+        </Header>
+      ) : '' }
+      { card.type === 'show' ? (
+        <Header>
+          <Link href={card.url}>
+            <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
+          </Link>
+          <PlayIcon m="auto" />
         </Header>
       ) : '' }
     </ImageWrapper>

@@ -100,7 +100,7 @@ const Panoramic = styled(Box)`
   }
 
   ${ChannelLogo} {
-    border-right: 1px solid ${props => get(props, 'theme.colors.white', '#ffffff')}
+    border-right: 1px solid ${props => get(props, 'theme.colors.white', '#ffffff')};
     padding: ${props => get(props, 'theme.space[1]', '8')}px
     ${props => get(props, 'theme.space[3]', '24')}px
     ${props => get(props, 'theme.space[1]', '8')}px 0;

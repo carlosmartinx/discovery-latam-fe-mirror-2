@@ -8,7 +8,7 @@ import get from 'lodash/get';
 export const Root = styled(Flex)`
   background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
-  max-width: ${props => get(props, 'theme.breakpoints.4', '')};
+  max-width: ${props => get(props, 'theme.breakpoints.3', '1440px')};
   margin: 0 auto;
   overflow: hidden;
   max-height: auto;
