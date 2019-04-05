@@ -35,7 +35,6 @@ export default {
   gMail: '#d44638',
   dPrimary: '#246ad3',
   dSecondary: '#00255b',
-  orange: '#E14833',
   adsDark: '#001535',
   lazyBox: '#e3e6e8',
 };
