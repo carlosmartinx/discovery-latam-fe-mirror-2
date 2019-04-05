@@ -83,7 +83,6 @@
     "@storybook/addon-backgrounds": "^5.0.2",
     "@storybook/addon-knobs": "^5.0.1",
     "@use-hook/use-cookie": "^0.1.3",
-    "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-dfp": "^0.11.0",

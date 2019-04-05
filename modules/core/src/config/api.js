@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const config = {
-  baseURL: 'https://dev-discoverylatam.pantheonsite.io/discovery_home?langcode=es',
+  baseURL: 'https://tudiscovery-staging.herokuapp.com/api/v1/',
 };
 
 const api = axios.create(config);

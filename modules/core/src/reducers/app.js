@@ -2,7 +2,7 @@ import TYPES from '../actions/app/types';
 
 export const initialState = {
   lang: '',
-  home: '',
+  // home: '',
 };
 
 const appReducer = (state = initialState, { type, payload }) => {
@@ -11,11 +11,6 @@ const appReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         lang: payload.lang,
-      };
-    case TYPES.APP.HOME:
-      return {
-        ...state,
-        home: payload.home,
       };
     default:
       return state;

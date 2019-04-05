@@ -1,7 +1,11 @@
 import keyMirror from 'keymirror-nested';
 
 export default keyMirror({
-  APP: {
-    HOME: null,
+  HOME: {
+    SET: {
+      REQUEST: null,
+      SUCCESS: null,
+      ERROR: null,
+    },
   },
 });

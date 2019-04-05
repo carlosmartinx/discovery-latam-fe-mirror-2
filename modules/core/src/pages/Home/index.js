@@ -5,7 +5,6 @@ import { Box, Flex } from 'rebass';
 
 import { esCodes } from '@discovery-web-app/shared-components/config/tagCodes';
 
-
 // Components
 import {
   BulletTitle,
@@ -16,18 +15,20 @@ import {
 } from '@discovery-web-app/shared-components';
 
 // Actions
-import { getHomeAction } from '../../actions/home';
+import getHomeAction from '../../actions/home';
 
 // Global Page
 import Page from '../../components/page';
 
 
-const Home = ({ appState }) => {
-  useEffect(() => {
-    getHomeAction();
-  });
+const Home = (props) => {
+  const { appState } = props;
 
-  global.console.log(appState);
+  useEffect(() => {
+    props.getHomeAction();
+  }, []);
+
+  global.console.log(appState.home);
 
   const items = [
     {
@@ -200,8 +201,10 @@ const Home = ({ appState }) => {
 };
 
 Home.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  appState: PropTypes.object.isRequired,
+  appState: PropTypes.shape({
+    loading: PropTypes.bool,
+  }).isRequired,
+  getHomeAction: PropTypes.func.isRequired,
 };
 
 
