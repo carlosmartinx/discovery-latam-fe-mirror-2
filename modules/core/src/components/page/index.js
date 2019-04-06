@@ -176,7 +176,7 @@ class Page extends Component {
           meta={Page.getMetaTags(rest, location.pathname)}
         />
         {children}
-        <BoxBase>
+        <BoxBase pt="4">
           <Footer channels={channels} terms={terms} />
         </BoxBase>
       </StyledPage>

@@ -5,7 +5,7 @@ import {
   HeadlineWrapper,
   ContentWrapper,
   Title,
-  ChannelLogo,
+  ChannelSVG,
 } from '../content-card/styled';
 
 const Panoramic = styled(Box)`
@@ -77,24 +77,18 @@ const Panoramic = styled(Box)`
 
   ${ContentWrapper} {
     background: rgba(0,37,91,0.85);
-    border-bottom: 3px solid ${props => get(props, 'theme.colors.dPrimary', '#246ad3')};
+    border-bottom: 3px solid ${props => get(props, 'theme.colors.dPrimary', '#246ad3')}
     bottom: ${props => get(props, 'theme.space[0]', '0')}px;
     left: ${props => get(props, 'theme.space[0]', '0')}px;
     margin: auto;
-    max-width: ${props => get(props, 'theme.breakpoints.3', '1440px')};
     padding: ${props => get(props, 'theme.space[1]', '8')}px 
     ${props => get(props, 'theme.space[3]', '32')}px
     ${props => get(props, 'theme.space[5]', '40')}px;
     position: absolute;
     right: ${props => get(props, 'theme.space[0]', '0')}px;
 
-    @media (min-width: ${props => get(props, 'theme.breakpoints.2', '1024px')}) {
-      padding: ${props => get(props, 'theme.space[1]', '8')}px 96px
-      ${props => get(props, 'theme.space[5]', '40')}px;
-    }
-
     @media (min-width: ${props => get(props, 'theme.breakpoints.3', '1440px')}) {
-      padding: ${props => get(props, 'theme.space[1]', '8')}px 96px
+      padding: ${props => get(props, 'theme.space[1]', '8')}px 98px
       ${props => get(props, 'theme.space[5]', '40')}px;
     }
   }
@@ -105,13 +99,16 @@ const Panoramic = styled(Box)`
     padding-bottom: ${props => get(props, 'theme.space[1]', '8')}px
   }
 
-  ${ChannelLogo} {
+  ${ChannelSVG} {
     border-right: 1px solid ${props => get(props, 'theme.colors.white', '#ffffff')};
     padding: ${props => get(props, 'theme.space[1]', '8')}px
     ${props => get(props, 'theme.space[3]', '24')}px
     ${props => get(props, 'theme.space[1]', '8')}px 0;
     margin-right: ${props => get(props, 'theme.space[3]', '24')}px;
-    opacity: 1;
+    
+    svg {
+      opacity: 1;
+    }
   }
 
   ${Title} {

@@ -4,9 +4,8 @@ import ContentCard from '../content-card/index';
 import SliderSlick from '../slider-slick/index';
 import { BaseCarousel, Grid } from './styled';
 
-
 const FourItemCarousel = ({
-  sliderContent, numItemsDesktop, numItemsMobile, numItemsTablet,
+  sliderContent, numItemsDesktop, numItemsMobile, numItemsTablet, cardsTheme,
 }) => {
   const settings = {
     arrows: true,
@@ -39,19 +38,19 @@ const FourItemCarousel = ({
   };
 
   return (
-    <BaseCarousel>
+    <BaseCarousel backtheme={cardsTheme}>
       {sliderContent.length >= 5
         ? (
           <SliderSlick settings={settings}>
             {sliderContent.map(slide => (
-              <ContentCard card={slide} key={slide.key} />
+              <ContentCard card={slide} key={slide.key} backtheme={cardsTheme} />
             ))}
           </SliderSlick>
         )
         : (
           <Grid flexDirection={['column', 'column', 'row', 'row']}>
             {sliderContent.map(slide => (
-              <ContentCard card={slide} />
+              <ContentCard card={slide} backtheme={cardsTheme} />
             ))}
           </Grid>
         )
@@ -87,6 +86,7 @@ FourItemCarousel.propTypes = {
   numItemsDesktop: PropTypes.number,
   numItemsTablet: PropTypes.number,
   numItemsMobile: PropTypes.number,
+  cardsTheme: PropTypes.string,
 };
 
 FourItemCarousel.defaultProps = {
@@ -94,6 +94,7 @@ FourItemCarousel.defaultProps = {
   numItemsDesktop: 4,
   numItemsTablet: 2.1,
   numItemsMobile: 1.1,
+  cardsTheme: 'light',
 };
 
 export default FourItemCarousel;

@@ -41,7 +41,7 @@ const items = [
     headerSource: 'https://lkfsbnqnmjwfhf6vwa5w3wf47g.gcdn.anvato.net/anv-iupl/FAF/50B/FAF50BC43B504B748967A9C44CF5A337.jpg?Expires=1642437024&KeyName=mcpkey1&Signature=03OBysNVWH9wUS6IIC9VlaL5Bto',
   }];
 
-const adsData = [{
+const adsData = {
   bgColor: 'ads-dark',
   adTitle: 'Publicidad',
   adSlotConfig: [{
@@ -49,7 +49,7 @@ const adsData = [{
     adUnitText: 'discoverylatam/Box_bottom',
     adSlotId: esCodes.box_bottom,
   }],
-}];
+};
 
 storiesOf('Slider Content Card with Ad', module)
   .add('Content Cards', () => <ContentCardAds dataSliderContent={items} adsData={adsData} />, {

@@ -10,3 +10,7 @@ export { default as Menu } from './hamburger-menu';
 export { default as MiniCard } from './mini-card';
 export { default as PanoramicSlider } from './panoramic-slider';
 export { default as SliderContentCard } from './slider-content-card';
+export { default as Share } from './share';
+export { default as Sponsor } from './sponsor';
+export { default as ArticleImage } from './article/article-image';
+export { default as ArticleBodyData } from './article/article-bodytext';
