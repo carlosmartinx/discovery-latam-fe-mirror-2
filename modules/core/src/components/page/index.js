@@ -213,9 +213,7 @@ class Page extends Component {
         />
         {children}
         <CookieBar legal={esContent} btnText="Aceptar" />
-        <BoxBase pt="4">
-          <Footer channels={channels} terms={terms} />
-        </BoxBase>
+        <Footer channels={channels} terms={terms} />
       </StyledPage>
     );
   }
