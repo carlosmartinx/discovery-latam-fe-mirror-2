@@ -7,8 +7,6 @@ export const initialState = {
 };
 
 const contentReducer = (state = initialState, { type, payload = null }) => {
-  const key = (payload && payload.key) ? payload.key : 'dataDefault';
-  const combinedData = state.data;
   switch (type) {
     case TYPES.CONTENT.SET.REQUEST:
       return {
@@ -16,11 +14,10 @@ const contentReducer = (state = initialState, { type, payload = null }) => {
         loading: true,
       };
     case TYPES.CONTENT.SET.SUCCESS:
-      combinedData[key] = payload.data;
       return {
         ...state,
         loading: false,
-        data: combinedData,
+        data: payload.data,
       };
     case TYPES.CONTENT.SET.ERROR:
       return {

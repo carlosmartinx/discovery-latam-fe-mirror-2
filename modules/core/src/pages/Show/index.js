@@ -21,7 +21,7 @@ import getContentAction from '../../actions/content';
 
 import Page from '../../components/page';
 
-export const HomeChannel = (props) => {
+export const HomeShow = (props) => {
   const { appState, match } = props;
   useEffect(() => {
     props.getContentAction(match.url);
@@ -30,7 +30,7 @@ export const HomeChannel = (props) => {
   const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
 
   return (
-    <Page id="channel" background="#000f24">
+    <Page id="show" background="#000f24">
       <Box>
         {appState.data.destacados
         && <PanoramicSlider sliderContent={appState.data.destacados} />}
@@ -87,7 +87,7 @@ export const HomeChannel = (props) => {
   );
 };
 
-HomeChannel.propTypes = {
+HomeShow.propTypes = {
   appState: PropTypes.shape({
     loading: PropTypes.bool,
   }).isRequired,
@@ -106,4 +106,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(HomeChannel);
+)(HomeShow);

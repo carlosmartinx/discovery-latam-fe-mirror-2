@@ -1,4 +1,4 @@
-import getHome from '../../api/app';
+import { getHome } from '../../api/app';
 import {
   appFetchHomeDataRequestAC,
   appFetchHomeDataSuccessAC,

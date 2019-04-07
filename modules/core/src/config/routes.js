@@ -23,10 +23,17 @@ const Channel = Loadable({
   modules: ['channel'],
 });
 
+const Show = Loadable({
+  loader: () => import(/* webpackChunkName: "homechannel" */ '../pages/Show'),
+  loading: Loading,
+  modules: ['show'],
+});
+
 const Routes = () => (
   <Switch>
     <Route path="/test" component={Test} />
     <Route path="/:route" component={Channel} />
+    <Route path="/:route/:show" component={Show} />
     <Route component={Home} />
   </Switch>
 );

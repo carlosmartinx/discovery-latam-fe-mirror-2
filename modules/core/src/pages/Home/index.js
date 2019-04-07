@@ -9,7 +9,7 @@ import { esCodes } from '@discovery-web-app/shared-components/config/tagCodes';
 // Components
 import {
   BulletTitle,
-  Carousel,
+  FourItemCarousel,
   SliderContentCard,
   PanoramicSlider,
   Ads,
@@ -31,14 +31,15 @@ const Home = (props) => {
   const unitTextEs = 'discoverylatam/';
   const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
   return (
-    <Page id="homepage" background="#001534">
+    <Page id="homepage" background="#000f24">
       <Box>
         {appState.home.slider && <PanoramicSlider sliderContent={appState.home.slider} />}
       </Box>
       <BoxBase>
         <Box>
           <BulletTitle barcolor="default" backtheme="dark" titleContent="Destacados" />
-          {appState.home.highlighted && <Carousel sliderContent={appState.home.highlighted} />}
+          {appState.home.highlighted
+          && <FourItemCarousel sliderContent={appState.home.highlighted} />}
         </Box>
         <Box>
           <BulletTitle barcolor="default" backtheme="dark" titleContent="Recomendados" />
@@ -63,19 +64,19 @@ const Home = (props) => {
         <Box>
           <BulletTitle barcolor="default" backtheme="dark" titleContent="Entretenimiento real" />
           {appState.home.categories
-          && <Carousel sliderContent={get(appState.home, 'categories[0].nodes')} />}
+          && <FourItemCarousel sliderContent={get(appState.home, 'categories[0].nodes')} />}
         </Box>
         <Box>
           <BulletTitle barcolor="default" backtheme="dark" titleContent="Estilo de vida" />
           {appState.home.categories
-          && <Carousel sliderContent={get(appState.home, 'categories[1].nodes')} />}
+          && <FourItemCarousel sliderContent={get(appState.home, 'categories[1].nodes')} />}
         </Box>
         <Box>
           <BulletTitle barcolor="default" backtheme="dark" titleContent="DISCOVERY K!DS PLAY!" />
           {appState.home.categories
-          && <Carousel sliderContent={get(appState.home, 'categories[2].nodes[0].videos')} />}
+          && <FourItemCarousel sliderContent={get(appState.home, 'categories[2].nodes[0].videos')} />}
         </Box>
-        <Box mt="4">
+        <Box my="4">
           <Ads
             adTitle="Publicidad"
             bgColor="ads-dark"

@@ -1,4 +1,4 @@
-import get from '../../api/content';
+import { getChannelInfo } from '../../api/app';
 import {
   appFetchContentDataRequestAC,
   appFetchContentDataSuccessAC,
@@ -8,8 +8,8 @@ import {
 const getContentAction = route => async (dispatch) => {
   dispatch(appFetchContentDataRequestAC());
   try {
-    const data = await get({ route });
-    dispatch(appFetchContentDataSuccessAC(data.data, route));
+    const data = await getChannelInfo(route);
+    dispatch(appFetchContentDataSuccessAC(data.data));
   } catch (error) {
     dispatch(appFetchContentDataErrorAC(error));
   }
