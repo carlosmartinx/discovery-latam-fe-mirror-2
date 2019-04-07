@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import get from 'lodash/get';
-import { Heading as HeadingBase, Box, Button } from 'rebass';
+import {
+  Heading as HeadingBase, Box, Button, Text,
+} from 'rebass';
 import { Root as CardRoot, ImageWrapper, ContentWrapper } from '@discovery-web-app/shared-components/dist/content-card/styled';
 
 export const Heading = styled(HeadingBase)`
-  font-size: 30px;
-  &:hover {
-    background-color: ${props => get(props, 'theme.colors.lightgray', '')}
-  }
+  font-size: 36px;
+  max-width: ${props => get(props, 'theme.breakpoints.3', '')};
+  color: ${props => get(props, 'theme.colors.white', '')};
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px;
 `;
 
 export const SearchBox = styled(Box)`
@@ -61,9 +65,25 @@ export const SearchBox = styled(Box)`
 
 export const LoadMore = styled(Button)`
   color: ${props => get(props, 'theme.colors.white', '')};
-  margin: 20px auto 0;
+  margin: 20px auto;
   display: block;
   width: 100%;
   cursor: pointer;
   background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
+`;
+
+export const DefaulMessage = styled(Text)`
+  max-width: ${props => get(props, 'theme.breakpoints.3', '')};
+  color: ${props => get(props, 'theme.colors.white', '')};
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  
+  span {
+    display: block;
+    font-size: 28px;
+  }
 `;
