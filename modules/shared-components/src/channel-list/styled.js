@@ -8,6 +8,7 @@ export const Root = styled(Flex)`
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  max-width: ${props => get(props, 'theme.breakpoints.3', '')};
 `;
 
 export const Card = styled(Box)`

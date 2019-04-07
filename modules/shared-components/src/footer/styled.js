@@ -8,7 +8,6 @@ import get from 'lodash/get';
 export const Root = styled(Flex)`
   background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
-  max-width: ${props => get(props, 'theme.breakpoints.3', '1440px')};
   margin: 0 auto;
   overflow: hidden;
   max-height: auto;
@@ -24,6 +23,7 @@ export const Card = styled(Box)`
   display: inline-block;
   text-align: center;
   justify-content: center;
+  max-width: ${props => get(props, 'theme.breakpoints.3', '')};
 `;
 
 export const LinkWrapper = styled(Link)`

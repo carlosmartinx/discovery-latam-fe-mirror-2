@@ -41,7 +41,8 @@ const ContentCard = ({
       || card.type === 'article'
       || card.type === 'programa'
       || card.type === 'external_content'
-      || card.type === 'show' ? (
+      || card.type === 'show'
+      || card.type === 'galeria_de_imagenes' ? (
         <Link href={card.url}>
           <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
         </Link>

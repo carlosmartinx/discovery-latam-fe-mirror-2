@@ -1,0 +1,68 @@
+import styled from 'styled-components';
+import get from 'lodash/get';
+import { Heading as HeadingBase, Box, Button } from 'rebass';
+import { Root as CardRoot, ImageWrapper, ContentWrapper } from '@discovery-web-app/shared-components/dist/content-card/styled';
+
+export const Heading = styled(HeadingBase)`
+  font-size: 30px;
+  &:hover {
+    background-color: ${props => get(props, 'theme.colors.lightgray', '')}
+  }
+`;
+
+export const SearchBox = styled(Box)`
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+
+  @media (min-width: ${props => get(props, 'theme.breakpoints.0', '')}) {
+    ${CardRoot} {
+      display: flex;
+      padding: 15px 15px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    ${ImageWrapper} {
+      width: calc((100% * 2) / 4);
+    }
+
+    ${ContentWrapper} {
+      width: calc((100% * 2) / 4);
+      padding: 0 15px;
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media (min-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
+    ${ImageWrapper} {
+      width: calc((100% * 2) / 6);
+    }
+
+    ${ContentWrapper} {
+      width: calc((100% * 4) / 6);
+    }
+  }
+
+  @media (min-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
+    ${ImageWrapper} {
+      width: calc((100% * 2) / 12);
+    }
+
+    ${ContentWrapper} {
+      width: calc((100% * 10) / 12);
+    }
+  }
+`;
+
+export const LoadMore = styled(Button)`
+  color: ${props => get(props, 'theme.colors.white', '')};
+  margin: 20px auto 0;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  background-color: ${props => get(props, 'theme.colors.tdBackground1', '')};
+`;

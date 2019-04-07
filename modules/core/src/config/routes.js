@@ -17,9 +17,16 @@ const Test = Loadable({
   modules: ['test'],
 });
 
+const Search = Loadable({
+  loader: () => import(/* webpackChunkName: "search" */ '../pages/Search'),
+  loading: Loading,
+  modules: ['search'],
+});
+
 const Routes = () => (
   <Switch>
     <Route path="/test" component={Test} />
+    <Route path="/buscador/:searchTerm" component={Search} />
     <Route component={Home} />
   </Switch>
 );
