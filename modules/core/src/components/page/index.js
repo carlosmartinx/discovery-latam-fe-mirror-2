@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import Helmet from 'react-helmet';
 import {
-  Header, Footer,
+  Header,
+  Footer,
+  Ads,
+  CookieBar,
 } from '@discovery-web-app/shared-components';
+import { Box } from 'rebass';
+import { esCodes } from '@discovery-web-app/shared-components/config/tagCodes';
 import StyledPage from './styled';
 import { BoxBase } from '../../utils/styled';
 
@@ -153,9 +158,40 @@ class Page extends Component {
       },
     ];
 
+    const unitTextEs = 'discoverylatam/';
+    const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
+
+    const esContent = (
+      <p>
+        Al acceder a nuestro sitio, usted entiende y acepta nuestros Términos y Condiciones.
+        Como la mayoría de los sitios web, los sitios de Discovery utilizan cookies
+        para mejorar su experiencia con nuestro contenido.
+        Para obtener más información acerca de las cookies y cómo administrarlas,
+        por favor lea nuestra Política de privacidad.
+        Declaro que he leído y acepto los
+        {' '}
+        <a href="https://tudiscovery.com/terminos-y-condiciones" rel="noopener noreferrer" target="_blank"> términos y condiciones</a>
+        {' '}
+        y las
+        {' '}
+        <a href="políticas de privacidad" rel="noopener noreferrer" target="_blank"> políticas de privacidad </a>
+      </p>
+    );
+
     return (
       <StyledPage id={id} className={className} background={background}>
         <BoxBase>
+          <Box pt="2">
+            <Ads
+              adTitle="Publicidad"
+              bgColor="ads-dark"
+              adSlotConfig={[{
+                adSlotSize: [728, 90],
+                adUnitText: unitText,
+                adSlotId: esCodes.leaderboard_mid,
+              }]}
+            />
+          </Box>
           <Header />
         </BoxBase>
         <Helmet
@@ -176,6 +212,7 @@ class Page extends Component {
           meta={Page.getMetaTags(rest, location.pathname)}
         />
         {children}
+        <CookieBar legal={esContent} btnText="Aceptar" />
         <BoxBase pt="4">
           <Footer channels={channels} terms={terms} />
         </BoxBase>

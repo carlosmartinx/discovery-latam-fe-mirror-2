@@ -22,7 +22,7 @@ import getHomeAction from '../../actions/home';
 // Global Page
 import Page from '../../components/page';
 
-const Home = (props) => {
+const Channel = (props) => {
   const { appState } = props;
   useEffect(() => {
     props.getHomeAction();
@@ -31,13 +31,13 @@ const Home = (props) => {
   const unitTextEs = 'discoverylatam/';
   const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
   return (
-    <Page id="homepage" background="#001534">
+    <Page id="channel" background="#001534">
       <Box>
         {appState.home.slider && <PanoramicSlider sliderContent={appState.home.slider} />}
       </Box>
       <BoxBase>
         <Box>
-          <BulletTitle barcolor="default" backtheme="dark" titleContent="Destacados" />
+          <BulletTitle barcolor="default" backtheme="dark" titleContent="Populares" />
           {appState.home.highlighted && <Carousel sliderContent={appState.home.highlighted} />}
         </Box>
         <Box>
@@ -75,23 +75,12 @@ const Home = (props) => {
           {appState.home.categories
           && <Carousel sliderContent={get(appState.home, 'categories[2].nodes[0].videos')} />}
         </Box>
-        <Box mt="4">
-          <Ads
-            adTitle="Publicidad"
-            bgColor="ads-dark"
-            adSlotConfig={[{
-              adSlotSize: [728, 90],
-              adUnitText: unitText,
-              adSlotId: esCodes.mob_leaderboard_bottom,
-            }]}
-          />
-        </Box>
       </BoxBase>
     </Page>
   );
 };
 
-Home.propTypes = {
+Channel.propTypes = {
   appState: PropTypes.shape({
     loading: PropTypes.bool,
   }).isRequired,
@@ -111,4 +100,4 @@ const mapDispatchToProps = ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Home);
+)(Channel);
