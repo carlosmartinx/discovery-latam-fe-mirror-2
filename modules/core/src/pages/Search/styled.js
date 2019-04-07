@@ -14,12 +14,13 @@ export const SearchBox = styled(Box)`
   position: relative;
   width: 100%;
   padding: 20px 0;
+  margin: 0 auto;
+  max-width: ${props => get(props, 'theme.breakpoints.3', '')};
 
   @media (min-width: ${props => get(props, 'theme.breakpoints.0', '')}) {
     ${CardRoot} {
       display: flex;
-      padding: 15px 15px;
-      max-width: 1440px;
+      padding: 15px;
       margin: 0 auto;
     }
 
