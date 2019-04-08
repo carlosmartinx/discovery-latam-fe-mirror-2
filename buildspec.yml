@@ -11,5 +11,5 @@ phases:
       - npm install -g lerna
       - yarn
       - yarn transpile
-      - yarn build-storybook
-      - aws s3 sync storybook-static s3://www.tudiscoveryla-uat.com --delete
+      - yarn build
+      - aws s3 sync modules/core/build s3://www.tudiscoverylamirror.com --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
