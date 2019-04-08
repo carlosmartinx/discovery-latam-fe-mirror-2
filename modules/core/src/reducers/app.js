@@ -2,7 +2,6 @@ import TYPES from '../actions/app/types';
 
 export const initialState = {
   lang: '',
-  // home: '',
 };
 
 const appReducer = (state = initialState, { type, payload }) => {

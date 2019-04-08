@@ -2,13 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Box } from 'rebass';
-// import { get } from 'lodash';
-// import { esCodes } from '@discovery-web-app/shared-components/config/tagCodes';
-// Components
-// import {
-//   PanoramicSlider,
-// } from '@discovery-web-app/shared-components';
-// import { BoxBase } from '../../utils/styled';
 
 // Actions
 import getSponsorAction from '../../actions/sponsor';
