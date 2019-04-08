@@ -3,7 +3,11 @@ import get from 'lodash/get';
 import {
   Heading as HeadingBase, Box, Button, Text,
 } from 'rebass';
-import { Root as CardRoot, ImageWrapper, ContentWrapper } from '@discovery-web-app/shared-components/dist/content-card/styled';
+import {
+  Root as CardRoot,
+  ImageWrapper,
+  ContentWrapper,
+} from '@discovery-web-app/shared-components/dist/content-card/styled';
 
 export const Heading = styled(HeadingBase)`
   font-family: ${props => get(props, 'theme.fonts.sans', '')};
