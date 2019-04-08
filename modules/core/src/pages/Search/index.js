@@ -41,7 +41,6 @@ const SearchResults = ({ match }) => {
     fetchResults();
   }, [match.params.searchTerm]);
 
-  global.console.log('history', data);
   return (
     <Page id="search" background="#000f24">
       <Flex flexDirection="column">
