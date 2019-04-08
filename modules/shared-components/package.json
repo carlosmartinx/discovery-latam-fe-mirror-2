@@ -87,7 +87,10 @@
     "react": "^16.8.4",
     "react-dfp": "^0.11.0",
     "react-lazyload": "^2.5.0",
+    "react-render-html": "^0.6.0",
     "react-slick": "^0.23.2",
+    "react-sticky-el": "^1.0.20",
+    "react-svg": "^8.0.2",
     "react-test-renderer": "^16.8.4",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.1.3"
