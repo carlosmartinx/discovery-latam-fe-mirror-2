@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Carousel from '.';
+import FourItemCarousel from '.';
 
 const items = [
   {
@@ -404,17 +404,17 @@ const threeItems = [
 ];
 
 storiesOf('Carousel', module)
-  .add('Carousel 8 Items', () => <Carousel sliderContent={items} />, {
+  .add('Carousel 8 Items', () => <FourItemCarousel sliderContent={items} />, {
     backgrounds: [{
       name: 'Dark', value: 'rgba(0,14,38)', default: true,
     }],
   })
-  .add('Carousel 4 items', () => <Carousel sliderContent={fourItems} />, {
+  .add('Carousel 4 items', () => <FourItemCarousel sliderContent={fourItems} />, {
     backgrounds: [{
       name: 'Dark', value: 'rgba(0,14,38)', default: true,
     }],
   })
-  .add('Carousel 3 items', () => <Carousel sliderContent={threeItems} />, {
+  .add('Carousel 3 items', () => <FourItemCarousel sliderContent={threeItems} />, {
     backgrounds: [{
       name: 'Dark', value: 'rgba(0,14,38)', default: true,
     }],
