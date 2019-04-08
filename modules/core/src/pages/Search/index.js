@@ -50,80 +50,82 @@ const SearchResults = ({ match }) => {
           {' '}
           {match.params.searchTerm}
         </Heading>
-        {data.nodos ? (
-          <SearchBox>
-            {data.nodos.slice(0, maxItems).map((item, index) => {
-              if (index + 1 === 5) {
-                return (
-                  <Box key={item.id}>
-                    <ContentCard card={item} />
-                    <Ads
-                      bgColor={adsData.bgColor}
-                      adTitle={adsData.adTitle}
-                      adSlotConfig={[
-                        {
-                          adSlotSize: [300, 50],
-                          adUnitText: 'discoverylatam/Mobile_Leaderboard_mid',
-                          // TODO: Validate codes with Internationalization
-                          adSlotId: esCodes.mob_leaderboard_mid,
-                        },
-                        {
-                          adSlotSize: [728, 90],
-                          adUnitText: 'discoverylatam/Leaderboard_mid',
-                          // TODO: Validate codes with Internationalization
-                          adSlotId: esCodes.leaderboard_mid,
-                        },
-                      ]}
-                    />
-                  </Box>
-                );
-              }
-              return <Box key={item.id}><ContentCard card={item} /></Box>;
-            })}
-            {maxItems < data.nodos.length && (
-            <Box>
-              {/* TODO: Change text "Cargar más" to internationalization text */}
-              <LoadMore borderRadius={0} onClick={() => loadMore()}>Cargar Más</LoadMore>
-            </Box>
-            )}
-            <Ads
-              bgColor={adsData.bgColor}
-              adTitle={adsData.adTitle}
-              adSlotConfig={[
-                {
-                  adSlotSize: [300, 50],
-                  adUnitText: 'discoverylatam/Mobile_Leaderboard_bottom',
-                  // TODO: Validate codes with Internationalization
-                  adSlotId: esCodes.mob_leaderboard_bottom,
-                },
-                {
-                  adSlotSize: [728, 90],
-                  adUnitText: 'discoverylatam/Leaderboard_bottom',
-                  // TODO: Validate codes with Internationalization
-                  adSlotId: esCodes.leaderboard_bottom,
-                },
-              ]}
-            />
-          </SearchBox>
-        )
-          : (
-            <SearchBox>
-              {data.message ? (
-                <DefaulMessage>
-                  {/* TODO: Change text "Lo sentimos" to internationalization text */}
-                  <span>Lo sentimos</span>
-                  {data.message}
-                </DefaulMessage>
-              )
-                : (
-                  <DefaulMessage>
-                    {/* TODO: Change text "Cargando" to internationalization text */}
-                    Cargando
-                  </DefaulMessage>
-                )}
-            </SearchBox>
-          )}
       </BoxBase>
+      {data.nodos ? (
+        <SearchBox>
+          {data.nodos.slice(0, maxItems).map((item, index) => {
+            if (index + 1 === 5) {
+              return (
+                <Box key={item.id}>
+                  <BoxBase>
+                    <ContentCard card={item} />
+                  </BoxBase>
+                  <Ads
+                    bgColor={adsData.bgColor}
+                    adTitle={adsData.adTitle}
+                    adSlotConfig={[
+                      {
+                        adSlotSize: [300, 50],
+                        adUnitText: 'discoverylatam/Mobile_Leaderboard_mid',
+                        // TODO: Validate codes with Internationalization
+                        adSlotId: esCodes.mob_leaderboard_mid,
+                      },
+                      {
+                        adSlotSize: [728, 90],
+                        adUnitText: 'discoverylatam/Leaderboard_mid',
+                        // TODO: Validate codes with Internationalization
+                        adSlotId: esCodes.leaderboard_mid,
+                      },
+                    ]}
+                  />
+                </Box>
+              );
+            }
+            return <BoxBase key={item.id}><ContentCard card={item} /></BoxBase>;
+          })}
+          {maxItems < data.nodos.length && (
+          <BoxBase>
+            {/* TODO: Change text "Cargar más" to internationalization text */}
+            <LoadMore borderRadius={0} onClick={() => loadMore()}>Cargar Más</LoadMore>
+          </BoxBase>
+          )}
+          <Ads
+            bgColor={adsData.bgColor}
+            adTitle={adsData.adTitle}
+            adSlotConfig={[
+              {
+                adSlotSize: [300, 50],
+                adUnitText: 'discoverylatam/Mobile_Leaderboard_bottom',
+                // TODO: Validate codes with Internationalization
+                adSlotId: esCodes.mob_leaderboard_bottom,
+              },
+              {
+                adSlotSize: [728, 90],
+                adUnitText: 'discoverylatam/Leaderboard_bottom',
+                // TODO: Validate codes with Internationalization
+                adSlotId: esCodes.leaderboard_bottom,
+              },
+            ]}
+          />
+        </SearchBox>
+      )
+        : (
+          <SearchBox>
+            {data.message ? (
+              <DefaulMessage>
+                {/* TODO: Change text "Lo sentimos" to internationalization text */}
+                <span>Lo sentimos</span>
+                {data.message}
+              </DefaulMessage>
+            )
+              : (
+                <DefaulMessage>
+                  {/* TODO: Change text "Cargando" to internationalization text */}
+                  Cargando
+                </DefaulMessage>
+              )}
+          </SearchBox>
+        )}
     </Page>
   );
 };
