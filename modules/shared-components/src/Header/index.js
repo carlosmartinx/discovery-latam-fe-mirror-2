@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {
   Flex, Box, Image,
 } from 'rebass';
+import { Redirect } from 'react-router-dom';
 
 // eslint-disable-next-line import/named
 import { Input, Button, Root } from './styled';
@@ -30,13 +31,48 @@ const Logo = () => (
   </Flex>
 );
 
-const Search = ({ placeholder }) => (
-  <Box alignSelf="end" width={1}>
-    <Input
-      placeholder={placeholder}
-    />
-  </Box>
-);
+const Search = ({ placeholder }) => {
+  const [redirect, setRedirect] = useState(false);
+  const [inputValue, setinputValue] = useState('');
+
+  const handleOnKeyDown = (event) => {
+    if (event.keyCode !== 13) {
+      setRedirect(false);
+    }
+  };
+
+  const handleOnKeyUp = (event) => {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      setRedirect(true);
+    }
+  };
+
+  useEffect(() => {
+    const input = document.getElementById('searchInput');
+    input.addEventListener('keydown', handleOnKeyDown);
+    input.addEventListener('keyup', handleOnKeyUp);
+    // Remove event listeners on cleanup
+    return () => {
+      input.removeEventListener('keydown', handleOnKeyDown);
+      input.removeEventListener('keyup', handleOnKeyUp);
+    };
+  }, []);
+
+  return (
+    <Box alignSelf="end" width={1}>
+      {redirect && inputValue && (<Redirect push to={`/buscador/${inputValue}`} />)}
+      <Input
+        id="searchInput"
+        placeholder={placeholder}
+        value={inputValue}
+        onChange={(e) => {
+          setinputValue(e.target.value);
+        }}
+      />
+    </Box>
+  );
+};
 
 Search.propTypes = {
   placeholder: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,

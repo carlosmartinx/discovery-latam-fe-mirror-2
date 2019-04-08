@@ -26,7 +26,7 @@ const Search = Loadable({
 const Routes = () => (
   <Switch>
     <Route path="/test" component={Test} />
-    <Route path="/buscador/:searchTerm" component={Search} />
+    <Route path="/buscador/:searchTerm" exact component={Search} />
     <Route component={Home} />
   </Switch>
 );
