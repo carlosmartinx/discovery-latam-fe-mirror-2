@@ -17,9 +17,16 @@ const Test = Loadable({
   modules: ['test'],
 });
 
+const Programming = Loadable({
+  loader: () => import(/* webpackChunkName: "test" */ '../pages/Programming'),
+  loading: Loading,
+  modules: ['programming'],
+});
+
 const Routes = () => (
   <Switch>
     <Route path="/test" component={Test} />
+    <Route path="/programacion" component={Programming} />
     <Route component={Home} />
   </Switch>
 );
