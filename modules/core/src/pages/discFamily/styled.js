@@ -16,21 +16,23 @@ export const WrapperFamily = styled(Card)`
   width: 100%;
   z-index: 1;
   flex-wrap: wrap;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
     padding-top: 50px;
     clip-path: polygon(0 0,100% 0,100% 95%,0% 100%);
     padding-bottom: 70px;
   }
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
     padding-bottom: 50px
   }
   ${Flex} {
     width: 1140px;
+
     @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
       width: 100%;
       flex-wrap: wrap;
     }
-  }
   }
 `;
 
@@ -41,6 +43,7 @@ export const FamilyText = styled(Text)`
   font-weight: 600;
   font-style: italic;
   line-height: 1.2;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
     font-size: calc(${props => get(props, 'theme.fontSizes.4', '')}px + 2px);
     width: 62%;
@@ -53,10 +56,12 @@ export const DowText = styled(FamilyText)`
   text-transform: uppercase;
   letter-spacing: 3px;
   padding: 20px 0 45px;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
     letter-spacing: 0;
     width: 100%;
   }
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
     padding: 20px 0 0 19px
   }
@@ -72,12 +77,14 @@ export const LinkUrl = styled(Link)`
 export const BoxImg = styled(Box)`
   overflow: hidden;
   width: 67%
+
   ${Image} {
     max-width: initial;
     height: auto;
   }
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
-    width: 100%
+    width: 100%;
     position: absolute;
     ${Image} {
       max-width: 100%;
@@ -89,10 +96,12 @@ export const BoxImg = styled(Box)`
 
 export const ContentBox = styled(Flex)`
   margin: -200px auto;
-  background-color: ${props => get(props, 'theme.colors.white', '')}
+  background-color: ${props => get(props, 'theme.colors.white', '')};
   clip-path: polygon(0 10%,100% 0,100% 100%,0 100%);
-  color: ${props => get(props, 'theme.colors.black', '')}
+  color: ${props => get(props, 'theme.colors.black', '')};
   width: 100%;
+  flex-wrap: wrap;
+
   ${Box} {
     max-width: 1140px;
   }
@@ -100,6 +109,7 @@ export const ContentBox = styled(Flex)`
     clip-path: none;
     margin: 0 auto;
     flex-wrap: wrap;
+
     ${Box} {
       max-width: 100%;
     }
@@ -120,8 +130,9 @@ export const ContentList = styled(Flex)`
   width: 100%;
   margin-bottom: 120px;
   border-bottom: 1px solid #1eb44a;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
-    border-bottom: 0
+    border-bottom: 0;
     position: relative;
     &:after {
       content: "";
@@ -141,6 +152,7 @@ export const ContentList = styled(Flex)`
     padding: 0;
     list-style: none;
     margin-bottom: 75px;
+
     @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
       max-width: 100%;
       margin-bottom: 50px;

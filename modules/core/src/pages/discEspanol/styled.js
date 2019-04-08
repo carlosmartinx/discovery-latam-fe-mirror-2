@@ -16,21 +16,23 @@ export const WrapperFamily = styled(Card)`
   width: 100%;
   z-index: 1;
   flex-wrap: wrap;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
     padding-top: 50px;
     clip-path: polygon(0 0,100% 0,100% 95%,0% 100%);
     padding-bottom: 70px;
   }
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
     padding-bottom: 50px
   }
+
   ${Flex} {
     width: 1140px;
     @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
       width: 100%;
       flex-wrap: wrap;
     }
-  }
   }
 `;
 
@@ -39,6 +41,7 @@ export const CardLog = styled(Card)`
   text-align: center;
   padding-top: 65px;
   padding-bottom: 55px;
+
   ${Image} {
     max-width: 70%;
   }
@@ -54,6 +57,7 @@ export const FamilyText = styled(Text)`
   line-height: 1.1;
   text-transform: uppercase;
   padding-bottom: 8px;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.0', '')}) {
     font-size: calc(${props => get(props, 'theme.fontSizes.4', '')}px);
   }
@@ -64,12 +68,14 @@ export const DowText = styled(FamilyText)`
   letter-spacing: 3px;
   padding: 20px 0 45px;
   font-weight: bold;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.3', '')}) {
     letter-spacing: 0;
     width: 100%;
     padding: 0 0 40px 19px;
     font-size: (${props => get(props, 'theme.fontSizes.8', '')}px);
   }
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
     padding: 0 0 0 19px
   }
@@ -77,6 +83,7 @@ export const DowText = styled(FamilyText)`
 
 export const LinkUrl = styled(Link)`
   padding: 10px 0;
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.1', '')}) {
     display: none;
   }
@@ -85,13 +92,15 @@ export const LinkUrl = styled(Link)`
 export const BoxImg = styled(Box)`
   overflow: hidden;
   width: 67%;
+
   ${Image} {
     max-width: initial;
     height: auto;
   }
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
-    width: 100%
+    width: 100%;
     position: absolute;
+
     ${Image} {
       max-width: 100%;
       overflow: hidden;
@@ -102,20 +111,23 @@ export const BoxImg = styled(Box)`
 
 export const ContentBox = styled(Flex)`
   margin: -200px auto;
-  background-color: ${props => get(props, 'theme.colors.white', '')}
+  background-color: ${props => get(props, 'theme.colors.white', '')};
   clip-path: polygon(0 10%,100% 0,100% 100%,0 100%);
-  color: ${props => get(props, 'theme.colors.black', '')}
+  color: ${props => get(props, 'theme.colors.black', '')};
   width: 100%;
+  flex-wrap: wrap;
+
   ${Box} {
     max-width: 1140px;
   }
+
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
     clip-path: none;
     margin: 0 auto;
     flex-wrap: wrap;
     ${Box} {
       max-width: 100%;
-  }
+    }
   }
 `;
 
@@ -134,7 +146,7 @@ export const ContentList = styled(Flex)`
   margin-bottom: 120px;
   border-bottom: 1px solid #1eb44a;
   @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
-    border-bottom: 0
+    border-bottom: 0;
     position: relative;
     &:after {
       content: "";
@@ -149,7 +161,7 @@ export const ContentList = styled(Flex)`
   .ProgramsList {
     display: inline-flex;
     flex-wrap: wrap;
-    max-width: 550px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -161,14 +173,14 @@ export const ContentList = styled(Flex)`
     }
     li {
       display: flex;
-      width: 47%;
+      width: 50%;
+      line-height: 1.3;
       font-family: ${props => get(props, 'theme.fonts.sans', '')};
       font-size: ${props => get(props, 'theme.fontSizes.4', '')}px;
       @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
         width: 100%;
       }
       &:nth-child(2n) {
-        margin-left: 30px;
         @media (max-width: ${props => get(props, 'theme.breakpoints.2', '')}) {
           margin-left: 0;
       }
