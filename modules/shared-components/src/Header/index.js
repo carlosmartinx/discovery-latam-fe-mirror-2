@@ -7,7 +7,7 @@ import {
 } from 'rebass';
 
 // eslint-disable-next-line import/named
-import { Input, Button } from './styled';
+import { Input, Button, Root } from './styled';
 import IconMenu from '../../icons/menu.svg';
 import IconSearch from '../../icons/search.svg';
 import IconClose from '../../icons/close.svg';
@@ -49,16 +49,18 @@ const Header = (props) => {
   const justifyContent = search ? 'flex-end' : 'space-between';
 
   return (
-    <Flex
+    <Root
       flexDirection="row"
       justifyContent={justifyContent}
+      py={2}
+      m="auto"
     >
       {search ? <Search placeholder={searchPlaceHolder} /> : <Logo />}
 
       <Button onClick={() => setSearch(!search)}>
         <Image src={search ? IconClose : IconSearch} />
       </Button>
-    </Flex>
+    </Root>
   );
 };
 

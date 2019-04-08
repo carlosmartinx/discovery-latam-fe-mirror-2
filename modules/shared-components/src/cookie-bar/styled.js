@@ -13,6 +13,7 @@ export const Root = styled(Box)`
   max-width: ${props => get(props, 'theme.breakpoints.3', '')};
   position: fixed;
   right: 0;
+  z-index: 9;
 `;
 
 export const Inner = styled(Flex)`

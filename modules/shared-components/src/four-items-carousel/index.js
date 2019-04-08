@@ -4,7 +4,6 @@ import ContentCard from '../content-card/index';
 import SliderSlick from '../slider-slick/index';
 import { BaseCarousel, Grid } from './styled';
 
-
 const FourItemCarousel = ({
   sliderContent, numItemsDesktop, numItemsMobile, numItemsTablet, cardsTheme,
 }) => {
@@ -44,7 +43,7 @@ const FourItemCarousel = ({
         ? (
           <SliderSlick settings={settings}>
             {sliderContent.map(slide => (
-              <ContentCard card={slide} backtheme={cardsTheme} />
+              <ContentCard card={slide} key={slide.key} backtheme={cardsTheme} />
             ))}
           </SliderSlick>
         )
@@ -60,20 +59,42 @@ const FourItemCarousel = ({
   );
 };
 
+
 FourItemCarousel.propTypes = {
-  sliderContent: PropTypes.element,
-  cardsTheme: PropTypes.string,
+  sliderContent: PropTypes.arrayOf(PropTypes.shape({
+    backtheme: PropTypes.string,
+    background: PropTypes.string,
+    label: PropTypes.string,
+    duration: PropTypes.shape({
+      minutes: PropTypes.string,
+      seconds: PropTypes.string,
+    }),
+    totalTime: PropTypes.string,
+    isFullySponsored: PropTypes.bool,
+    title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    description: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+    sponsor: PropTypes.shape({
+      name: PropTypes.string,
+      circular_logo: PropTypes.string,
+      url: PropTypes.string,
+    }),
+    channelLogo: PropTypes.string,
+    channelAlt: PropTypes.string,
+    link: PropTypes.string,
+    variation: PropTypes.string,
+  })),
   numItemsDesktop: PropTypes.number,
   numItemsTablet: PropTypes.number,
   numItemsMobile: PropTypes.number,
+  cardsTheme: PropTypes.string,
 };
 
 FourItemCarousel.defaultProps = {
   sliderContent: {},
-  cardsTheme: 'light',
   numItemsDesktop: 4,
   numItemsTablet: 2.1,
   numItemsMobile: 1.1,
+  cardsTheme: 'light',
 };
 
 export default FourItemCarousel;

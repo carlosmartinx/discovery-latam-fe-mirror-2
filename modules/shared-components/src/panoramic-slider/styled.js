@@ -7,6 +7,7 @@ import {
   Title,
   ChannelSVG,
 } from '../content-card/styled';
+import { BoxSponsor } from '../sponsor/styled';
 
 const Panoramic = styled(Box)`
   max-width: ${props => get(props, 'theme.breakpoints.3', '1440px')};
@@ -93,6 +94,12 @@ const Panoramic = styled(Box)`
     }
   }
 
+  ${BoxSponsor} {
+    @media (min-width: ${props => get(props, 'theme.breakpoints.3', '1440px')}) {
+      right: 98px;
+    }
+  }
+
   ${HeadlineWrapper} {
     display: flex;
     align-items: center;
@@ -100,12 +107,15 @@ const Panoramic = styled(Box)`
   }
 
   ${ChannelSVG} {
-    border-right: 1px solid ${props => get(props, 'theme.colors.white', '#ffffff')}
+    border-right: 1px solid ${props => get(props, 'theme.colors.white', '#ffffff')};
     padding: ${props => get(props, 'theme.space[1]', '8')}px
     ${props => get(props, 'theme.space[3]', '24')}px
     ${props => get(props, 'theme.space[1]', '8')}px 0;
     margin-right: ${props => get(props, 'theme.space[3]', '24')}px;
-    opacity: 1;
+    
+    svg {
+      opacity: 1;
+    }
   }
 
   ${Title} {

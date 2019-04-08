@@ -28,7 +28,7 @@ const ContentCard = ({
   <Root>
     { card.sponsor ? <Sponsor data={card.sponsor} variation={variationSponsor} /> : '' }
     <ImageWrapper>
-      { card.type === 'gallery' ? (
+      { card.type === 'image_gallery' ? (
         <Header>
           <Link href={card.url}>
             <img alt={card.preview_image.image_alt} src={card.preview_image.image_url} />
@@ -37,12 +37,16 @@ const ContentCard = ({
         </Header>
 
       ) : '' }
-      { card.type === 'image' || card.type === 'article' || card.type === 'programa' ? (
+      { card.type === 'image'
+      || card.type === 'article'
+      || card.type === 'programa'
+      || card.type === 'external_content'
+      || card.type === 'show' ? (
         <Link href={card.url}>
           <HeaderImage src={card.preview_image.image_url} alt={card.preview_image.image_alt} />
         </Link>
 
-      ) : '' }
+        ) : '' }
       { card.type === 'video' ? (
         <Header>
           <Link href={card.url}>
@@ -78,7 +82,8 @@ const ContentCard = ({
 
     <ContentWrapper sponsor={!!card.sponsor}>
       <HeadlineWrapper>
-        {card.channel && <ChannelSVG><ReactSVG src={card.channel.logo_svg} /></ChannelSVG>}
+        {card.channel
+        && <ChannelSVG backtheme={backtheme}><ReactSVG src={card.channel.logo_svg} /></ChannelSVG>}
         {card.title
           && (
           <Link href={card.url}>
