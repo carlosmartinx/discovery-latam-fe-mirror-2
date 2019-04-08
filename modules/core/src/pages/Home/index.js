@@ -27,7 +27,6 @@ const Home = (props) => {
   useEffect(() => {
     props.getHomeAction();
   }, []);
-
   const unitTextEs = 'discoverylatam/';
   const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
   return (

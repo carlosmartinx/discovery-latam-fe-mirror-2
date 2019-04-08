@@ -4,6 +4,7 @@ import app from './app';
 import test from './demo';
 import home from './home';
 import data from './content';
+import sponsor from './sponsor';
 
 export default history => combineReducers({
   router: connectRouter(history),
@@ -11,4 +12,5 @@ export default history => combineReducers({
   home,
   test,
   data,
+  sponsor,
 });
