@@ -159,7 +159,7 @@ class Page extends Component {
     ];
 
     const unitTextEs = 'discoverylatam/';
-    const unitText = `${unitTextEs}Mobile_leaderboard_bottom`;
+    const unitText = `${unitTextEs}Mobile_leaderboard_top`;
 
     const esContent = (
       <p>
@@ -188,7 +188,7 @@ class Page extends Component {
               adSlotConfig={[{
                 adSlotSize: [728, 90],
                 adUnitText: unitText,
-                adSlotId: esCodes.leaderboard_mid,
+                adSlotId: esCodes.leaderboard_top,
               }]}
             />
           </Box>

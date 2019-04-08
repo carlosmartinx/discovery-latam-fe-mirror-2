@@ -20,7 +20,7 @@ const Footer = ({
     />
     <Card p={1}>
       {terms.map(term => (
-        <TermsLink href={term.url} key={terms.text}>{term.text}</TermsLink>
+        <TermsLink href={term.url} key={terms.url}>{term.text}</TermsLink>
       ))}
     </Card>
     <Card p={1}>
