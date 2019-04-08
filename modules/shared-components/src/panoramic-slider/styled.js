@@ -7,6 +7,7 @@ import {
   Title,
   ChannelSVG,
 } from '../content-card/styled';
+import { BoxSponsor } from '../sponsor/styled';
 
 const Panoramic = styled(Box)`
   max-width: ${props => get(props, 'theme.breakpoints.3', '1440px')};
@@ -90,6 +91,12 @@ const Panoramic = styled(Box)`
     @media (min-width: ${props => get(props, 'theme.breakpoints.3', '1440px')}) {
       padding: ${props => get(props, 'theme.space[1]', '8')}px 98px
       ${props => get(props, 'theme.space[5]', '40')}px;
+    }
+  }
+
+  ${BoxSponsor} {
+    @media (min-width: ${props => get(props, 'theme.breakpoints.3', '1440px')}) {
+      right: 98px;
     }
   }
 

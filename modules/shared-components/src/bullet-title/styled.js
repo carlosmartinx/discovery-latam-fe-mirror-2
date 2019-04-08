@@ -9,6 +9,38 @@ export const Root = styled(Flex)`
   text-transform: uppercase;
   line-height: 32px;
   max-width: ${props => get(props, 'theme.breakpoints.3', '')};
+
+  & .animal-planet {
+    background: ${props => get(props, 'theme.colors.animalPlanet', '')};
+  }
+
+  & .turbo {
+    background: ${props => get(props, 'theme.colors.turbo', '')};
+  }
+
+  & .sience {
+    background: ${props => get(props, 'theme.colors.science', '')};
+  }
+
+  & .id {
+    background: ${props => get(props, 'theme.colors.id', '')};
+  }
+
+  & .tlc {
+    background: ${props => get(props, 'theme.colors.tlc', '')};
+  }
+
+  & .food {
+    background: ${props => get(props, 'theme.colors.food', '')};
+  }
+
+  & .kids {
+    background: ${props => get(props, 'theme.colors.kids', '')};
+  }
+
+  & .discoveryhh {
+    background: ${props => get(props, 'theme.colors.discoveryhh', '')};
+  }
 `;
 
 export const Headline = styled(Heading)`

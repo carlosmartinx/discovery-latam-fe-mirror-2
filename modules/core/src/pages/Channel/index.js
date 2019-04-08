@@ -37,12 +37,12 @@ export const HomeChannel = (props) => {
       </Box>
       <BoxBase>
         <Box>
-          <BulletTitle barcolor="default" backtheme="dark" titleContent="Populares" />
+          <BulletTitle className={match.params.route} backtheme="dark" titleContent="Populares" />
           {appState.data.populares
           && <FourItemCarousel sliderContent={appState.data.populares} />}
         </Box>
         <Box>
-          <BulletTitle barcolor="default" backtheme="dark" titleContent="Recomendados" />
+          <BulletTitle className={match.params.route} barcolor="default" backtheme="dark" titleContent="Recomendados" />
           <Flex flexDirection={['column', 'column', 'row', 'row']} alignItems="center">
             <Box width={[1, 1, 8 / 12]}>
               {appState.data.recomendados
@@ -62,7 +62,7 @@ export const HomeChannel = (props) => {
           </Flex>
         </Box>
         <Box>
-          <BulletTitle barcolor="default" backtheme="dark" titleContent="Lo más reciente" />
+          <BulletTitle className={match.params.route} barcolor="default" backtheme="dark" titleContent="Lo más reciente" />
           {appState.data.recent
           && <FourItemCarousel sliderContent={appState.data.recent} />}
         </Box>
@@ -78,7 +78,7 @@ export const HomeChannel = (props) => {
           />
         </Box>
         <Box mb="4">
-          <BulletTitle barcolor="default" backtheme="dark" titleContent="Programas" />
+          <BulletTitle className={match.params.route} barcolor="default" backtheme="dark" titleContent="Programas" />
           {appState.data.shows
           && <FourItemCarousel sliderContent={appState.data.shows} />}
         </Box>

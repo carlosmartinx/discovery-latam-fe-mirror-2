@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Root, Headline, Bullet } from './styled';
 
-const BulletTitle = ({ barcolor, backtheme, titleContent }) => (
+const BulletTitle = ({
+  className, barcolor, backtheme, titleContent,
+}) => (
   <Root
     alignItems="center"
     mx="auto"
@@ -12,6 +14,7 @@ const BulletTitle = ({ barcolor, backtheme, titleContent }) => (
     <Bullet
       mr={2}
       barcolor={barcolor}
+      className={className}
     />
     <Headline
       fontSize={4}
@@ -26,6 +29,7 @@ BulletTitle.propTypes = {
   titleContent: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   barcolor: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   backtheme: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  className: PropTypes.string.isRequired,
 };
 
 BulletTitle.defaultProps = {
