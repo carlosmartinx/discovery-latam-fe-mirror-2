@@ -5,4 +5,8 @@ import { storiesOf } from '@storybook/react';
 import Header from '.';
 
 storiesOf('Header', module)
-  .add('default', () => <Header />);
+  .add('default', () => <Header />, {
+    backgrounds: [{
+      name: 'Dark', value: 'rgba(0,14,38)', default: true,
+    }],
+  });

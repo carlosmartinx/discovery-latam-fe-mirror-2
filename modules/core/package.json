@@ -6,6 +6,7 @@
     ],
     "plugins": [
       "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-transform-runtime",
       [
         "react-intl",
         {
@@ -24,6 +25,7 @@
     "@discovery-web-app/shared-components": "^0.1.1",
     "@storybook/addon-backgrounds": "^5.0.2",
     "@use-hook/use-cookie": "^0.1.3",
+    "axios": "^0.18.0",
     "connected-react-router": "^6.3.2",
     "cookie-parser": "^1.4.4",
     "cross-env": "^5.2.0",
@@ -49,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/polyfill": "^7.4.0",
     "@babel/register": "^7.4.0",
     "babel-plugin-react-intl": "^3.0.1",
@@ -120,6 +123,9 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
       "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/modules/shared-components/dist/"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",

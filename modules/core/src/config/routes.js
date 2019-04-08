@@ -29,11 +29,32 @@ const DiscEspanol = Loadable({
   modules: ['espanol'],
 });
 
+const Channel = Loadable({
+  loader: () => import(/* webpackChunkName: "homechannel" */ '../pages/Channel'),
+  loading: Loading,
+  modules: ['channel'],
+});
+
+const Show = Loadable({
+  loader: () => import(/* webpackChunkName: "homechannel" */ '../pages/Show'),
+  loading: Loading,
+  modules: ['show'],
+});
+
+const Sponsor = Loadable({
+  loader: () => import(/* webpackChunkName: "Sponsor" */ '../pages/Sponsor'),
+  loading: Loading,
+  modules: ['sponsor'],
+});
+
 const Routes = () => (
   <Switch>
     <Route path="/test" component={Test} />
     <Route path="/discovery-en-espanol" component={DiscEspanol} />
     <Route path="/discovery-familia" component={Family} />
+    <Route exact path="/:route" component={Channel} />
+    <Route exact path="/sponsor/:name" component={Sponsor} />
+    <Route path="/:route/:show" component={Show} />
     <Route component={Home} />
   </Switch>
 );

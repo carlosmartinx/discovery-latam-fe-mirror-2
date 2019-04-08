@@ -36,7 +36,9 @@ export const ChannelSVG = styled(Box)`
     opacity: 0.3;
 
     path {
-      fill: ${props => get(props, 'theme.colors.black', '')};
+      fill: ${props => (props.backtheme === 'light'
+    ? get(props, 'theme.colors.white', '')
+    : get(props, 'theme.colors.black', ''))};
     }
   }
 `;
@@ -45,6 +47,7 @@ export const PlayIcon = styled(Box)`
   background: url(${props => get(props, 'theme.icons.playerresting', '')});
   background-repeat: no-repeat;
   background-size: 100%;
+  filter: invert(100%);
   bottom: ${props => get(props, 'theme.space[0]', '')}px;
   height: 48px;
   left: ${props => get(props, 'theme.space[0]', '')}px;
@@ -99,12 +102,9 @@ export const TotalDuration = styled(Box)`
 
 export const ContentWrapper = styled(Flex)`
   bottom: ${props => get(props, 'theme.space[0]', '')}px;
-  border-bottom: ${props => (props.sponsor ? `3px solid${get(props, 'theme.colors.dPrimary')}` : '0')};
   flex-direction: column;
-  padding: ${props => (props.sponsor ? '0 16px' : '16px 0')};
-  position: ${props => (props.sponsor ? 'absolute' : 'inherit')}
-  left: ${props => get(props, 'theme.space[0]', '')}px;
-  right: ${props => get(props, 'theme.space[0]', '')}px;
+  padding: ${props => get(props, 'theme.space[2]', '16')}px 0;
+  
   & a {
     text-decoration: none;
   }

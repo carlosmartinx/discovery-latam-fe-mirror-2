@@ -8,7 +8,7 @@ import ChannelList from '../channel-list';
 const Footer = ({
   terms, copyright, mainLinkLogo, channels, discoveryLogo,
 }) => (
-  <Root flexDirection="column" p={4}>
+  <Root flexDirection="column" p={4} m="auto">
     <Card alignItems="center">
       <LinkWrapper href={mainLinkLogo} target="_blank">
         <ImgLogo src={discoveryLogo} alt="Discovery" mx="auto" />
