@@ -16,7 +16,7 @@ export const Heading = styled(HeadingBase)`
   color: ${props => get(props, 'theme.colors.white', '')};
   margin: 0 auto;
   width: 100%;
-  padding: 15px;
+  padding: 15px 0;
 `;
 
 export const SearchBox = styled(Box)`
@@ -30,7 +30,7 @@ export const SearchBox = styled(Box)`
   @media (min-width: ${props => get(props, 'theme.breakpoints.0', '')}) {
     ${CardRoot} {
       display: flex;
-      padding: 15px;
+      padding: 15px 0;
       margin: 0 auto;
     }
 

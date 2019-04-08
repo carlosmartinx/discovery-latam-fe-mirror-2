@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Flex, Box } from 'rebass';
+import { Box } from 'rebass';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { esCodes } from '@discovery-web-app/shared-components/config/tagCodes';
@@ -11,6 +11,7 @@ import Page from '../../components/page';
 import {
   SearchBox, LoadMore, Heading, DefaulMessage,
 } from './styled';
+import { BoxBase } from '../../utils/styled';
 
 // API connection
 import getResults from '../../api/search';
@@ -43,7 +44,7 @@ const SearchResults = ({ match }) => {
 
   return (
     <Page id="search" background="#000f24">
-      <Flex flexDirection="column">
+      <BoxBase>
         <Heading>
           Resultados de busqueda:
           {' '}
@@ -122,7 +123,7 @@ const SearchResults = ({ match }) => {
                 )}
             </SearchBox>
           )}
-      </Flex>
+      </BoxBase>
     </Page>
   );
 };
