@@ -60,7 +60,7 @@ const Search = ({ placeholder }) => {
   }, []);
 
   return (
-    <Box alignSelf="end" width={1}>
+    <Box alignSelf="end" width={1} px={[10, 24]}>
       {redirect && inputValue && (<Redirect push to={`/buscador/${inputValue}`} />)}
       <Input
         id="searchInput"
@@ -91,11 +91,25 @@ const Header = (props) => {
       py={2}
       m="auto"
     >
-      {search ? <Search placeholder={searchPlaceHolder} /> : <Logo />}
+      {!search && <Logo />}
 
-      <Button onClick={() => setSearch(!search)}>
-        <Image src={search ? IconClose : IconSearch} />
-      </Button>
+      {!search ? (
+        <Button onClick={() => setSearch(!search)}>
+          <Image src={IconSearch} />
+        </Button>
+      ) : (
+        <Button>
+          <Image src={IconSearch} />
+        </Button>
+      )}
+
+      {search && <Search placeholder={searchPlaceHolder} />}
+
+      {search && (
+        <Button onClick={() => setSearch(!search)}>
+          <Image src={search ? IconClose : IconSearch} />
+        </Button>
+      )}
     </Root>
   );
 };
@@ -105,7 +119,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  searchPlaceHolder: 'Buscar...',
+  searchPlaceHolder: 'Buscar',
 };
 
 export default Header;

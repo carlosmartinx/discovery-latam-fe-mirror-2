@@ -6,6 +6,7 @@ import {
 import { Root as CardRoot, ImageWrapper, ContentWrapper } from '@discovery-web-app/shared-components/dist/content-card/styled';
 
 export const Heading = styled(HeadingBase)`
+  font-family: ${props => get(props, 'theme.fonts.sans', '')};
   font-size: 36px;
   max-width: ${props => get(props, 'theme.breakpoints.3', '')};
   color: ${props => get(props, 'theme.colors.white', '')};
@@ -15,6 +16,7 @@ export const Heading = styled(HeadingBase)`
 `;
 
 export const SearchBox = styled(Box)`
+  font-family: ${props => get(props, 'theme.fonts.sans', '')};
   position: relative;
   width: 100%;
   padding: 20px 0;
@@ -64,6 +66,7 @@ export const SearchBox = styled(Box)`
 `;
 
 export const LoadMore = styled(Button)`
+  font-family: ${props => get(props, 'theme.fonts.sans', '')};
   color: ${props => get(props, 'theme.colors.white', '')};
   margin: 20px auto;
   display: block;

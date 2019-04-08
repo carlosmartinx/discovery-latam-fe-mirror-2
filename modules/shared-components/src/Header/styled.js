@@ -6,21 +6,33 @@ import get from 'lodash/get';
 // eslint-disable-next-line import/prefer-default-export
 export const Root = styled(Flex)`
   max-width: ${props => get(props, 'theme.breakpoints.3', '1440px')};
+  min-height: 65px;
 `;
 
 export const Input = styled.input`
-  width: 96%;
+  font-family: ${props => get(props, 'theme.fonts.sans', '')};
+  width: 100%;
   border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  border-bottom: 1px solid ${props => get(props, 'theme.colors.g1', '')};
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
+  background-color: transparent;
+  text-align: left;
+  font-weight: bold;
+  font-size: ${props => get(props, 'theme.fontSizes[2]', '16')}px;
+  line-height: 24px;
+  color: ${props => get(props, 'theme.colors.white', '')};
+  
+  &:focus {
+    outline: 0;
+  }
 `;
 
 export const Button = styled(ButtonBase)`
   background-color: transparent;
   filter: invert(100%);
   padding: 0;
+
+  &:focus {
+    outline: 0;
+  }
 `;
